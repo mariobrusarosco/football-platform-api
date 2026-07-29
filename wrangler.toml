@@ -2,10 +2,7 @@ name = "football-platform-api-demo"
 main = "src/apps/cloudflare-worker/worker.ts"
 compatibility_date = "2026-07-09"
 workers_dev = true
-
-[vars]
-ASSET_BASE_URL = "https://pub-ad9a25475486494b8665c0b11bd920ca.r2.dev"
-CORS_ORIGIN = "http://localhost:5173"
+keep_vars = true
 
 [secrets]
 required = ["DATABASE_URL"]
@@ -22,3 +19,6 @@ class_name = "ApiContainer"
 [[migrations]]
 tag = "v1"
 new_sqlite_classes = ["ApiContainer"]
+
+[observability]
+enabled = true

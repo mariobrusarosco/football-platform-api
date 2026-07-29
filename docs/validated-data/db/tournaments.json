@@ -2,7 +2,7 @@
   {
     "id": "WC-1950",
     "year": 1950,
-    "name": "1950 FIFA Men's World Cup",
+    "name": "1950 World Cup",
     "hostCountry": "Brazil",
     "winner": "Uruguay",
     "startDate": "1950-06-24",
@@ -12,7 +12,7 @@
   {
     "id": "WC-1954",
     "year": 1954,
-    "name": "1954 FIFA Men's World Cup",
+    "name": "1954 World Cup",
     "hostCountry": "Switzerland",
     "winner": "West Germany",
     "startDate": "1954-06-16",
@@ -22,7 +22,7 @@
   {
     "id": "WC-1958",
     "year": 1958,
-    "name": "1958 FIFA Men's World Cup",
+    "name": "1958 World Cup",
     "hostCountry": "Sweden",
     "winner": "Brazil",
     "startDate": "1958-06-08",
@@ -32,7 +32,7 @@
   {
     "id": "WC-1962",
     "year": 1962,
-    "name": "1962 FIFA Men's World Cup",
+    "name": "1962 World Cup",
     "hostCountry": "Chile",
     "winner": "Brazil",
     "startDate": "1962-05-30",
@@ -42,7 +42,7 @@
   {
     "id": "WC-1966",
     "year": 1966,
-    "name": "1966 FIFA Men's World Cup",
+    "name": "1966 World Cup",
     "hostCountry": "England",
     "winner": "England",
     "startDate": "1966-07-11",
@@ -52,7 +52,7 @@
   {
     "id": "WC-1970",
     "year": 1970,
-    "name": "1970 FIFA Men's World Cup",
+    "name": "1970 World Cup",
     "hostCountry": "Mexico",
     "winner": "Brazil",
     "startDate": "1970-05-31",
@@ -62,7 +62,7 @@
   {
     "id": "WC-1974",
     "year": 1974,
-    "name": "1974 FIFA Men's World Cup",
+    "name": "1974 World Cup",
     "hostCountry": "West Germany",
     "winner": "West Germany",
     "startDate": "1974-06-13",
@@ -72,7 +72,7 @@
   {
     "id": "WC-1978",
     "year": 1978,
-    "name": "1978 FIFA Men's World Cup",
+    "name": "1978 World Cup",
     "hostCountry": "Argentina",
     "winner": "Argentina",
     "startDate": "1978-06-01",
@@ -82,7 +82,7 @@
   {
     "id": "WC-1982",
     "year": 1982,
-    "name": "1982 FIFA Men's World Cup",
+    "name": "1982 World Cup",
     "hostCountry": "Spain",
     "winner": "Italy",
     "startDate": "1982-06-13",
@@ -92,7 +92,7 @@
   {
     "id": "WC-1986",
     "year": 1986,
-    "name": "1986 FIFA Men's World Cup",
+    "name": "1986 World Cup",
     "hostCountry": "Mexico",
     "winner": "Argentina",
     "startDate": "1986-05-31",
@@ -102,7 +102,7 @@
   {
     "id": "WC-1990",
     "year": 1990,
-    "name": "1990 FIFA Men's World Cup",
+    "name": "1990 World Cup",
     "hostCountry": "Italy",
     "winner": "West Germany",
     "startDate": "1990-06-08",
@@ -112,7 +112,7 @@
   {
     "id": "WC-1994",
     "year": 1994,
-    "name": "1994 FIFA Men's World Cup",
+    "name": "1994 World Cup",
     "hostCountry": "United States",
     "winner": "Brazil",
     "startDate": "1994-06-17",
@@ -122,7 +122,7 @@
   {
     "id": "WC-1998",
     "year": 1998,
-    "name": "1998 FIFA Men's World Cup",
+    "name": "1998 World Cup",
     "hostCountry": "France",
     "winner": "France",
     "startDate": "1998-06-10",
@@ -132,7 +132,7 @@
   {
     "id": "WC-2002",
     "year": 2002,
-    "name": "2002 FIFA Men's World Cup",
+    "name": "2002 World Cup",
     "hostCountry": "Korea, Japan",
     "winner": "Brazil",
     "startDate": "2002-05-31",
@@ -142,7 +142,7 @@
   {
     "id": "WC-2006",
     "year": 2006,
-    "name": "2006 FIFA Men's World Cup",
+    "name": "2006 World Cup",
     "hostCountry": "Germany",
     "winner": "Italy",
     "startDate": "2006-06-09",
@@ -152,7 +152,7 @@
   {
     "id": "WC-2010",
     "year": 2010,
-    "name": "2010 FIFA Men's World Cup",
+    "name": "2010 World Cup",
     "hostCountry": "South Africa",
     "winner": "Spain",
     "startDate": "2010-06-11",
@@ -162,7 +162,7 @@
   {
     "id": "WC-2014",
     "year": 2014,
-    "name": "2014 FIFA Men's World Cup",
+    "name": "2014 World Cup",
     "hostCountry": "Brazil",
     "winner": "Germany",
     "startDate": "2014-06-12",
@@ -172,7 +172,7 @@
   {
     "id": "WC-2018",
     "year": 2018,
-    "name": "2018 FIFA Men's World Cup",
+    "name": "2018 World Cup",
     "hostCountry": "Russia",
     "winner": "France",
     "startDate": "2018-06-14",
@@ -182,7 +182,7 @@
   {
     "id": "WC-2022",
     "year": 2022,
-    "name": "2022 FIFA Men's World Cup",
+    "name": "2022 World Cup",
     "hostCountry": "Qatar",
     "winner": "Argentina",
     "startDate": "2022-11-20",

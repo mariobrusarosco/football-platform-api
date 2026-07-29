@@ -72,6 +72,9 @@ GitHub environment demo:    DATABASE_URL
 Cloudflare demo Worker:     DATABASE_URL
 ```
 
+See [Environment Configuration](docs/guides/environment-configuration.md) for the exact local,
+Cloudflare, and GitHub setup.
+
 Public assets use the same semantic rule. Local development and the demo Worker currently use the
 same public `ASSET_BASE_URL`; PostgreSQL stores only object keys. See
 [Almanac Public Assets](docs/slices/almanac-assets.md).
@@ -157,9 +160,8 @@ Expected result:
 /api/almanac/teams        API returns the seeded national-team index
 ```
 
-`CORS_ORIGIN` is the frontend origin allowed to call the API. Local development and the current
-demo configuration use `http://localhost:5173`. Replace the demo value when the frontend receives
-a deployed origin.
+`CORS_ORIGIN` is the frontend origin allowed to call the API. Local development uses
+`http://localhost:5173`; demo uses its deployed frontend origin in Cloudflare.
 
 If `/api/health/db` fails, check that Postgres is running:
 
