@@ -71,6 +71,20 @@
       "when": 1784378544969,
       "tag": "0009_almanac_matches",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1784388252787,
+      "tag": "0010_almanac_national_team_visual_identities",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1785277945864,
+      "tag": "0011_almanac_edition_index_logo",
+      "breakpoints": true
     }
   ]
 }

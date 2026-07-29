@@ -1,43 +1,25 @@
 import { count, desc, eq } from 'drizzle-orm';
 import { db } from '../../../../platform/database';
 import { worldCupEditionVisualIdentities, worldCupEditions } from './schema';
+import type {
+  EditionDetailRecord,
+  EditionListRecord,
+  EditionNavigationRecord,
+} from './types';
 
-export type EditionIndexRecord = {
-  id: string;
-  year: number;
-  hostDisplayName: string;
-  hostFlagAssetKey: string | null;
-};
-
-export type EditionDetailRecord = {
-  id: string;
-  year: number;
-  name: string;
-  hostDisplayName: string;
-  visualIdentity: {
-    logoAssetKey: string | null;
-    trophyAssetKey: string | null;
-    accentColor: string;
-    accentTextColor: string;
-    spineColor: string;
-  } | null;
-};
-
-export type EditionNavigationRecord = {
-  id: string;
-  year: number;
-  hostDisplayName: string;
-};
-
-export const listEditionIndexRecords = async (): Promise<EditionIndexRecord[]> => {
+export const listEditionRecords = async (): Promise<EditionListRecord[]> => {
   return db
     .select({
       id: worldCupEditions.id,
       year: worldCupEditions.year,
       hostDisplayName: worldCupEditions.hostDisplayName,
-      hostFlagAssetKey: worldCupEditions.hostFlagAssetKey,
+      logoAssetKey: worldCupEditionVisualIdentities.logoAssetKey,
     })
     .from(worldCupEditions)
+    .leftJoin(
+      worldCupEditionVisualIdentities,
+      eq(worldCupEditionVisualIdentities.editionId, worldCupEditions.id)
+    )
     .orderBy(desc(worldCupEditions.year));
 };
 

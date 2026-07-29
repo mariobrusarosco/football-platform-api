@@ -1,6 +1,7 @@
 import { closeDatabase, db } from "../src/platform/database";
 import { seedGoals } from "./seed-almanac/goals";
 import { seedMatches } from "./seed-almanac/matches";
+import { seedNationalTeamVisualIdentities } from "./seed-almanac/national-team-visual-identities";
 import { seedNationalTeams } from "./seed-almanac/national-teams";
 import { seedPlayers } from "./seed-almanac/players";
 import { seedWorldCupEditionVisualIdentities } from "./seed-almanac/world-cup-edition-visual-identities";
@@ -18,6 +19,11 @@ const seedAlmanac = async (): Promise<void> => {
       editions.bySourceKey,
     );
     const nationalTeams = await seedNationalTeams(transaction, updatedAt);
+    const nationalTeamVisualIdentityCount = await seedNationalTeamVisualIdentities(
+      transaction,
+      updatedAt,
+      nationalTeams.bySourceKey,
+    );
     const playerCount = await seedPlayers(transaction, updatedAt);
     const participationCount = await seedWorldCupEditionTeams(
       transaction,
@@ -33,6 +39,7 @@ const seedAlmanac = async (): Promise<void> => {
       editionCount: editions.count,
       visualIdentityCount,
       nationalTeamCount: nationalTeams.count,
+      nationalTeamVisualIdentityCount,
       playerCount,
       participationCount,
       squadPlayerCount,
@@ -42,7 +49,7 @@ const seedAlmanac = async (): Promise<void> => {
   });
 
   console.log(
-    `Seeded ${result.editionCount} Almanac World Cup editions, ${result.visualIdentityCount} edition visual identities, ${result.nationalTeamCount} national teams, ${result.playerCount} players, ${result.participationCount} edition-team participations, ${result.squadPlayerCount} squad-player memberships, ${result.matchCount} matches, and ${result.goalCount} goals.`,
+    `Seeded ${result.editionCount} Almanac World Cup editions, ${result.visualIdentityCount} edition visual identities, ${result.nationalTeamCount} national teams, ${result.nationalTeamVisualIdentityCount} national-team visual identities, ${result.playerCount} players, ${result.participationCount} edition-team participations, ${result.squadPlayerCount} squad-player memberships, ${result.matchCount} matches, and ${result.goalCount} goals.`,
   );
 };
 

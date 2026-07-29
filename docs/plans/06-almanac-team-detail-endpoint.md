@@ -2,7 +2,7 @@
 
 ## Status
 
-- [ ] Ready for implementation
+- [x] Completed
 
 ## Objective
 
@@ -99,8 +99,8 @@ the Teams seed and produces one visual-identity row for the canonical national t
 }
 ```
 
-The example values reflect the current eight-edition baseline. Tests must still derive and assert
-the neighbors and page number from the seeded ordering rather than hard-coding them in production.
+The example values reflect the current eight-edition baseline. Production derives the neighbors
+and page number from the seeded ordering rather than hard-coding those values.
 
 `visualIdentity` is `null` when no visual-identity row exists. `flagUrl` and `badgeUrl` are nullable
 when their asset keys are absent.
@@ -115,38 +115,38 @@ when their asset keys are absent.
 - `scripts/seed-almanac/national-team-visual-identities.ts`
 - `scripts/seed-almanac.ts`
 - `docs/almanac-schema.md`
-- Focused Teams service and HTTP tests.
+- Focused local HTTP verification of the Teams index and detail routes.
 
 ## Implementation Checklist
 
-- [ ] Add the team visual-identity schema to the Teams domain.
-- [ ] Generate exactly one Teams migration.
-- [ ] Add an idempotent seed from `team_visual_identities.json`.
-- [ ] Convert POC badge paths into provider-neutral asset keys at the seed boundary.
-- [ ] Canonicalize source-team aliases consistently with the existing national-team seed.
-- [ ] Add a repository read for one team and its optional visual identity by normalized code.
-- [ ] Add a repository read for the established alphabetical navigation order.
-- [ ] Add `getTeamDetail(code)` to the Teams service.
-- [ ] Derive the team page number from the existing Teams index ordering.
-- [ ] Derive previous and next navigation without storing paths or page numbers.
-- [ ] Construct public flag and badge URLs in the service with the platform asset helper.
-- [ ] Add `GET /:code` after the existing Teams index route.
-- [ ] Return `400` for a malformed code and `404` for a well-formed unknown code.
-- [ ] Add focused tests for `BRA`, `ARG`, lowercase input, malformed input, missing teams,
-  navigation boundaries, and missing visual identity.
-- [ ] Document the implemented table and derived values in `docs/almanac-schema.md`.
+- [x] Add the team visual-identity schema to the Teams domain.
+- [x] Generate exactly one Teams migration.
+- [x] Add an idempotent seed from `team_visual_identities.json`.
+- [x] Convert POC badge paths into provider-neutral asset keys at the seed boundary.
+- [x] Canonicalize source-team aliases consistently with the existing national-team seed.
+- [x] Add a repository read for one team and its optional visual identity by normalized code.
+- [x] Reuse the established alphabetical Teams index ordering for navigation.
+- [x] Add `getTeamDetail(code)` to the Teams service.
+- [x] Derive the team page number from the existing Teams index ordering.
+- [x] Derive previous and next navigation without storing paths or page numbers.
+- [x] Construct public flag and badge URLs in the service with the platform asset helper.
+- [x] Add `GET /:code` after the existing Teams index route.
+- [x] Return `400` for a malformed code and `404` for a well-formed unknown code.
+- [x] Verify `BRA`, `ARG`, lowercase input, malformed input, missing teams, navigation boundaries,
+  index compatibility, and absence of raw POC asset paths through local HTTP requests.
+- [x] Document the implemented table and derived values in `docs/almanac-schema.md`.
 
 ## Acceptance Criteria
 
-- [ ] `GET /api/almanac/teams/BRA` returns Brazil with `200`.
-- [ ] `GET /api/almanac/teams/ARG` returns Argentina with `200`.
-- [ ] Lowercase team codes resolve to the same records.
-- [ ] Page numbers match the existing Teams index response.
-- [ ] Previous and next teams follow the existing alphabetical order.
-- [ ] The first team's `previous` value and the last team's `next` value are `null`.
-- [ ] Visual asset URLs use `ASSET_BASE_URL`; raw POC paths are never returned.
-- [ ] Running the Almanac seed twice does not duplicate team visual identities.
-- [ ] `GET /api/almanac/teams` remains behaviorally unchanged.
+- [x] `GET /api/almanac/teams/BRA` returns Brazil with `200`.
+- [x] `GET /api/almanac/teams/ARG` returns Argentina with `200`.
+- [x] Lowercase team codes resolve to the same records.
+- [x] Page numbers match the existing Teams index response.
+- [x] Previous and next teams follow the existing alphabetical order.
+- [x] The first team's `previous` value and the last team's `next` value are `null`.
+- [x] Visual asset URLs use `ASSET_BASE_URL`; raw POC paths are never returned.
+- [x] Running the Almanac seed twice does not duplicate team visual identities.
+- [x] `GET /api/almanac/teams` remains behaviorally unchanged.
 
 ## Verification
 
@@ -155,10 +155,12 @@ pnpm db:check
 pnpm db:migrate
 pnpm db:seed:almanac
 pnpm db:seed:almanac
-pnpm test
 pnpm typecheck
 pnpm build
 ```
+
+The root application does not currently have an active automated-test command. This ticket uses
+focused HTTP requests against the built server instead of adding test-runner infrastructure.
 
 After automated checks pass, inspect these local responses:
 
@@ -174,3 +176,5 @@ http://localhost:3000/api/almanac/teams/ARG
 - Team statistics or evolution calculations.
 - Frontend implementation.
 - Cloudflare deployment changes.
+- New test-runner infrastructure.
+- Speculative query-performance indexes and value-level `CHECK` constraints.

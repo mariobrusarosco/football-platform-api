@@ -1,15 +1,13 @@
 # Almanac Public Assets
 
-## Superseded API Contract Notice
+## Current API Contract Notice
 
-This slice records the initial public-asset proof. Its former top-level Editions `logoUrl` response
-was superseded on 2026-07-12 by decision N9 in
-[Almanac Index Navigation](./almanac-index-navigation.md). The current Editions index route is
-`GET /api/almanac/editions` and returns the host-country flag as `host.flagUrl`. Edition
-`logo_asset_key` remains valid stored data for other Almanac contexts.
+The current Editions index route is `GET /api/almanac/editions`. On 2026-07-28, its top-level
+`logoUrl` contract was restored for the edition logos stored in
+`world_cup_edition_visual_identities.logo_asset_key`. The temporary host-country `host.flagUrl`
+contract was removed, while `host.displayName` remains.
 
-Do not restore `/api/almanac/world-cups` or its top-level `logoUrl` response from the historical
-evidence and checklists below.
+Do not restore the historical `/api/almanac/world-cups` route.
 
 ## Status
 

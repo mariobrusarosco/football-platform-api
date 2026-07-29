@@ -52,7 +52,7 @@ It does not include edition rows or team rows.
 ```text
 stable edition identity
 year
-host display name and host-country flag URL
+host display name and edition logo URL
 path
 page number
 ```
@@ -130,9 +130,8 @@ and Drizzle disagree after implementation, stop and resolve the mismatch.
 | section order | Define the fixed section order in the Contents service; do not persist it. | Accepted |
 
 The Teams index displays a national-team flag through `flagUrl`, derived from
-`national_teams.flag_asset_key`. The Editions index displays a host-country flag through
-`host.flagUrl`, derived from `world_cup_editions.host_flag_asset_key`. The existing edition
-`logo_asset_key` remains separate and is not returned by the Editions index.
+`national_teams.flag_asset_key`. The Editions index displays its own logo through top-level
+`logoUrl`, derived from `world_cup_edition_visual_identities.logo_asset_key`.
 
 ## Accepted Page Number Rule
 
@@ -173,7 +172,7 @@ Follow-up  Valid later work tracked outside this slice
 | N6 | Accepted | Preserve no compatibility with the provisional `/api/almanac/world-cups` contract. |
 | N7 | Accepted | Derive page numbers from explicit ordering and the current one-page-per-item rule. Do not store absolute page numbers on edition or team records. |
 | N8 | Accepted | Build each response path from existing record values, such as `/editions/2022` from year `2022` or `/teams/bra` from code `bra`, instead of storing the full path in PostgreSQL. |
-| N9 | Accepted | Return the host-country flag as `host.flagUrl`, derived from nullable `world_cup_editions.host_flag_asset_key`. Keep edition `logo_asset_key` separate and omit it from the Editions index contract. |
+| N9 | Superseded | The former host-country `host.flagUrl` contract was replaced on 2026-07-28 by top-level edition `logoUrl`, derived from `world_cup_edition_visual_identities.logo_asset_key`. |
 | N10 | Accepted | Treat reusable national teams and edition-specific squads as separate domains. This slice implements Teams only and does not model rosters or players. |
 | N11 | Accepted | Define Contents labels, paths, and order as backend configuration in the Contents service. Derive the Teams index page from the edition count. Do not create a Contents table, repository, or migration. |
 | N12 | Follow-up | Revisit page-span-aware calculation only when an accepted screen requires an edition or team to occupy multiple pages. |
@@ -272,11 +271,10 @@ A real request to `GET http://localhost:3000/api/almanac/contents` returned `200
 fixed order and derived page numbers: About page `3`, Editions page `3`, and Teams page `6`. The
 response contained no edition or team rows.
 
-Migration `0004_almanac_edition_host_flag_asset_key` added only the nullable
-`host_flag_asset_key` column. A real request to `GET http://localhost:3000/api/almanac/editions`
-returned `200` with 2022 and 2018 ordered descending, paths `/editions/2022` and
-`/editions/2018`, derived page numbers `4` and `5`, and nullable `host.flagUrl` values. A request to
-the removed `/api/almanac/world-cups` route returned `404`.
+The historical local proof returned nullable `host.flagUrl` values. That response was superseded
+on 2026-07-28: migration `0011_almanac_edition_index_logo` removes `host_flag_asset_key`, and the
+Editions index now returns top-level `logoUrl`. The removed `/api/almanac/world-cups` route remains
+unsupported.
 
 Migration `0003_almanac_national_teams` created the accepted six-column table. Running the
 idempotent seed twice left exactly two rows: Argentina and Brazil. A real request to

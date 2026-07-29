@@ -4,7 +4,7 @@ import type {
   TournamentSourceRecord,
 } from "../../src/products/almanac/domains/editions/types";
 import type { SeedTransaction } from "./database";
-import { assetPlaceholder, readSeedSource } from "./source";
+import { readSeedSource } from "./source";
 
 const tournaments = readSeedSource<TournamentSourceRecord>("tournaments.json");
 
@@ -23,7 +23,6 @@ export const seedWorldCupEditions = async (
         year: tournament.year,
         name: tournament.name,
         hostDisplayName: tournament.hostCountry,
-        hostFlagAssetKey: assetPlaceholder,
       })
       .onConflictDoUpdate({
         target: worldCupEditions.year,
@@ -31,7 +30,6 @@ export const seedWorldCupEditions = async (
           sourceKey: tournament.id,
           name: tournament.name,
           hostDisplayName: tournament.hostCountry,
-          hostFlagAssetKey: assetPlaceholder,
           updatedAt,
         },
       });
