@@ -1,1 +1,0 @@
-CREATE INDEX IF NOT EXISTS "tournament_provider_idx" ON "tournament" USING btree ("provider");

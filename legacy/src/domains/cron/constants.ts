@@ -1,8 +1,0 @@
-export const CRON_TARGET_IDS = {
-  SYSTEM_PRINT_MESSAGE: 'system.print_message',
-  MATCHES_SYNC_OPEN: 'matches.sync_open',
-  MATCHES_SYNC_ENDED: 'matches.sync_ended',
-  SCOREBOARD_APPLY_PENDING_TOURNAMENTS: 'scoreboard.apply_pending_tournaments',
-  TOURNAMENTS_CURRENT_ROUND_SYNC: 'tournaments.current_round_sync',
-  TOURNAMENTS_KNOCKOUT_ROUNDS_SYNC: 'tournaments.knockout_rounds_sync',
-} as const;

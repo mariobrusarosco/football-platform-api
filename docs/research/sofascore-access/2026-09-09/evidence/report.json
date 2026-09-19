@@ -1,0 +1,1314 @@
+{
+  "http": [
+    {
+      "headers": {},
+      "status": 200,
+      "sample": "{\"seasons\":[{\"name\":\"Premier League 26\\/27\",\"year\":\"26\\/27\",\"editor\":false,\"id\":96668},{\"name\":\"Premier League 25\\/26\",\"year\":\"25\\/26\",\"editor\":false,\"id\":76986},{\"name\":\"Premier League 24\\/25\",\"year\":\"24\\/25\",\"editor\":false,\"id\":61627},{\"name\":\"Prem"
+    },
+    {
+      "headers": {
+        "X-Requested-With": "XMLHttpRequest"
+      },
+      "status": 200,
+      "sample": "{\"seasons\":[{\"name\":\"Premier League 26\\/27\",\"year\":\"26\\/27\",\"editor\":false,\"id\":96668},{\"name\":\"Premier League 25\\/26\",\"year\":\"25\\/26\",\"editor\":false,\"id\":76986},{\"name\":\"Premier League 24\\/25\",\"year\":\"24\\/25\",\"editor\":false,\"id\":61627},{\"name\":\"Prem"
+    }
+  ],
+  "browser": [
+    {
+      "url": "https://img.sofascore.com/api/v1/player/856714/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/player/108579/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/4698/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/player/839956/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/player/991011/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/player/826643/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2672/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2829/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/17/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/4819/image",
+      "status": 200
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/sport/football/trending-top-players",
+      "status": 200,
+      "keys": [
+        "topPlayers"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/sofascore-news/en/posts?page=1&per_page=12&categories=sport",
+      "status": 200,
+      "keys": "list"
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/config/top-unique-tournaments/00/football",
+      "status": 404,
+      "keys": [
+        "error"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/sport/-10800/event-count",
+      "status": 200,
+      "keys": [
+        "snooker",
+        "badminton",
+        "futsal",
+        "ice-hockey",
+        "minifootball",
+        "table-tennis",
+        "darts",
+        "american-football",
+        "floorball",
+        "football",
+        "tennis",
+        "baseball",
+        "basketball",
+        "bandy",
+        "padel",
+        "handball",
+        "cricket",
+        "waterpolo",
+        "volleyball",
+        "esports"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/transfer?page=1&sort=-transferFee",
+      "status": 200,
+      "keys": [
+        "transfers"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country",
+      "status": 200,
+      "keys": [
+        "countrySportPriorities"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/sport/football/categories/all",
+      "status": 200,
+      "keys": [
+        "categories"
+      ]
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/player/855833/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/player/818244/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/player/1402912/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/1644/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2817/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2959/image",
+      "status": 200
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/country/alpha2",
+      "status": 200,
+      "keys": [
+        "alpha2",
+        "continent_code",
+        "country",
+        "city",
+        "ip",
+        "f",
+        "region_code"
+      ]
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2404/image",
+      "status": 200
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/sport/football/live-tournaments",
+      "status": 200,
+      "keys": [
+        "liveTournaments"
+      ]
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/40/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/38/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/player/948261/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/player/996952/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/14/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/36360/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/player/994546/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/player/974505/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/player/2087085/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/39/image",
+      "status": 200
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/config/country-sport-priorities/country/BR",
+      "status": 200,
+      "keys": [
+        "countrySportPriorities"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/branding/providers/BR/web",
+      "status": 200,
+      "keys": [
+        "config"
+      ]
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/44/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/33/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/player/892673/image",
+      "status": 200
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/config/default-unique-tournaments/BR/football",
+      "status": 200,
+      "keys": [
+        "uniqueTournaments"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/odds/providers/BR/web",
+      "status": 200,
+      "keys": [
+        "providers"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/trending/events/BR/all",
+      "status": 200,
+      "keys": [
+        "events"
+      ],
+      "events": 63
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/config/top-unique-tournaments/BR/football",
+      "status": 200,
+      "keys": [
+        "uniqueTournaments"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/sport/football/scheduled-tournaments/2026-09-09/page/1",
+      "status": 200,
+      "keys": [
+        "scheduled",
+        "hasNextPage"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/event/newly-added-events",
+      "status": 200,
+      "keys": [
+        "events"
+      ],
+      "events": 71
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/3206/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/1963/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/5257/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/1977/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/1957/image",
+      "status": 200
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/odds/providers/BR/web-odds",
+      "status": 200,
+      "keys": [
+        "providers"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/odds/1/featured-events/football",
+      "status": 200,
+      "keys": [
+        "featuredEvents"
+      ]
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/1968/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/385485/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2714/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/168090/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/124534/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/23400/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/269199/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/3543/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/6827/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/7570/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/103101/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/5981/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/34672/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/39723/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2836/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/42/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/129830/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/6690/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/4389/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/4387/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/292996/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/275923/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/34313/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/34/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/49735/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/390/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/480/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/384/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/13/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/44/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/7/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/1465/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/1470/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/37/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/238/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/35/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/36/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/14/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/18/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/1024/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/19/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/22/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/358/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/291/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/21/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/18/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/388/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/2308/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/242/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/2132/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/1/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/172/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/1468/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/500/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/13470/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/18641/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/28676/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/376/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/322/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/28562/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/955/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/48/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/1786/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/307/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/26/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/310/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/410/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/853/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/97/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/305/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/37539/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/703/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/18817/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/1783/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/22246/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/26841/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/26844/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/26845/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/26846/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/671/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/296/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/1086/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/34/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/736/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/297/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/22397/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/167/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/808/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/1556/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/35954/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/21344/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/19891/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/379/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/26176/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/26682/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/26929/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/26954/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/27114/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/27207/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/222/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/21341/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/158/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/16345/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/1582/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/22777/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/26813/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/29543/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/29979/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/35019/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/35693/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/11420/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/category/1020/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/18643/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/19220/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/20348/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/21151/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/22794/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/9491/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/20102/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/23502/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/24434/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/20976/image",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/unique-tournament/16589/image",
+      "status": 200
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/390/scheduled-events/2026-09-09",
+      "status": 200,
+      "keys": [
+        "events"
+      ],
+      "events": 7
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/238/scheduled-events/2026-09-09",
+      "status": 200,
+      "keys": [
+        "events"
+      ],
+      "events": 1
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/37/scheduled-events/2026-09-09",
+      "status": 200,
+      "keys": [
+        "events"
+      ],
+      "events": 3
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/480/scheduled-events/2026-09-09",
+      "status": 200,
+      "keys": [
+        "events"
+      ],
+      "events": 3
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/384/scheduled-events/2026-09-09",
+      "status": 200,
+      "keys": [
+        "events"
+      ],
+      "events": 3
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/7/scheduled-events/2026-09-09",
+      "status": 200,
+      "keys": [
+        "events"
+      ],
+      "events": 12
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/36/scheduled-events/2026-09-09",
+      "status": 200,
+      "keys": [
+        "events"
+      ],
+      "events": 2
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/19/scheduled-events/2026-09-09",
+      "status": 200,
+      "keys": [
+        "events"
+      ],
+      "events": 28
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/21/scheduled-events/2026-09-09",
+      "status": 200,
+      "keys": [
+        "events"
+      ],
+      "events": 7
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/2132/scheduled-events/2026-09-09",
+      "status": 200,
+      "keys": [
+        "events"
+      ],
+      "events": 15
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/event/16459588",
+      "status": 200,
+      "keys": [
+        "event"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/event/16588818",
+      "status": 200,
+      "keys": [
+        "event"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/8/seasons",
+      "status": 200,
+      "keys": [
+        "seasons"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/event/16588818/odds/1/all",
+      "status": 200,
+      "keys": [
+        "markets",
+        "eventId",
+        "liveStreamUrl"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/17/seasons",
+      "status": 200,
+      "keys": [
+        "seasons"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/odds/providers/BR/web-featured",
+      "status": 200,
+      "keys": [
+        "providers"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/event/16459588/odds/1/all",
+      "status": 200,
+      "keys": [
+        "markets",
+        "eventId",
+        "liveStreamUrl"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/325/seasons",
+      "status": 200,
+      "keys": [
+        "seasons"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/7/seasons",
+      "status": 200,
+      "keys": [
+        "seasons"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/373/seasons",
+      "status": 200,
+      "keys": [
+        "seasons"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/357/seasons",
+      "status": 200,
+      "keys": [
+        "seasons"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/35/seasons",
+      "status": 200,
+      "keys": [
+        "seasons"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/679/seasons",
+      "status": 200,
+      "keys": [
+        "seasons"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/event/16588818/odds/1/all",
+      "status": 200,
+      "keys": [
+        "markets",
+        "eventId",
+        "liveStreamUrl"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/event/16459588/odds/1/all",
+      "status": 200,
+      "keys": [
+        "markets",
+        "eventId",
+        "liveStreamUrl"
+      ]
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/135514/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/22032/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2020/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2011/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/39634/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2001/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/7315/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/1973/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/7314/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/3006/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/3014/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2955/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2972/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/1979/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/1977/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/1963/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/1968/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/5257/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/1957/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/3206/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2817/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/44/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2836/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/1164/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2677/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2959/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/1644/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/1052482/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/189/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/42/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/143/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2714/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/264637/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2352/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/8/season/97268/player-of-the-season-race",
+      "status": 200,
+      "keys": [
+        "topPlayers",
+        "statisticsType",
+        "playerOfTheTournament"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/17/season/96668/player-of-the-season-race",
+      "status": 200,
+      "keys": [
+        "topPlayers",
+        "statisticsType",
+        "playerOfTheTournament"
+      ]
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/328532/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2404/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/228616/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/3001/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/3061/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2348/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/34/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/38/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2351/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/48/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/3/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/2359/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/829592/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/72022/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/120868/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/78151/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/90138/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/90134/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/90120/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/262177/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/110757/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/team/43732/image/small",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/odds/provider/2309/logo",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/odds/provider/2300/logo",
+      "status": 200
+    },
+    {
+      "url": "https://img.sofascore.com/api/v1/odds/provider/2308/logo",
+      "status": 200
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/35/season/97464/player-of-the-season-race",
+      "status": 200,
+      "keys": [
+        "topPlayers",
+        "statisticsType",
+        "playerOfTheTournament"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/7/season/96518/player-of-the-season-race",
+      "status": 200,
+      "keys": [
+        "topPlayers",
+        "statisticsType",
+        "playerOfTheTournament"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/373/season/89353/player-of-the-season-race",
+      "status": 404,
+      "keys": [
+        "error"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/679/season/96522/player-of-the-season-race",
+      "status": 404,
+      "keys": [
+        "error"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/357/season/69619/player-of-the-season-race",
+      "status": 404,
+      "keys": [
+        "error"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/unique-tournament/325/season/87678/player-of-the-season-race",
+      "status": 200,
+      "keys": [
+        "topPlayers",
+        "statisticsType",
+        "playerOfTheTournament"
+      ]
+    },
+    {
+      "url": "https://www.sofascore.com/api/v1/dsp/country/BR",
+      "status": 200,
+      "keys": [
+        "ads"
+      ]
+    }
+  ],
+  "navigation_status": 200,
+  "title": "Football Live Scores, Fixtures & Odds | Sofascore | Championship League, Premier League",
+  "visible_text": "Trending\nToday\n1ST\n0\n-\n0\n1ST\n0\n-\n0\n21:30\n-\nFT\n3\n-\n2\nFT\n2\n-\n1\nFT\n5\n-\n1\nFT\n2\n-\n1\nFT\n2\n-\n1\nFT\n0\n-\n1\nFT\n6\n-\n3\nTomorrow\n10:00\n-\n16:00\n-\n20:00\n-\n20:00\n-\n20:00\n-\n21:30\n-\n21:35\n-\nSCORES\nNEWS\nFANTASY\nTORNEO\nSearch Sofascore\n\u2318K\nFootball\nVolleyball\nBasketball\nTennis\nMMA\nTable tennis\n20\nMore\nDropping odds\nFavourites\nTV schedule\nAdvertisement\nFootball today - livescore and schedule for Premier League, Champions League\nAll\nFavourites\nCompetitions\nToday\nLive (98)\nFinished\nUpcoming\nOdds\nBrasileir\u00e3o S\u00e9rie B\nBrazil\n5\n19:30\n-\nBotafogo-SP\nNovorizontino\n19:30\n-\nFortaleza\nAva\u00ed\n20:30\n-\nAm\u00e9rica-MG\nN\u00e1utico\n20:30\n-\nOper\u00e1rio-PR\nCRB\n21:30\n-\nAtl\u00e9tico-GO\nCear\u00e1\nUEFA Champions League\nEurope\n6\n13:45\nFT\nBarcelona\nFeyenoord\n5\n5\n1\n1\n13:45\nFT\nStuttgart\nViking\n3\n3\n1\n1\n16:00\nFT\nLiverpool\nAtl. Madrid\n2\n2\n1\n1\n16:00\nFT\nPSG\nSlovan\n6\n6\n1\n1\n16:00\nFT\nNapoli\nArsenal\n0\n0\n1\n1\n16:00\nFT\nSporting\nGalatasaray\n3\n3\n1\n1\nCONMEBOL Libertadores, Knockout stage\nSouth America\n1\n/2\n19:00\n4'\nPalmeiras\nLDU\n0\n0\n0\n0\n21:30\n-\nEstudiantes\nCorinthians\nCONMEBOL Sudamericana, Knockout stage\nSouth America\n1\n/1\n19:00\n4'\nSantos\nAtl\u00e9tico-MG\n0\n0\n0\n0\nLiga Portugal Betclic\nPortugal\n1\n16:45\nFT\nMoreirense\nBenfica\n0\n0\n4\n4\nVriendenLoterij Eredivisie\nNetherlands\n1"
+}

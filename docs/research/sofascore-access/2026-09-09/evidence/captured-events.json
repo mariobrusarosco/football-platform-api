@@ -1,0 +1,4246 @@
+{
+  "events": [
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Youth League",
+        "slug": "uefa-youth-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+              "hi": "\u092f\u0942\u0930\u094b\u092a",
+              "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+              "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Youth League",
+          "slug": "uefa-youth-league",
+          "primaryColorHex": "#44c156",
+          "secondaryColorHex": "#2828c6",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+                "hi": "\u092f\u0942\u0930\u094b\u092a",
+                "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+                "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 26344,
+          "hasPerformanceGraphFeature": false,
+          "showBanner": true,
+          "country": {},
+          "id": 2132,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u062f\u0648\u0631\u064a \u0623\u0628\u0637\u0627\u0644 \u0623\u0648\u0631\u0648\u0628\u0627 \u0644\u0644\u0634\u0628\u0627\u0628",
+              "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u0989\u09a5 \u09b2\u09c0\u0997",
+              "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+              "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 446,
+        "isGroup": false,
+        "id": 138558,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u062f\u0648\u0631\u064a \u0627\u0644\u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a",
+            "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u09df\u09c1\u09a5 \u09b2\u09c0\u0997",
+            "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+            "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Youth League 26/27",
+        "year": "26/27",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 102576
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "xcLsBORb",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Club Brugge U19",
+        "slug": "club-brugge-u19",
+        "shortName": "Club Brugge U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 5156,
+        "nameCode": "CBR",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "BE",
+          "alpha3": "BEL",
+          "name": "Belgium",
+          "slug": "belgium"
+        },
+        "id": 231976,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#0080ff",
+          "secondary": "#000000",
+          "text": "#000000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "Club Brugge \u062a\u062d\u062a 19",
+            "hi": "\u0915\u094d\u0932\u092c \u092c\u094d\u0930\u0942\u091c\u094d\u095b\u0947 U19",
+            "ru": "\u041a\u043b\u0443\u0431 \u0411\u0440\u044e\u0433\u0433\u0435 U19"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Aston Villa U19",
+        "slug": "aston-villa-u19",
+        "shortName": "Aston Villa U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 1703,
+        "nameCode": "AVI",
+        "national": false,
+        "parentTeam": {
+          "name": "Aston Villa",
+          "slug": "aston-villa",
+          "shortName": "Aston Villa",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 1097660,
+          "nameCode": "AVL",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "EN",
+            "alpha3": "ENG",
+            "name": "England",
+            "slug": "england"
+          },
+          "id": 40,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#670e36",
+            "secondary": "#94bee5",
+            "text": "#94bee5"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0633\u062a\u0648\u0646 \u0641\u064a\u0644\u0627",
+              "bn": "\u0985\u09cd\u09af\u09be\u09b8\u09cd\u099f\u09a8 \u09ad\u09bf\u09b2\u09be",
+              "hi": "\u090f\u0938\u094d\u091f\u0928 \u0935\u093f\u0932\u093e",
+              "ru": "\u0410\u0441\u0442\u043e\u043d \u0412\u0438\u043b\u043b\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "EN",
+          "alpha3": "ENG",
+          "name": "England",
+          "slug": "england"
+        },
+        "id": 90122,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#670e36",
+          "secondary": "#94bee5",
+          "text": "#94bee5"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0627\u0633\u062a\u0648\u0646 \u06a2\u064a\u0644\u0627 \u062a\u062d\u062a 19",
+            "ru": "\u0410\u0441\u0442\u043e\u043d \u0412\u0438\u043b\u043b\u0430 U19"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 5,
+        "display": 5,
+        "period1": 2,
+        "period2": 3,
+        "normaltime": 5
+      },
+      "awayScore": {
+        "current": 3,
+        "display": 3,
+        "period1": 0,
+        "period2": 3,
+        "normaltime": 3
+      },
+      "time": {
+        "currentPeriodStartTimestamp": 1788949570,
+        "lastPeriodEndTimestamp": 1788871643
+      },
+      "changes": {
+        "changes": [
+          "time.currentPeriodStart"
+        ],
+        "changeTimestamp": 1788953712
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16990407,
+      "slug": "club-brugge-u19-aston-villa-u19",
+      "startTimestamp": 1788868800,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro",
+          "youth"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Youth League",
+        "slug": "uefa-youth-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+              "hi": "\u092f\u0942\u0930\u094b\u092a",
+              "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+              "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Youth League",
+          "slug": "uefa-youth-league",
+          "primaryColorHex": "#44c156",
+          "secondaryColorHex": "#2828c6",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+                "hi": "\u092f\u0942\u0930\u094b\u092a",
+                "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+                "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 26344,
+          "hasPerformanceGraphFeature": false,
+          "showBanner": true,
+          "country": {},
+          "id": 2132,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u062f\u0648\u0631\u064a \u0623\u0628\u0637\u0627\u0644 \u0623\u0648\u0631\u0648\u0628\u0627 \u0644\u0644\u0634\u0628\u0627\u0628",
+              "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u0989\u09a5 \u09b2\u09c0\u0997",
+              "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+              "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 446,
+        "isGroup": false,
+        "id": 138558,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u062f\u0648\u0631\u064a \u0627\u0644\u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a",
+            "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u09df\u09c1\u09a5 \u09b2\u09c0\u0997",
+            "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+            "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Youth League 26/27",
+        "year": "26/27",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 102576
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "Opkcsnztc",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 3,
+      "homeTeam": {
+        "name": "Lille U19",
+        "slug": "lille-u19",
+        "shortName": "Lille U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 1988,
+        "nameCode": "LOSC",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "Lille",
+          "slug": "lille",
+          "shortName": "Lille",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 348243,
+          "nameCode": "LIL",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "FR",
+            "alpha3": "FRA",
+            "name": "France",
+            "slug": "france"
+          },
+          "id": 1643,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#df0000",
+            "secondary": "#24216a",
+            "text": "#24216a"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0644\u064a\u0644",
+              "bn": "\u09b2\u09bf\u09b2",
+              "hi": "\u0932\u093f\u0932\u0940",
+              "ru": "\u041b\u0438\u043b\u043b\u044c"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "FR",
+          "alpha3": "FRA",
+          "name": "France",
+          "slug": "france"
+        },
+        "id": 296213,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#df0000",
+          "secondary": "#24216a",
+          "text": "#24216a"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0644\u064a\u0644 \u062a\u062d\u062a 19",
+            "ru": "\u041b\u0438\u043b\u043b\u044c U19"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0644\u064a\u0644 \u062a\u062d\u062a 19",
+            "ru": "\u041b\u0438\u043b\u043b\u044c"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Real Betis U19",
+        "slug": "real-betis-u19",
+        "shortName": "Real Betis U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 4834,
+        "nameCode": "RBB",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "ES",
+          "alpha3": "ESP",
+          "name": "Spain",
+          "slug": "spain"
+        },
+        "id": 275789,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffff",
+          "secondary": "#006633",
+          "text": "#006633"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0631\u064a\u0627\u0644 \u0628\u064a\u062a\u064a\u0633 \u062a\u062d\u062a 19",
+            "ru": "\u0420\u0435\u0430\u043b \u0411\u0435\u0442\u0438\u0441 U19"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0631\u064a\u0627\u0644 \u0628\u064a\u062a\u064a\u0633 \u062a\u062d\u062a 19",
+            "ru": "\u0420\u0435\u0430\u043b \u0411\u0435\u0442\u0438\u0441 U19"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "currentPeriodStartTimestamp": 1788876086,
+        "lastPeriodEndTimestamp": 1788875184
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1788879038
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": false,
+      "detailId": 4,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16990420,
+      "homeRedCards": 1,
+      "slug": "lille-u19-real-betis-u19",
+      "startTimestamp": 1788872400,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro",
+          "youth"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Youth League",
+        "slug": "uefa-youth-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+              "hi": "\u092f\u0942\u0930\u094b\u092a",
+              "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+              "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Youth League",
+          "slug": "uefa-youth-league",
+          "primaryColorHex": "#44c156",
+          "secondaryColorHex": "#2828c6",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+                "hi": "\u092f\u0942\u0930\u094b\u092a",
+                "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+                "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 26344,
+          "hasPerformanceGraphFeature": false,
+          "showBanner": true,
+          "country": {},
+          "id": 2132,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u062f\u0648\u0631\u064a \u0623\u0628\u0637\u0627\u0644 \u0623\u0648\u0631\u0648\u0628\u0627 \u0644\u0644\u0634\u0628\u0627\u0628",
+              "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u0989\u09a5 \u09b2\u09c0\u0997",
+              "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+              "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 446,
+        "isGroup": false,
+        "id": 138558,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u062f\u0648\u0631\u064a \u0627\u0644\u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a",
+            "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u09df\u09c1\u09a5 \u09b2\u09c0\u0997",
+            "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+            "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Youth League 26/27",
+        "year": "26/27",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 102576
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "uzrsfCHb",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "Borussia Dortmund U19",
+        "slug": "borussia-dortmund-u19",
+        "shortName": "Dortmund U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 7338,
+        "nameCode": "BVB",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "Borussia Dortmund",
+          "slug": "borussia-dortmund",
+          "shortName": "Dortmund",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 1551842,
+          "nameCode": "BVB",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "name": "Germany",
+            "slug": "germany"
+          },
+          "id": 2673,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#ffe600",
+            "secondary": "#000000",
+            "text": "#000000"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0628\u0648\u0631\u0648\u0633\u064a\u0627 \u062f\u0648\u0631\u062a\u0645\u0648\u0646\u062f",
+              "hi": "\u092c\u094b\u0930\u0941\u0938\u094d\u0938\u093f\u092f\u093e  \u0921\u0949\u0930\u094d\u091f\u092e\u0941\u0902\u0921",
+              "ru": "\u0411\u043e\u0440\u0443\u0441\u0441\u0438\u044f \u0414\u043e\u0440\u0442\u043c\u0443\u043d\u0434"
+            },
+            "shortNameTranslation": {
+              "ar": "\u062f\u0648\u0631\u062a\u0645\u0648\u0646\u062f",
+              "bn": "\u09a1\u09b0\u09cd\u099f\u09ae\u09c1\u09a8\u09cd\u09a1",
+              "hi": "\u0921\u0949\u0930\u094d\u091f\u092e\u0941\u0902\u0921",
+              "ru": "\u0414\u043e\u0440\u0442\u043c\u0443\u043d\u0434"
+            }
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "DE",
+          "alpha3": "DEU",
+          "name": "Germany",
+          "slug": "germany"
+        },
+        "id": 43719,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffff00",
+          "secondary": "#000000",
+          "text": "#000000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0628\u0648\u0631\u0633\u064a\u0627 \u062f\u0648\u0631\u062a\u0645\u0648\u0646\u062f \u062a\u062d\u062a 19",
+            "hi": "\u092c\u094b\u0930\u0941\u0938\u094d\u0938\u093f\u092f\u093e \u0926\u094b\u0930\u094d\u091f\u092e\u0941\u0902\u0921 U19",
+            "ru": "\u0411\u043e\u0440\u0443\u0441\u0441\u0438\u044f \u0414\u043e\u0440\u0442\u043c\u0443\u043d\u0434 U19"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Villarreal U19",
+        "slug": "villarreal-u19",
+        "shortName": "Villarreal U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 3789,
+        "nameCode": "VIL",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "Villarreal",
+          "slug": "villarreal",
+          "shortName": "Villarreal",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 489828,
+          "nameCode": "VIL",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "ES",
+            "alpha3": "ESP",
+            "name": "Spain",
+            "slug": "spain"
+          },
+          "id": 2819,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#ffff00",
+            "secondary": "#013765",
+            "text": "#013765"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0641\u064a\u0627\u0631\u064a\u0627\u0644",
+              "bn": "\u09ad\u09bf\u09b2\u09be\u09b0\u09bf\u09af\u09bc\u09be\u09b2",
+              "hi": "\u0935\u093f\u0932\u094d\u0932\u093e\u0930\u093f\u092f\u0932",
+              "ru": "\u0412\u0438\u043b\u044c\u044f\u0440\u0440\u0435\u0430\u043b"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "ES",
+          "alpha3": "ESP",
+          "name": "Spain",
+          "slug": "spain"
+        },
+        "id": 206355,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffff00",
+          "secondary": "#013765",
+          "text": "#013765"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0641\u064a\u0627\u0631\u064a\u0627\u0644 \u062a\u062d\u062a 19",
+            "ru": "\u0412\u0438\u043b\u044c\u044f\u0440\u0440\u0435\u0430\u043b U19"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0641\u064a\u0627\u0631\u064a\u0627\u0644 \u062a\u062d\u062a 19",
+            "ru": "\u0412\u0438\u043b\u044c\u044f\u0440\u0440\u0435\u0430\u043b U19"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 3,
+        "display": 3,
+        "period1": 1,
+        "period2": 2,
+        "normaltime": 3
+      },
+      "time": {
+        "currentPeriodStartTimestamp": 1788879913,
+        "lastPeriodEndTimestamp": 1788878886
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1788882928
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": false,
+      "detailId": 4,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16990410,
+      "slug": "villarreal-u19-borussia-dortmund-u19",
+      "startTimestamp": 1788876000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro",
+          "youth"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Youth League",
+        "slug": "uefa-youth-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+              "hi": "\u092f\u0942\u0930\u094b\u092a",
+              "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+              "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Youth League",
+          "slug": "uefa-youth-league",
+          "primaryColorHex": "#44c156",
+          "secondaryColorHex": "#2828c6",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+                "hi": "\u092f\u0942\u0930\u094b\u092a",
+                "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+                "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 26344,
+          "hasPerformanceGraphFeature": false,
+          "showBanner": true,
+          "country": {},
+          "id": 2132,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u062f\u0648\u0631\u064a \u0623\u0628\u0637\u0627\u0644 \u0623\u0648\u0631\u0648\u0628\u0627 \u0644\u0644\u0634\u0628\u0627\u0628",
+              "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u0989\u09a5 \u09b2\u09c0\u0997",
+              "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+              "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 446,
+        "isGroup": false,
+        "id": 138558,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u062f\u0648\u0631\u064a \u0627\u0644\u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a",
+            "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u09df\u09c1\u09a5 \u09b2\u09c0\u0997",
+            "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+            "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Youth League 26/27",
+        "year": "26/27",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 102576
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "erYseLFg",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Real Madrid U19",
+        "slug": "real-madrid-u19",
+        "shortName": "Real Madrid U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 34747,
+        "nameCode": "RMA",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "Real Madrid",
+          "slug": "real-madrid",
+          "shortName": "Real Madrid",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 8846182,
+          "nameCode": "RMA",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "ES",
+            "alpha3": "ESP",
+            "name": "Spain",
+            "slug": "spain"
+          },
+          "id": 2829,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#ffffff",
+            "secondary": "#004996",
+            "text": "#004996"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0631\u064a\u0627\u0644 \u0645\u062f\u0631\u064a\u062f",
+              "bn": "\u09b0\u09bf\u09af\u09bc\u09be\u09b2 \u09ae\u09be\u09a6\u09cd\u09b0\u09bf\u09a6",
+              "hi": "\u0930\u093f\u092f\u0932 \u092e\u0948\u0921\u094d\u0930\u093f\u0921",
+              "ru": "\u0420\u0435\u0430\u043b \u041c\u0430\u0434\u0440\u0438\u0434"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "ES",
+          "alpha3": "ESP",
+          "name": "Spain",
+          "slug": "spain"
+        },
+        "id": 120854,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffff",
+          "secondary": "#004996",
+          "text": "#004996"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0631\u064a\u0627\u0644 \u0645\u062f\u0631\u064a\u062f\u062a\u062d\u062a 19",
+            "hi": "\u0930\u093f\u092f\u0932 \u092e\u093e\u0926\u094d\u0930\u093f\u0926 U19",
+            "ru": "\u0420\u0435\u0430\u043b \u041c\u0430\u0434\u0440\u0438\u0434 U19"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0631\u064a\u0627\u0644 \u0645\u062f\u0631\u064a\u062f\u062a\u062d\u062a 19"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Inter U20",
+        "slug": "inter-milano-u20-u20",
+        "shortName": "Inter U20",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 9859,
+        "nameCode": "IUU",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "Inter",
+          "slug": "inter",
+          "shortName": "Inter",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 2157936,
+          "nameCode": "INT",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "IT",
+            "alpha3": "ITA",
+            "name": "Italy",
+            "slug": "italy"
+          },
+          "id": 2697,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#1a57cc",
+            "secondary": "#000000",
+            "text": "#000000"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0627\u0646\u062a\u0631",
+              "bn": "\u0987\u09a8\u09cd\u099f\u09be\u09b0",
+              "hi": "\u0907\u0902\u091f\u0930",
+              "ru": "\u0418\u043d\u0442\u0435\u0440"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "IT",
+          "alpha3": "ITA",
+          "name": "Italy",
+          "slug": "italy"
+        },
+        "id": 826804,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#1a57cc",
+          "secondary": "#000000",
+          "text": "#000000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0625\u0646\u062a\u0631 \u062a\u062d\u062a 20",
+            "ru": "\u0418\u043d\u0442\u0435\u0440 U20"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0625\u0646\u062a\u0631 \u062a\u062d\u062a 20",
+            "ru": "\u0418\u043d\u0442\u0435\u0440 U20"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 3,
+        "display": 3,
+        "period1": 1,
+        "period2": 2,
+        "normaltime": 3
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "currentPeriodStartTimestamp": 1788876540
+      },
+      "changes": {
+        "changes": [
+          "cardsCode"
+        ],
+        "changeTimestamp": 1788946317
+      },
+      "hasGlobalHighlights": false,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 17039757,
+      "slug": "inter-u20-real-madrid-u19",
+      "startTimestamp": 1788876000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro",
+          "youth"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Youth League",
+        "slug": "uefa-youth-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+              "hi": "\u092f\u0942\u0930\u094b\u092a",
+              "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+              "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Youth League",
+          "slug": "uefa-youth-league",
+          "primaryColorHex": "#44c156",
+          "secondaryColorHex": "#2828c6",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+                "hi": "\u092f\u0942\u0930\u094b\u092a",
+                "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+                "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 26344,
+          "hasPerformanceGraphFeature": false,
+          "showBanner": true,
+          "country": {},
+          "id": 2132,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u062f\u0648\u0631\u064a \u0623\u0628\u0637\u0627\u0644 \u0623\u0648\u0631\u0648\u0628\u0627 \u0644\u0644\u0634\u0628\u0627\u0628",
+              "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u0989\u09a5 \u09b2\u09c0\u0997",
+              "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+              "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 446,
+        "isGroup": false,
+        "id": 138558,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u062f\u0648\u0631\u064a \u0627\u0644\u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a",
+            "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u09df\u09c1\u09a5 \u09b2\u09c0\u0997",
+            "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+            "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Youth League 26/27",
+        "year": "26/27",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 102576
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "HzrsCTec",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "VfB Stuttgart U19",
+        "slug": "vfb-stuttgart-u19",
+        "shortName": "Stuttgart U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 2974,
+        "nameCode": "STU",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "VfB Stuttgart",
+          "slug": "vfb-stuttgart",
+          "shortName": "Stuttgart",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 279285,
+          "nameCode": "VFB",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "name": "Germany",
+            "slug": "germany"
+          },
+          "id": 2677,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#ffffff",
+            "secondary": "#ff0000",
+            "text": "#ff0000"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0634\u062a\u0648\u062a\u062c\u0627\u0631\u062a",
+              "hi": "VFB \u0938\u094d\u091f\u0941\u091f\u0917\u093e\u0930\u094d\u091f",
+              "ru": "\u0428\u0442\u0443\u0442\u0433\u0430\u0440\u0442"
+            },
+            "shortNameTranslation": {
+              "ar": "\u0634\u062a\u0648\u062a\u062c\u0627\u0631\u062a",
+              "bn": "\u09b8\u09cd\u099f\u09c1\u099f\u0997\u09be\u09b0\u09cd\u099f",
+              "hi": "\u0938\u094d\u091f\u0941\u091f\u0917\u093e\u0930\u094d\u091f"
+            }
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "DE",
+          "alpha3": "DEU",
+          "name": "Germany",
+          "slug": "germany"
+        },
+        "id": 43732,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffff",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0641\u064a \u0625\u0641 \u0628\u064a \u0634\u062a\u0648\u062a\u063a\u0627\u0631\u062a \u062a\u062d\u062a 19",
+            "hi": "\u0935\u093f\u090d\u095e\u092c\u0940 \u0938\u094d\u091f\u0941\u091f\u0917\u0930\u094d\u091f U19",
+            "ru": "\u0412\u0424\u0411 \u0428\u0442\u0443\u0442\u0433\u0430\u0440\u0442 \u042319 U19"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Viking FK U19",
+        "slug": "viking-fk-u19",
+        "shortName": "Viking FK U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 1278,
+        "nameCode": "VFU",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "NO",
+          "alpha3": "NOR",
+          "name": "Norway",
+          "slug": "norway"
+        },
+        "id": 262177,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0641\u064a\u0643\u064a\u0646\u063a \u0625\u0641 \u0643\u064a\u0647 \u062a\u062d\u062a 19",
+            "ru": "\u0412\u0438\u043a\u0438\u043d\u0433 \u0424\u041a U19"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0641\u064a\u0643\u064a\u0646\u063a \u0625\u0641 \u0643\u064a\u0647 \u062a\u062d\u062a 19",
+            "ru": "\u0412\u0438\u043a\u0438\u043d\u0433 \u0424\u041a U19"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 5,
+        "display": 5,
+        "period1": 1,
+        "period2": 4,
+        "normaltime": 5
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "currentPeriodStartTimestamp": 1788953775,
+        "lastPeriodEndTimestamp": 1788952802
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type"
+        ],
+        "changeTimestamp": 1788956830
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": false,
+      "detailId": 4,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16990413,
+      "slug": "viking-fk-u19-vfb-stuttgart-u19",
+      "startTimestamp": 1788949800,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro",
+          "youth"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Youth League",
+        "slug": "uefa-youth-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+              "hi": "\u092f\u0942\u0930\u094b\u092a",
+              "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+              "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Youth League",
+          "slug": "uefa-youth-league",
+          "primaryColorHex": "#44c156",
+          "secondaryColorHex": "#2828c6",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+                "hi": "\u092f\u0942\u0930\u094b\u092a",
+                "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+                "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 26344,
+          "hasPerformanceGraphFeature": false,
+          "showBanner": true,
+          "country": {},
+          "id": 2132,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u062f\u0648\u0631\u064a \u0623\u0628\u0637\u0627\u0644 \u0623\u0648\u0631\u0648\u0628\u0627 \u0644\u0644\u0634\u0628\u0627\u0628",
+              "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u0989\u09a5 \u09b2\u09c0\u0997",
+              "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+              "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 446,
+        "isGroup": false,
+        "id": 138558,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u062f\u0648\u0631\u064a \u0627\u0644\u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a",
+            "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u09df\u09c1\u09a5 \u09b2\u09c0\u0997",
+            "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+            "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Youth League 26/27",
+        "year": "26/27",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 102576
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "vcLsRQGg",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "Napoli U20",
+        "slug": "ssc-napoli-u20-u20",
+        "shortName": "Napoli U20",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 2011,
+        "nameCode": "NUU",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "SSC Napoli",
+          "slug": "napoli",
+          "shortName": "Napoli",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 1177838,
+          "nameCode": "NAP",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "IT",
+            "alpha3": "ITA",
+            "name": "Italy",
+            "slug": "italy"
+          },
+          "id": 2714,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#008cea",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0646\u0627\u0628\u0648\u0644\u064a",
+              "bn": "\u09a8\u09be\u09aa\u09cb\u09b2\u09bf",
+              "hi": "\u0928\u0947\u092a\u094b\u0932\u0940",
+              "ru": "\u041d\u0430\u043f\u043e\u043b\u0438"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "IT",
+          "alpha3": "ITA",
+          "name": "Italy",
+          "slug": "italy"
+        },
+        "id": 829592,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0646\u0627\u0628\u0648\u0644\u064a \u062a\u062d\u062a 20",
+            "ru": "\u041d\u0430\u043f\u043e\u043b\u0438 U20"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0646\u0627\u0628\u0648\u0644\u064a \u062a\u062d\u062a 20",
+            "ru": "\u041d\u0430\u043f\u043e\u043b\u0438 U20"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Arsenal U19",
+        "slug": "arsenal-u19",
+        "shortName": "Arsenal U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 6213,
+        "nameCode": "ARS",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "Arsenal",
+          "slug": "arsenal",
+          "shortName": "Arsenal",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 4203271,
+          "nameCode": "ARS",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "EN",
+            "alpha3": "ENG",
+            "name": "England",
+            "slug": "england"
+          },
+          "id": 42,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#cc0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0627\u0631\u0633\u0646\u0627\u0644",
+              "bn": "\u0986\u09b0\u09cd\u09b8\u09c7\u09a8\u09be\u09b2",
+              "hi": "\u0906\u0930\u094d\u0938\u0947\u0928\u0932",
+              "ru": "\u0410\u0440\u0441\u0435\u043d\u0430\u043b"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "EN",
+          "alpha3": "ENG",
+          "name": "England",
+          "slug": "england"
+        },
+        "id": 90120,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0623\u0631\u0633\u0646\u0627\u0644 \u062a\u062d\u062a 19",
+            "ru": "\u0410\u0440\u0441\u0435\u043d\u0430\u043b U19"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0623\u0631\u0633\u0646\u0627\u0644 \u062a\u062d\u062a 19",
+            "ru": "\u0410\u0440\u0441\u0435\u043d\u0430\u043b U19"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2
+      },
+      "time": {
+        "currentPeriodStartTimestamp": 1788959235,
+        "lastPeriodEndTimestamp": 1788958241
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "awayScore.normaltime"
+        ],
+        "changeTimestamp": 1788962339
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": false,
+      "detailId": 4,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 17045020,
+      "slug": "napoli-u20-arsenal-u19",
+      "startTimestamp": 1788955200,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro",
+          "youth"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Youth League",
+        "slug": "uefa-youth-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+              "hi": "\u092f\u0942\u0930\u094b\u092a",
+              "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+              "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Youth League",
+          "slug": "uefa-youth-league",
+          "primaryColorHex": "#44c156",
+          "secondaryColorHex": "#2828c6",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+                "hi": "\u092f\u0942\u0930\u094b\u092a",
+                "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+                "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 26344,
+          "hasPerformanceGraphFeature": false,
+          "showBanner": true,
+          "country": {},
+          "id": 2132,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u062f\u0648\u0631\u064a \u0623\u0628\u0637\u0627\u0644 \u0623\u0648\u0631\u0648\u0628\u0627 \u0644\u0644\u0634\u0628\u0627\u0628",
+              "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u0989\u09a5 \u09b2\u09c0\u0997",
+              "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+              "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 446,
+        "isGroup": false,
+        "id": 138558,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u062f\u0648\u0631\u064a \u0627\u0644\u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a",
+            "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u09df\u09c1\u09a5 \u09b2\u09c0\u0997",
+            "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+            "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Youth League 26/27",
+        "year": "26/27",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 102576
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "NcLshpU",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Paris Saint-Germain U19",
+        "slug": "paris-saint-germain-u19",
+        "shortName": "PSG U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 9960,
+        "nameCode": "PSG",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "Paris Saint-Germain",
+          "slug": "paris-saint-germain",
+          "shortName": "PSG",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 3832548,
+          "nameCode": "PSG",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "FR",
+            "alpha3": "FRA",
+            "name": "France",
+            "slug": "france"
+          },
+          "id": 1644,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#000066",
+            "secondary": "#ff1541",
+            "text": "#ff1541"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0628\u0627\u0631\u064a\u0633 \u0633\u0627\u0646 \u062c\u064a\u0631\u0645\u0627\u0646",
+              "hi": "\u092a\u0947\u0930\u093f\u0938 \u0938\u0947\u0902\u091f-\u091c\u0930\u094d\u092e\u0947\u0928",
+              "ru": "\u041f\u0430\u0440\u0438 \u0421\u0435\u043d-\u0416\u0435\u0440\u043c\u0435\u043d"
+            },
+            "shortNameTranslation": {
+              "bn": "\u09aa\u09bf\u098f\u09b8\u099c\u09bf",
+              "hi": "\u092a\u0940\u090f\u0938\u091c\u0940",
+              "ru": "\u041f\u0421\u0416"
+            }
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "FR",
+          "alpha3": "FRA",
+          "name": "France",
+          "slug": "france"
+        },
+        "id": 90138,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#000066",
+          "secondary": "#ff1541",
+          "text": "#ff1541"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0628\u0627\u0631\u064a\u0633 \u0633\u0627\u0646 \u062c\u064a\u0631\u0645\u0627\u0646 \u062a\u062d\u062a 19",
+            "ru": "\u041f\u0430\u0440\u0438 \u0421\u0435\u043d-\u0416\u0435\u0440\u043c\u0435\u043d"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0628\u064a \u0625\u0633 \u062c\u064a \u062a\u062d\u062a 19"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "\u0160K Slovan Bratislava U19",
+        "slug": "sk-slovan-bratislava-u19",
+        "shortName": "Slovan Bratislava U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 1215,
+        "nameCode": "SBR",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "SK",
+          "alpha3": "SVK",
+          "name": "Slovakia",
+          "slug": "slovakia"
+        },
+        "id": 110757,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#99ccff",
+          "secondary": "#000000",
+          "text": "#000000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0625\u0633 \u0643\u064a\u0647 \u0633\u0644\u0648\u0641\u0627\u0646 \u0628\u0631\u0627\u062a\u064a\u0633\u0644\u0627\u0641\u0627 \u062a\u062d\u062a 19",
+            "ru": "\u0428\u041a \u0421\u043b\u043e\u0432\u0430\u043d \u0411\u0440\u0430\u0442\u0438\u0441\u043b\u0430\u0432\u0430 U19"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0633\u0644\u0648\u0641\u0627\u0646 \u0628\u0631\u0627\u062a\u064a\u0633\u0644\u0627\u0641\u0627 \u062a\u062d\u062a 19",
+            "ru": "\u0421\u043b\u043e\u0432\u0430\u043d \u0411\u0440\u0430\u0442\u0438\u0441\u043b\u0430\u0432\u0430"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 6,
+        "display": 6,
+        "period1": 3,
+        "period2": 3,
+        "normaltime": 6
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "time": {
+        "currentPeriodStartTimestamp": 1788960647,
+        "lastPeriodEndTimestamp": 1788959765
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "awayScore.normaltime"
+        ],
+        "changeTimestamp": 1788963472
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": false,
+      "detailId": 4,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16990412,
+      "slug": "sk-slovan-bratislava-u19-paris-saint-germain-u19",
+      "startTimestamp": 1788957000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro",
+          "youth"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Youth League",
+        "slug": "uefa-youth-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+              "hi": "\u092f\u0942\u0930\u094b\u092a",
+              "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+              "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Youth League",
+          "slug": "uefa-youth-league",
+          "primaryColorHex": "#44c156",
+          "secondaryColorHex": "#2828c6",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+                "hi": "\u092f\u0942\u0930\u094b\u092a",
+                "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+                "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 26344,
+          "hasPerformanceGraphFeature": false,
+          "showBanner": true,
+          "country": {},
+          "id": 2132,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u062f\u0648\u0631\u064a \u0623\u0628\u0637\u0627\u0644 \u0623\u0648\u0631\u0648\u0628\u0627 \u0644\u0644\u0634\u0628\u0627\u0628",
+              "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u0989\u09a5 \u09b2\u09c0\u0997",
+              "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+              "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 446,
+        "isGroup": false,
+        "id": 138558,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u062f\u0648\u0631\u064a \u0627\u0644\u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a",
+            "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u09df\u09c1\u09a5 \u09b2\u09c0\u0997",
+            "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+            "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Youth League 26/27",
+        "year": "26/27",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 102576
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "bnGstrY",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 3,
+      "homeTeam": {
+        "name": "Sporting U19",
+        "slug": "sporting-u19",
+        "shortName": "Sporting U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8658,
+        "nameCode": "SCP",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "Sporting CP",
+          "slug": "sporting",
+          "shortName": "Sporting",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 837598,
+          "nameCode": "SCP",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "PT",
+            "alpha3": "PRT",
+            "name": "Portugal",
+            "slug": "portugal"
+          },
+          "id": 3001,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#009966",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0633\u0628\u0648\u0631\u062a\u0646\u062c",
+              "bn": "\u09b8\u09cd\u09aa\u09cb\u09b0\u09cd\u099f\u09bf\u0982",
+              "hi": "\u0938\u094d\u092a\u094b\u0930\u094d\u091f\u093f\u0902\u0917",
+              "ru": "\u0421\u043f\u043e\u0440\u0442\u0438\u043d\u0433 \u041b\u0438\u0441\u0441\u0430\u0431\u043e\u043d"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "PT",
+          "alpha3": "PRT",
+          "name": "Portugal",
+          "slug": "portugal"
+        },
+        "id": 78151,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#009966",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0633\u0628\u0648\u0631\u062a\u064a\u0646\u063a \u062a\u062d\u062a 19",
+            "ru": "\u0421\u043f\u043e\u0440\u0442\u0438\u043d\u0433 \u041b\u0438\u0441\u0441\u0430\u0431\u043e\u043d"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0633\u0628\u0648\u0631\u062a\u064a\u0646\u063a \u062a\u062d\u062a 19"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Galatasaray U19",
+        "slug": "galatasaray-u19",
+        "shortName": "Galatasaray U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 6339,
+        "nameCode": "GAL",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "Galatasaray",
+          "slug": "galatasaray",
+          "shortName": "Galatasaray",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 1107482,
+          "nameCode": "GAL",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "TR",
+            "alpha3": "TUR",
+            "name": "T\u00fcrkiye",
+            "slug": "turkiye"
+          },
+          "id": 3061,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#ff9900",
+            "secondary": "#ff0000",
+            "text": "#ff0000"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u063a\u0644\u0637\u0629 \u0633\u0631\u0627\u064a",
+              "bn": "\u0997\u09be\u09b2\u09be\u09a4\u09be\u09b8\u09be\u09b0\u09be\u09af\u09bc",
+              "hi": "\u0917\u0948\u0932\u093e\u0924\u0938\u0930\u093e\u092f",
+              "ru": "\u0413\u0430\u043b\u0430\u0442\u0430\u0441\u0430\u0440\u0430\u0439"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "TR",
+          "alpha3": "TUR",
+          "name": "T\u00fcrkiye",
+          "slug": "turkiye"
+        },
+        "id": 120868,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff9900",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u063a\u0627\u0644\u0627\u0637\u0633\u0631\u0627\u064a \u062a\u062d\u062a 19",
+            "ru": "\u0424\u041a \u0413\u0430\u043b\u0430\u0442\u0430\u0441\u0430\u0440\u0430\u0439"
+          },
+          "shortNameTranslation": {
+            "ar": "\u063a\u0627\u0644\u0627\u0637\u0633\u0631\u0627\u064a \u062a\u062d\u062a 19"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2
+      },
+      "time": {
+        "currentPeriodStartTimestamp": 1788962683,
+        "lastPeriodEndTimestamp": 1788961685
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "homeScore.normaltime"
+        ],
+        "changeTimestamp": 1788965901
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": false,
+      "detailId": 4,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16990416,
+      "awayRedCards": 1,
+      "slug": "galatasaray-u19-sporting-u19",
+      "startTimestamp": 1788958800,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro",
+          "youth"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Youth League",
+        "slug": "uefa-youth-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+              "hi": "\u092f\u0942\u0930\u094b\u092a",
+              "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+              "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Youth League",
+          "slug": "uefa-youth-league",
+          "primaryColorHex": "#44c156",
+          "secondaryColorHex": "#2828c6",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+                "hi": "\u092f\u0942\u0930\u094b\u092a",
+                "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+                "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 26344,
+          "hasPerformanceGraphFeature": false,
+          "showBanner": true,
+          "country": {},
+          "id": 2132,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u062f\u0648\u0631\u064a \u0623\u0628\u0637\u0627\u0644 \u0623\u0648\u0631\u0648\u0628\u0627 \u0644\u0644\u0634\u0628\u0627\u0628",
+              "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u0989\u09a5 \u09b2\u09c0\u0997",
+              "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+              "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 446,
+        "isGroup": false,
+        "id": 138558,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u062f\u0648\u0631\u064a \u0627\u0644\u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a",
+            "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u09df\u09c1\u09a5 \u09b2\u09c0\u0997",
+            "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+            "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Youth League 26/27",
+        "year": "26/27",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 102576
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "xPDsJcL",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 3,
+      "homeTeam": {
+        "name": "Liverpool U19",
+        "slug": "liverpool-u19",
+        "shortName": "Liverpool U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 7022,
+        "nameCode": "LIV",
+        "national": false,
+        "parentTeam": {
+          "name": "Liverpool FC",
+          "slug": "liverpool",
+          "shortName": "Liverpool",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 4332794,
+          "nameCode": "LIV",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "EN",
+            "alpha3": "ENG",
+            "name": "England",
+            "slug": "england"
+          },
+          "id": 44,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#cc0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0644\u064a\u0641\u0631\u0628\u0648\u0644",
+              "bn": "\u09b2\u09bf\u09ad\u09be\u09b0\u09aa\u09c1\u09b2",
+              "hi": "\u0932\u093f\u0935\u0930\u092a\u0942\u0932",
+              "ru": "\u041b\u0438\u0432\u0435\u0440\u043f\u0443\u043b\u044c"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "EN",
+          "alpha3": "ENG",
+          "name": "England",
+          "slug": "england"
+        },
+        "id": 90134,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#cc0000",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0644\u064a\u06a2\u0631\u067e\u0648\u0644 \u062a\u062d\u062a 19",
+            "hi": "\u0932\u093f\u0935\u0930\u092a\u0942\u0932 U19",
+            "ru": "\u0424\u041a \u041b\u0438\u0432\u0435\u0440\u043f\u0443\u043b\u044c U19"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Atl\u00e9tico Madrid U19",
+        "slug": "atletico-madrid-u19",
+        "shortName": "Atl. Madrid U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 6374,
+        "nameCode": "ATM",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "ES",
+          "alpha3": "ESP",
+          "name": "Spain",
+          "slug": "spain"
+        },
+        "id": 72022,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffff",
+          "secondary": "#c40000",
+          "text": "#c40000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0623\u062a\u0644\u062a\u064a\u0643\u0648 \u0645\u062f\u0631\u064a\u062f \u062a\u062d\u062a 19",
+            "ru": "\u0410\u0442\u043b\u0435\u0442\u0438\u043a\u043e \u041c\u0430\u0434\u0440\u0438\u0434"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0623\u062a\u0644. \u0645\u062f\u0631\u064a\u062f \u062a\u062d\u062a 19"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 2,
+        "period2": 0,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2
+      },
+      "time": {
+        "currentPeriodStartTimestamp": 1788966278,
+        "lastPeriodEndTimestamp": 1788965289
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "awayScore.normaltime"
+        ],
+        "changeTimestamp": 1788969329
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": false,
+      "detailId": 4,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16990421,
+      "slug": "liverpool-u19-atletico-madrid-u19",
+      "startTimestamp": 1788962400,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro",
+          "youth"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Youth League",
+        "slug": "uefa-youth-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+              "hi": "\u092f\u0942\u0930\u094b\u092a",
+              "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+              "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Youth League",
+          "slug": "uefa-youth-league",
+          "primaryColorHex": "#44c156",
+          "secondaryColorHex": "#2828c6",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+                "hi": "\u092f\u0942\u0930\u094b\u092a",
+                "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+                "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 26344,
+          "hasPerformanceGraphFeature": false,
+          "showBanner": true,
+          "country": {},
+          "id": 2132,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u062f\u0648\u0631\u064a \u0623\u0628\u0637\u0627\u0644 \u0623\u0648\u0631\u0648\u0628\u0627 \u0644\u0644\u0634\u0628\u0627\u0628",
+              "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u0989\u09a5 \u09b2\u09c0\u0997",
+              "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+              "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 446,
+        "isGroup": false,
+        "id": 138558,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u062f\u0648\u0631\u064a \u0627\u0644\u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a",
+            "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u09df\u09c1\u09a5 \u09b2\u09c0\u0997",
+            "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+            "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Youth League 26/27",
+        "year": "26/27",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 102576
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "DcLsCTDb",
+      "status": {
+        "code": 0,
+        "description": "Not started",
+        "type": "notstarted"
+      },
+      "homeTeam": {
+        "name": "Barcelona U19",
+        "slug": "barcelona-u19",
+        "shortName": "Barcelona U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 43976,
+        "nameCode": "BAR",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "FC Barcelona",
+          "slug": "barcelona",
+          "shortName": "Barcelona",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 8496240,
+          "nameCode": "BAR",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "ES",
+            "alpha3": "ESP",
+            "name": "Spain",
+            "slug": "spain"
+          },
+          "id": 2817,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#154284",
+            "secondary": "#9d1009",
+            "text": "#9d1009"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0628\u0631\u0634\u0644\u0648\u0646\u0629",
+              "bn": "\u09ac\u09be\u09b0\u09cd\u09b8\u09c7\u09b2\u09cb\u09a8\u09be",
+              "hi": "\u092c\u093e\u0930\u094d\u0938\u093f\u0932\u094b\u0928\u093e",
+              "ru": "\u0411\u0430\u0440\u0441\u0435\u043b\u043e\u043d\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "ES",
+          "alpha3": "ESP",
+          "name": "Spain",
+          "slug": "spain"
+        },
+        "id": 90128,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#154284",
+          "secondary": "#9d1009",
+          "text": "#9d1009"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0628\u0631\u0634\u0644\u0648\u0646\u0629 \u062a\u062d\u062a 19",
+            "ru": "\u0424\u041a \u0411\u0430\u0440\u0441\u0435\u043b\u043e\u043d\u0430"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0628\u0631\u0634\u0644\u0648\u0646\u0629 \u062a\u062d\u062a 19"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Feyenoord U19",
+        "slug": "feyenoord-u19",
+        "shortName": "Feyenoord U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 1708,
+        "nameCode": "FUU",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "Feyenoord",
+          "slug": "feyenoord",
+          "shortName": "Feyenoord",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 403789,
+          "nameCode": "FEY",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "NL",
+            "alpha3": "NLD",
+            "name": "Netherlands",
+            "slug": "netherlands"
+          },
+          "id": 2959,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#ff0000",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0641\u064a\u0646\u0648\u0631\u062f",
+              "bn": "\u09ab\u09c7\u0987\u09a8\u09c1\u09b0\u09cd\u09a1",
+              "hi": "\u092b\u093c\u0947\u0928\u094b\u0930\u094d\u0921",
+              "ru": "\u0424\u0435\u0439\u0435\u043d\u043e\u043e\u0440\u0434 \u0420\u043e\u0442\u0442\u0435\u0440\u0434\u0430\u043c"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "NL",
+          "alpha3": "NLD",
+          "name": "Netherlands",
+          "slug": "netherlands"
+        },
+        "id": 197177,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0641\u0627\u064a\u0646\u0648\u0631\u062f \u062a\u062d\u062a 19",
+            "ru": "\u0424\u0435\u0439\u0435\u043d\u043e\u043e\u0440\u0434 U19"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0641\u0627\u064a\u0646\u0648\u0631\u062f \u062a\u062d\u062a 19",
+            "ru": "\u0424\u0435\u0439\u0435\u043d\u043e\u043e\u0440\u0434 U19"
+          }
+        }
+      },
+      "homeScore": {},
+      "awayScore": {},
+      "time": {},
+      "changes": {
+        "changeTimestamp": 0
+      },
+      "hasGlobalHighlights": false,
+      "detailId": 4,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16990417,
+      "slug": "feyenoord-u19-barcelona-u19",
+      "startTimestamp": 1789025400,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro",
+          "youth"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Youth League",
+        "slug": "uefa-youth-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+              "hi": "\u092f\u0942\u0930\u094b\u092a",
+              "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+              "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Youth League",
+          "slug": "uefa-youth-league",
+          "primaryColorHex": "#44c156",
+          "secondaryColorHex": "#2828c6",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+                "hi": "\u092f\u0942\u0930\u094b\u092a",
+                "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+                "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 26344,
+          "hasPerformanceGraphFeature": false,
+          "showBanner": true,
+          "country": {},
+          "id": 2132,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u062f\u0648\u0631\u064a \u0623\u0628\u0637\u0627\u0644 \u0623\u0648\u0631\u0648\u0628\u0627 \u0644\u0644\u0634\u0628\u0627\u0628",
+              "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u0989\u09a5 \u09b2\u09c0\u0997",
+              "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+              "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 446,
+        "isGroup": false,
+        "id": 138558,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u062f\u0648\u0631\u064a \u0627\u0644\u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a",
+            "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u09df\u09c1\u09a5 \u09b2\u09c0\u0997",
+            "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+            "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Youth League 26/27",
+        "year": "26/27",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 102576
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "aBXbstLFg",
+      "status": {
+        "code": 0,
+        "description": "Not started",
+        "type": "notstarted"
+      },
+      "homeTeam": {
+        "name": "Fenerbah\u00e7e U19",
+        "slug": "fenerbahce-u19",
+        "shortName": "Fenerbah\u00e7e U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 3083,
+        "nameCode": "FEN",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "Fenerbah\u00e7e",
+          "slug": "fenerbahce",
+          "shortName": "Fenerbah\u00e7e",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 746550,
+          "nameCode": "FEN",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "TR",
+            "alpha3": "TUR",
+            "name": "T\u00fcrkiye",
+            "slug": "turkiye"
+          },
+          "id": 3052,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#000066",
+            "secondary": "#ffff00",
+            "text": "#ffff00"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0641\u0646\u0631\u0628\u062e\u0634\u0629",
+              "bn": "\u09ab\u09c7\u09a8\u09be\u09b0\u09ac\u09be\u09b9\u099a\u09c7",
+              "hi": "\u092b\u0947\u0928\u0930\u092c\u093e\u091a\u0947",
+              "ru": "\u0424\u0435\u043d\u0435\u0440\u0431\u0430\u0445\u0447\u0435"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "TR",
+          "alpha3": "TUR",
+          "name": "T\u00fcrkiye",
+          "slug": "turkiye"
+        },
+        "id": 243800,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#000066",
+          "secondary": "#ffff00",
+          "text": "#ffff00"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0641\u0646\u0631\u0628\u062e\u0634\u0629 \u062a\u062d\u062a 19",
+            "ru": "\u0424\u0435\u043d\u0435\u0440\u0431\u0430\u0445\u0447\u0435"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0641\u0646\u0631\u0628\u062e\u0634\u0629 \u062a\u062d\u062a 19"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Roma U20",
+        "slug": "as-roma-u20-u20",
+        "shortName": "Roma U20",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8448,
+        "nameCode": "RUU",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "AS Roma",
+          "slug": "roma",
+          "shortName": "Roma",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 845856,
+          "nameCode": "ASR",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "IT",
+            "alpha3": "ITA",
+            "name": "Italy",
+            "slug": "italy"
+          },
+          "id": 2702,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#990000",
+            "secondary": "#eaca15",
+            "text": "#eaca15"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0631\u0648\u0645\u0627",
+              "bn": "\u09b0\u09cb\u09ae\u09be",
+              "hi": "\u0930\u094b\u092e\u093e",
+              "ru": "\u0420\u043e\u043c\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "IT",
+          "alpha3": "ITA",
+          "name": "Italy",
+          "slug": "italy"
+        },
+        "id": 826818,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#990000",
+          "secondary": "#eaca15",
+          "text": "#eaca15"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0631\u0648\u0645\u0627 \u062a\u062d\u062a 20",
+            "ru": "\u0420\u043e\u043c\u0430 U20"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0631\u0648\u0645\u0627 \u062a\u062d\u062a 20",
+            "ru": "\u0420\u043e\u043c\u0430 U20"
+          }
+        }
+      },
+      "homeScore": {},
+      "awayScore": {},
+      "time": {},
+      "changes": {
+        "changeTimestamp": 0
+      },
+      "hasGlobalHighlights": false,
+      "detailId": 4,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 17039756,
+      "slug": "roma-u20-fenerbahce-u19",
+      "startTimestamp": 1789038000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro",
+          "youth"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Youth League",
+        "slug": "uefa-youth-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+              "hi": "\u092f\u0942\u0930\u094b\u092a",
+              "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+              "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Youth League",
+          "slug": "uefa-youth-league",
+          "primaryColorHex": "#44c156",
+          "secondaryColorHex": "#2828c6",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+                "hi": "\u092f\u0942\u0930\u094b\u092a",
+                "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+                "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 26344,
+          "hasPerformanceGraphFeature": false,
+          "showBanner": true,
+          "country": {},
+          "id": 2132,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u062f\u0648\u0631\u064a \u0623\u0628\u0637\u0627\u0644 \u0623\u0648\u0631\u0648\u0628\u0627 \u0644\u0644\u0634\u0628\u0627\u0628",
+              "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u0989\u09a5 \u09b2\u09c0\u0997",
+              "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+              "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 446,
+        "isGroup": false,
+        "id": 138558,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u062f\u0648\u0631\u064a \u0627\u0644\u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a",
+            "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u09df\u09c1\u09a5 \u09b2\u09c0\u0997",
+            "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+            "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Youth League 26/27",
+        "year": "26/27",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 102576
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "PcLsyeT",
+      "status": {
+        "code": 0,
+        "description": "Not started",
+        "type": "notstarted"
+      },
+      "homeTeam": {
+        "name": "PSV Eindhoven U19",
+        "slug": "psv-eindhoven-u19",
+        "shortName": "PSV U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 2260,
+        "nameCode": "PSV",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "NL",
+          "alpha3": "NLD",
+          "name": "Netherlands",
+          "slug": "netherlands"
+        },
+        "id": 90140,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "PSV \u0622\u064a\u0646\u062f\u0647\u0648\u06a2\u0646 \u062a\u062d\u062a 19",
+            "hi": "\u092a\u093f\u0910\u0938\u0935\u093f \u0906\u0907\u0928\u094d\u0921\u0939\u094b\u0935\u0947\u0928 U19",
+            "ru": "\u041f\u0421\u0412 \u042d\u0439\u043d\u0434\u0445\u043e\u0432\u0435\u043d U19"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Shakhtar Donetsk U19",
+        "slug": "shakhtar-donetsk-u19",
+        "shortName": "Shakhtar U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 2856,
+        "nameCode": "SHA",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "Shakhtar Donetsk",
+          "slug": "shakhtar-donetsk",
+          "shortName": "Shakhtar",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 168590,
+          "nameCode": "SHA",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "UA",
+            "alpha3": "UKR",
+            "name": "Ukraine",
+            "slug": "ukraine"
+          },
+          "id": 3313,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#ff6600",
+            "secondary": "#000000",
+            "text": "#000000"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0634\u0627\u062e\u062a\u0627\u0631 \u062f\u0648\u0646\u064a\u062a\u0633\u0643",
+              "ru": "\u0428\u0430\u0445\u0442\u0435\u0440 \u0414\u043e\u043d\u0435\u0446\u043a"
+            },
+            "shortNameTranslation": {
+              "ar": "\u0634\u0627\u062e\u062a\u0627\u0631",
+              "bn": "\u09b6\u09be\u0996\u09a4\u09be\u09b0",
+              "hi": "\u0936\u0916\u093c\u094d\u0924\u0930"
+            }
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "UA",
+          "alpha3": "UKR",
+          "name": "Ukraine",
+          "slug": "ukraine"
+        },
+        "id": 107723,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff6600",
+          "secondary": "#000000",
+          "text": "#000000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0634\u0627\u062e\u062a\u0627\u0631 \u062f\u0648\u0646\u064a\u062a\u0633\u0643 \u062a\u062d\u062a 19",
+            "ru": "\u0428\u0430\u0445\u0442\u0435\u0440 \u0414\u043e\u043d\u0435\u0446\u043a U19"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0634\u0627\u062e\u062a\u0627\u0631 \u062a\u062d\u062a 19",
+            "ru": "\u0428\u0430\u0445\u0442\u0435\u0440 U19"
+          }
+        }
+      },
+      "homeScore": {},
+      "awayScore": {},
+      "time": {},
+      "changes": {
+        "changeTimestamp": 0
+      },
+      "hasGlobalHighlights": false,
+      "detailId": 4,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16990422,
+      "slug": "shakhtar-donetsk-u19-psv-eindhoven-u19",
+      "startTimestamp": 1789041600,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro",
+          "youth"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Youth League",
+        "slug": "uefa-youth-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+              "hi": "\u092f\u0942\u0930\u094b\u092a",
+              "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+              "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Youth League",
+          "slug": "uefa-youth-league",
+          "primaryColorHex": "#44c156",
+          "secondaryColorHex": "#2828c6",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+                "hi": "\u092f\u0942\u0930\u094b\u092a",
+                "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+                "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 26344,
+          "hasPerformanceGraphFeature": false,
+          "showBanner": true,
+          "country": {},
+          "id": 2132,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u062f\u0648\u0631\u064a \u0623\u0628\u0637\u0627\u0644 \u0623\u0648\u0631\u0648\u0628\u0627 \u0644\u0644\u0634\u0628\u0627\u0628",
+              "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u0989\u09a5 \u09b2\u09c0\u0997",
+              "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+              "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 446,
+        "isGroup": false,
+        "id": 138558,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u062f\u0648\u0631\u064a \u0627\u0644\u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a",
+            "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u09df\u09c1\u09a5 \u09b2\u09c0\u0997",
+            "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+            "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Youth League 26/27",
+        "year": "26/27",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 102576
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "nIrskztc",
+      "status": {
+        "code": 0,
+        "description": "Not started",
+        "type": "notstarted"
+      },
+      "homeTeam": {
+        "name": "Slavia Praha U19",
+        "slug": "slavia-praha-u19",
+        "shortName": "Slavia Praha U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 4110,
+        "nameCode": "SLA",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "SK Slavia Praha",
+          "slug": "slavia-praha",
+          "shortName": "Slavia Praha",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 145751,
+          "nameCode": "SLA",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "CZ",
+            "alpha3": "CZE",
+            "name": "Czechia",
+            "slug": "czechia"
+          },
+          "id": 2216,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#ffffff",
+            "secondary": "#e10000",
+            "text": "#e10000"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0633\u0644\u0627\u0641\u064a\u0627 \u0628\u0631\u0627\u063a",
+              "bn": "\u09b8\u09cd\u09b2\u09be\u09ad\u09bf\u09af\u09bc\u09be \u09aa\u09cd\u09b0\u09be\u09b9\u09be",
+              "hi": "\u0938\u094d\u0932\u093e\u0935\u093f\u092f\u093e \u092a\u094d\u0930\u093e\u0939\u093e",
+              "ru": "\u0421\u043b\u0430\u0432\u0438\u044f \u041f\u0440\u0430\u0433\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "CZ",
+          "alpha3": "CZE",
+          "name": "Czechia",
+          "slug": "czechia"
+        },
+        "id": 44163,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0633\u0644\u0627\u0641\u064a\u0627 \u0628\u0631\u0627\u063a \u062a\u062d\u062a 19",
+            "ru": "\u0421\u043b\u0430\u0432\u0438\u044f \u041f\u0440\u0430\u0433\u0430"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0633\u0644\u0627\u0641\u064a\u0627 \u0628\u0631\u0627\u063a \u062a\u062d\u062a 19"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Lens U19",
+        "slug": "lens-u19",
+        "shortName": "Lens U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 854,
+        "nameCode": "LUU",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "RC Lens",
+          "slug": "rc-lens",
+          "shortName": "Lens",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 240665,
+          "nameCode": "RCL",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "FR",
+            "alpha3": "FRA",
+            "name": "France",
+            "slug": "france"
+          },
+          "id": 1648,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#a71a1b",
+            "secondary": "#ffce00",
+            "text": "#ffce00"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0644\u0627\u0646\u0633",
+              "bn": "\u09b2\u09c7\u09a8\u09cd\u09b8",
+              "hi": "\u0932\u0947\u0902\u0938",
+              "ru": "\u041b\u0430\u043d\u0441"
+            },
+            "shortNameTranslation": {
+              "ar": "\u0644\u0627\u0646\u0633"
+            }
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "FR",
+          "alpha3": "FRA",
+          "name": "France",
+          "slug": "france"
+        },
+        "id": 296210,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#a71a1b",
+          "secondary": "#ffce00",
+          "text": "#ffce00"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0644\u0646\u0633 \u062a\u062d\u062a 19",
+            "ru": "\u041b\u0435\u043d\u0441 U19"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0644\u0646\u0633 \u062a\u062d\u062a 19",
+            "ru": "\u041b\u0435\u043d\u0441 U19"
+          }
+        }
+      },
+      "homeScore": {},
+      "awayScore": {},
+      "time": {},
+      "changes": {
+        "changeTimestamp": 0
+      },
+      "hasGlobalHighlights": false,
+      "detailId": 4,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16990408,
+      "slug": "lens-u19-slavia-praha-u19",
+      "startTimestamp": 1789041600,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro",
+          "youth"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Youth League",
+        "slug": "uefa-youth-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+              "hi": "\u092f\u0942\u0930\u094b\u092a",
+              "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+              "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Youth League",
+          "slug": "uefa-youth-league",
+          "primaryColorHex": "#44c156",
+          "secondaryColorHex": "#2828c6",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+                "hi": "\u092f\u0942\u0930\u094b\u092a",
+                "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+                "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 26344,
+          "hasPerformanceGraphFeature": false,
+          "showBanner": true,
+          "country": {},
+          "id": 2132,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u062f\u0648\u0631\u064a \u0623\u0628\u0637\u0627\u0644 \u0623\u0648\u0631\u0648\u0628\u0627 \u0644\u0644\u0634\u0628\u0627\u0628",
+              "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u0989\u09a5 \u09b2\u09c0\u0997",
+              "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+              "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 446,
+        "isGroup": false,
+        "id": 138558,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u062f\u0648\u0631\u064a \u0627\u0644\u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a",
+            "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u09df\u09c1\u09a5 \u09b2\u09c0\u0997",
+            "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+            "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Youth League 26/27",
+        "year": "26/27",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 102576
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "UAebseAHb",
+      "status": {
+        "code": 0,
+        "description": "Not started",
+        "type": "notstarted"
+      },
+      "homeTeam": {
+        "name": "Como U20",
+        "slug": "como-u19",
+        "shortName": "Como U20",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 2180,
+        "nameCode": "COM",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "Como",
+          "slug": "como",
+          "shortName": "Como",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 321246,
+          "nameCode": "COM",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "IT",
+            "alpha3": "ITA",
+            "name": "Italy",
+            "slug": "italy"
+          },
+          "id": 2704,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#09436b",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0643\u0648\u0645\u0648 1907",
+              "ru": "\u041a\u043e\u043c\u043e"
+            },
+            "shortNameTranslation": {
+              "ru": "\u041a\u043e\u043c\u043e"
+            }
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "IT",
+          "alpha3": "ITA",
+          "name": "Italy",
+          "slug": "italy"
+        },
+        "id": 206254,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#09436b",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0643\u0648\u0645\u0648 \u062a\u062d\u062a 19",
+            "ru": "\u041a\u043e\u043c\u043e U19"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0643\u0648\u0645\u0648 \u062a\u062d\u062a 19",
+            "ru": "\u041a\u043e\u043c\u043e U19"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "RB Leipzig U19",
+        "slug": "rb-leipzig-u19",
+        "shortName": "Leipzig U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 1733,
+        "nameCode": "RBL",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "RB Leipzig",
+          "slug": "rb-leipzig",
+          "shortName": "Leipzig",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 428121,
+          "nameCode": "RBL",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "DE",
+            "alpha3": "DEU",
+            "name": "Germany",
+            "slug": "germany"
+          },
+          "id": 36360,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#ffffff",
+            "secondary": "#dd0000",
+            "text": "#dd0000"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0622\u0631 \u0628\u064a \u0644\u0627\u064a\u0628\u0632\u064a\u063a",
+              "hi": "RB \u0932\u0948\u092a\u095b\u093f\u0917",
+              "ru": "\u0420\u0411 \u041b\u0435\u0439\u043f\u0446\u0438\u0433"
+            },
+            "shortNameTranslation": {
+              "ar": "\u0644\u0627\u064a\u0628\u0632\u064a\u063a",
+              "bn": "\u09b2\u09bf\u09aa\u099c\u09bf\u0997",
+              "hi": "\u0932\u0940\u092a\u091c\u093c\u093f\u0917"
+            }
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "DE",
+          "alpha3": "DEU",
+          "name": "Germany",
+          "slug": "germany"
+        },
+        "id": 136294,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffff",
+          "secondary": "#dd0000",
+          "text": "#dd0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "RB Leipzig \u062a\u062d\u062a 19",
+            "hi": "\u0906\u0930\u092c\u0940 \u0932\u0947\u0907\u092a\u094d\u095b\u0940\u0917 U19",
+            "ru": "\u0420\u0411 \u041b\u0435\u0439\u043f\u0446\u0438\u0433 U19"
+          },
+          "shortNameTranslation": {
+            "ru": "\u041b\u0435\u0439\u043f\u0446\u0438\u0433 U19"
+          }
+        }
+      },
+      "homeScore": {},
+      "awayScore": {},
+      "time": {},
+      "changes": {
+        "changeTimestamp": 0
+      },
+      "hasGlobalHighlights": false,
+      "detailId": 4,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 17045021,
+      "slug": "como-u20-rb-leipzig-u19",
+      "startTimestamp": 1789045200,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro",
+          "youth"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Youth League",
+        "slug": "uefa-youth-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+              "hi": "\u092f\u0942\u0930\u094b\u092a",
+              "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+              "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Youth League",
+          "slug": "uefa-youth-league",
+          "primaryColorHex": "#44c156",
+          "secondaryColorHex": "#2828c6",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "\u0623\u0648\u0631\u0648\u0628\u0627",
+                "hi": "\u092f\u0942\u0930\u094b\u092a",
+                "bn": "\u0987\u0989\u09b0\u09cb\u09aa",
+                "ru": "\u0415\u0432\u0440\u043e\u043f\u0430"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 26344,
+          "hasPerformanceGraphFeature": false,
+          "showBanner": true,
+          "country": {},
+          "id": 2132,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u062f\u0648\u0631\u064a \u0623\u0628\u0637\u0627\u0644 \u0623\u0648\u0631\u0648\u0628\u0627 \u0644\u0644\u0634\u0628\u0627\u0628",
+              "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u0989\u09a5 \u09b2\u09c0\u0997",
+              "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+              "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 446,
+        "isGroup": false,
+        "id": 138558,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u062f\u0648\u0631\u064a \u0627\u0644\u0634\u0628\u0627\u0628 \u0627\u0644\u0623\u0648\u0631\u0648\u0628\u064a",
+            "bn": "\u0989\u09af\u09bc\u09c7\u09ab\u09be \u0987\u09df\u09c1\u09a5 \u09b2\u09c0\u0997",
+            "hi": "\u092f\u0942\u0908\u090f\u092b\u090f \u092f\u0942\u0925 \u0932\u0940\u0917",
+            "ru": "\u042e\u043d\u043e\u0448\u0435\u0441\u043a\u0430\u044f \u043b\u0438\u0433\u0430 \u0423\u0415\u0424\u0410"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Youth League 26/27",
+        "year": "26/27",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 102576
+      },
+      "roundInfo": {
+        "round": 1
+      },
+      "customId": "YqYsfvxh",
+      "status": {
+        "code": 0,
+        "description": "Not started",
+        "type": "notstarted"
+      },
+      "homeTeam": {
+        "name": "Manchester United U19",
+        "slug": "manchester-united-u19",
+        "shortName": "Man. United U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 10149,
+        "nameCode": "MUU",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "Manchester United",
+          "slug": "manchester-united",
+          "shortName": "Man Utd",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 4272185,
+          "nameCode": "MUN",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "EN",
+            "alpha3": "ENG",
+            "name": "England",
+            "slug": "england"
+          },
+          "id": 35,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#ff0000",
+            "secondary": "#373737",
+            "text": "#373737"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0645\u0627\u0646\u0634\u0633\u062a\u0631 \u064a\u0648\u0646\u0627\u064a\u062a\u062f",
+              "hi": "\u092e\u0947\u0928\u091a\u0947\u0938\u094d\u091f\u0930 \u092f\u0942\u0928\u093e\u0907\u091f\u0947\u0921 \u090d\u095e\u0938\u0940",
+              "ru": "\u041c\u0430\u043d\u0447\u0435\u0441\u0442\u0435\u0440 \u042e\u043d\u0430\u0439\u0442\u0435\u0434"
+            },
+            "shortNameTranslation": {
+              "ar": "\u0645\u0627\u0646\u0634\u0633\u062a\u0631 \u064a\u0648\u0646\u0627\u064a\u062a\u062f",
+              "bn": "\u09ae\u09cd\u09af\u09be\u09a8 \u0987\u0989\u09a8\u09be\u0987\u099f\u09c7\u09a1",
+              "hi": "\u092e\u0948\u0928 \u092f\u0942\u0928\u093e\u0907\u091f\u0947\u0921"
+            }
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "EN",
+          "alpha3": "ENG",
+          "name": "England",
+          "slug": "england"
+        },
+        "id": 120848,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#373737",
+          "text": "#373737"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0645\u0627\u0646\u0634\u0633\u062a\u0631 \u064a\u0648\u0646\u0627\u064a\u062a\u062f \u062a\u062d\u062a 19",
+            "ru": "\u041c\u0430\u043d\u0447\u0435\u0441\u0442\u0435\u0440 \u042e\u043d\u0430\u0439\u0442\u0435\u0434"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0645\u0627\u0646. \u064a\u0648\u0646\u0627\u064a\u062a\u062f \u062a\u062d\u062a 19",
+            "ru": "\u041c\u0430\u043d\u0447\u0435\u0441\u0442\u0435\u0440 \u042e\u043d\u0430\u0439\u0442\u0435\u0434 U19"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Sabah U19",
+        "slug": "sabah-masazir-u19-u19",
+        "shortName": "Sabah U19",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 224,
+        "nameCode": "SUU",
+        "disabled": false,
+        "national": false,
+        "parentTeam": {
+          "name": "Sabah FK",
+          "slug": "sabah-fk",
+          "shortName": "Sabah",
+          "gender": "M",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "userCount": 75166,
+          "nameCode": "SBH",
+          "disabled": false,
+          "national": false,
+          "type": 0,
+          "country": {
+            "alpha2": "AZ",
+            "alpha3": "AZE",
+            "name": "Azerbaijan",
+            "slug": "azerbaijan"
+          },
+          "id": 267828,
+          "subTeams": [],
+          "teamColors": {
+            "primary": "#034ea2",
+            "secondary": "#ffffff",
+            "text": "#ffffff"
+          },
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "\u0635\u0628\u0627\u062d \u0625\u0641 \u0643\u064a\u0647",
+              "ru": "\u0424\u041a \u0421\u0430\u0431\u0430\u0445"
+            },
+            "shortNameTranslation": {
+              "ar": "\u0635\u0628\u0627\u062d \u0625\u0641 \u0643\u064a\u0647",
+              "ru": "\u0421\u0430\u0431\u0430\u0445"
+            }
+          }
+        },
+        "type": 0,
+        "country": {
+          "alpha2": "AZ",
+          "alpha3": "AZE",
+          "name": "Azerbaijan",
+          "slug": "azerbaijan"
+        },
+        "id": 931005,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "\u0635\u0628\u0627\u062d \u062a\u062d\u062a 19",
+            "ru": "\u0421\u0430\u0431\u0430\u0445 U19"
+          },
+          "shortNameTranslation": {
+            "ar": "\u0635\u0628\u0627\u062d \u062a\u062d\u062a 19",
+            "ru": "\u0421\u0430\u0431\u0430\u0445 U19"
+          }
+        }
+      },
+      "homeScore": {},
+      "awayScore": {},
+      "time": {},
+      "changes": {
+        "changeTimestamp": 0
+      },
+      "hasGlobalHighlights": false,
+      "detailId": 4,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16990418,
+      "slug": "sabah-u19-manchester-united-u19",
+      "startTimestamp": 1789045200,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": [
+          "club"
+        ],
+        "level": [
+          "top-competitions",
+          "pro",
+          "youth"
+        ],
+        "gender": [
+          "M"
+        ]
+      }
+    }
+  ]
+}

@@ -1,2 +1,0 @@
-ALTER TABLE "tournament_round" ALTER COLUMN "tournament_id" SET DATA TYPE uuid USING "tournament_id"::uuid;--> statement-breakpoint
-ALTER TABLE "tournament_round" ALTER COLUMN "order" SET DATA TYPE integer USING "order"::integer;

@@ -1,2 +1,0 @@
-CREATE INDEX IF NOT EXISTS "tournament_member_tournament_idx" ON "tournament_member" USING btree ("tournament_id");--> statement-breakpoint
-CREATE INDEX IF NOT EXISTS "tournament_member_member_idx" ON "tournament_member" USING btree ("member_id");

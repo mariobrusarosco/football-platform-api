@@ -1,1 +1,0 @@
-ALTER TABLE "match" ADD COLUMN "scoreboard_applied_at" timestamp;

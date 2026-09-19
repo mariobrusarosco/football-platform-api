@@ -1,24 +1,20 @@
 import { buildPublicAssetUrl } from '../../../../platform/assets/public-asset-url';
 import { countWorldCupEditions } from '../editions/service';
 import { findNationalTeamDetailRecordByCode, listNationalTeamRecords } from './repository';
+import type {
+  GetTeamDetailResult,
+  NationalTeamRecord,
+  TeamIndexItem,
+  TeamNavigationItem,
+} from './types';
 
 const firstEditionPageNumber = 4;
 const teamsIndexPageCount = 1;
 
-export type TeamIndexItem = {
-  id: string;
-  code: string;
-  displayName: string;
-  path: string;
-  pageNumber: number;
-  flagUrl: string | null;
-};
-
-export const listTeams = async (): Promise<TeamIndexItem[]> => {
-  const [teams, editionCount] = await Promise.all([
-    listNationalTeamRecords(),
-    countWorldCupEditions(),
-  ]);
+const toTeamIndexItems = (
+  teams: NationalTeamRecord[],
+  editionCount: number
+): TeamIndexItem[] => {
   const firstTeamPageNumber = firstEditionPageNumber + editionCount + teamsIndexPageCount;
 
   return teams.map((team, index) => ({
@@ -31,34 +27,14 @@ export const listTeams = async (): Promise<TeamIndexItem[]> => {
   }));
 };
 
-export type TeamNavigationItem = {
-  code: string;
-  displayName: string;
-  path: string;
-};
+export const listTeams = async (): Promise<TeamIndexItem[]> => {
+  const [teams, editionCount] = await Promise.all([
+    listNationalTeamRecords(),
+    countWorldCupEditions(),
+  ]);
 
-export type TeamDetail = {
-  id: string;
-  code: string;
-  displayName: string;
-  pageNumber: number;
-  flagUrl: string | null;
-  visualIdentity: {
-    badgeUrl: string | null;
-    accentColor: string;
-    accentTextColor: string;
-    spineColor: string;
-  } | null;
-  navigation: {
-    previous: TeamNavigationItem | null;
-    next: TeamNavigationItem | null;
-  };
+  return toTeamIndexItems(teams, editionCount);
 };
-
-export type GetTeamDetailResult =
-  | { status: 'found'; team: TeamDetail }
-  | { status: 'invalid-code' }
-  | { status: 'not-found' };
 
 const toNavigationItem = (team: TeamIndexItem | undefined): TeamNavigationItem | null => {
   if (team === undefined) {
@@ -84,7 +60,11 @@ export const getTeamDetail = async (code: string): Promise<GetTeamDetailResult> 
     return { status: 'not-found' };
   }
 
-  const orderedTeams = await listTeams();
+  const [teamRecords, editionCount] = await Promise.all([
+    listNationalTeamRecords(),
+    countWorldCupEditions(),
+  ]);
+  const orderedTeams = toTeamIndexItems(teamRecords, editionCount);
   const teamIndex = orderedTeams.findIndex(candidate => candidate.id === team.id);
 
   if (teamIndex === -1) {

@@ -1,0 +1,30 @@
+{
+  "description": "Hashes recorded when archiving the original experiment artifacts; not signatures or proof of provider authenticity.",
+  "files": [
+    {
+      "file": "captured-events.json",
+      "bytes": 132844,
+      "sha256": "86f2975adfd44751cbd959ecadc00377d4a3b9fcbd2eee44c8406a4065e0233c"
+    },
+    {
+      "file": "champions-league-fixtures.json",
+      "bytes": 101659,
+      "sha256": "1041294821b55c2d7e3a23127235cb716ee37781fbfa40e9e220a83df6701242"
+    },
+    {
+      "file": "match-detail.json",
+      "bytes": 13062,
+      "sha256": "7d1b593de3c01973de4e8a05519e12d1f49450de89bc990de0a859be07371c0b"
+    },
+    {
+      "file": "original-probe.py",
+      "bytes": 2113,
+      "sha256": "f39c43d197fb5fbf450d378ae1654e5ae6477ab46ba565921c30098dd97c4611"
+    },
+    {
+      "file": "report.json",
+      "bytes": 35055,
+      "sha256": "c296894a6720e93ff72169d0cb13f4b3b4f531a6d67808754e558a8fae7d4df4"
+    }
+  ]
+}

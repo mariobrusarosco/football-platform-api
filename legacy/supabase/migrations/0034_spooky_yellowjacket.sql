@@ -1,2 +1,0 @@
-DROP INDEX IF EXISTS "cron_job_runs_scheduled_slot_unique_idx";--> statement-breakpoint
-CREATE UNIQUE INDEX IF NOT EXISTS "cron_job_runs_scheduled_run_unique_idx" ON "cron_job_runs" USING btree ("job_definition_id","scheduled_at","trigger_type");

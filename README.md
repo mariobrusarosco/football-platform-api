@@ -2,26 +2,17 @@
 
 Football Platform API is the backend for football products built from this repository.
 
-The root app is being rebuilt as a simpler v1 API. The old Best Shot app lives under `legacy/` only as reference material.
-
-```text
-root/   = new app
-legacy/ = old app kept as reference only
-```
-
-Do not build new features inside `legacy/`. Use it only to understand previous product behavior, domain rules, and database decisions.
-
 ## Product Domains
 
 This API is intentionally broader than a single product. The main domains are:
 
-| Domain | Purpose |
-| --- | --- |
-| Best Shot | Score-prediction game. Handles playable tournaments, matches, guesses, scoring, and leaderboards. |
-| Almanac | Read-only historical football data. Handles tournament history, national squads, players, teams, and historical context. |
-| Identity | Shared real-world entities used by multiple domains, such as people, teams, competitions, and provider identifiers. |
-| Provider | External data ingestion from sources such as SofaScore. Provider data is imported into our database; user-facing requests should read our database, not depend on live provider calls. |
-| Admin | Internal workflows for previewing, importing, syncing, and maintaining platform data. |
+| Domain    | Purpose                                                                                                                                                                                |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Best Shot | Score-prediction game. Handles playable tournaments, matches, guesses, scoring, and leaderboards.                                                                                      |
+| Almanac   | Read-only historical football data. Handles tournament history, national squads, players, teams, and historical context.                                                               |
+| Identity  | Shared real-world entities used by multiple domains, such as people, teams, competitions, and provider identifiers.                                                                    |
+| Provider  | External data ingestion from sources such as SofaScore. Provider data is imported into our database; user-facing requests should read our database, not depend on live provider calls. |
+| Admin     | Internal workflows for previewing, importing, syncing, and maintaining platform data.                                                                                                  |
 
 Keep the domain boundaries clear:
 

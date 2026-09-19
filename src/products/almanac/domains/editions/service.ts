@@ -1,16 +1,16 @@
-import { buildPublicAssetUrl } from "../../../../platform/assets/public-asset-url";
+import { buildPublicAssetUrl } from '../../../../platform/assets/public-asset-url';
 import {
   countWorldCupEditionRecords,
   findEditionDetailRecordByYear,
   listEditionNavigationRecords,
   listEditionRecords,
-} from "./repository";
+} from './repository';
 import type {
   EditionListItem,
   EditionNavigationItem,
   EditionNavigationRecord,
   GetEditionDetailResult,
-} from "./types";
+} from './types';
 
 const firstEditionPageNumber = 4;
 const firstWorldCupYear = 1930;
@@ -55,13 +55,13 @@ export const getEditionDetail = async (
     year < firstWorldCupYear ||
     year > latestSupportedWorldCupYear
   ) {
-    return { status: "invalid-year" };
+    return { status: 'invalid-year' };
   }
 
   const edition = await findEditionDetailRecordByYear(year);
 
   if (edition === null) {
-    return { status: "not-found" };
+    return { status: 'not-found' };
   }
 
   const orderedEditions = await listEditionNavigationRecords();
@@ -76,7 +76,7 @@ export const getEditionDetail = async (
   }
 
   return {
-    status: "found",
+    status: 'found',
     edition: {
       id: edition.id,
       year: edition.year,

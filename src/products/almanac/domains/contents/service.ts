@@ -1,13 +1,8 @@
 import { countWorldCupEditions } from '../editions/service';
+import type { ContentItem } from './types';
 
 const aboutAndEditionsPageNumber = 3;
 const firstEditionDetailPageNumber = 4;
-
-export type ContentItem = {
-  label: string;
-  path: string;
-  pageNumber: number;
-};
 
 export const listContents = async (): Promise<ContentItem[]> => {
   const editionCount = await countWorldCupEditions();

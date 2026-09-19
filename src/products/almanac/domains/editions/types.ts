@@ -76,6 +76,6 @@ export type EditionDetail = {
 };
 
 export type GetEditionDetailResult =
-  | { status: "found"; edition: EditionDetail }
-  | { status: "invalid-year" }
-  | { status: "not-found" };
+  | { status: 'found'; edition: EditionDetail }
+  | { status: 'invalid-year' }
+  | { status: 'not-found' };

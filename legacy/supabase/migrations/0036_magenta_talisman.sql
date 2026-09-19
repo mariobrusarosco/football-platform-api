@@ -1,1 +1,0 @@
-ALTER TABLE "cron_job_definitions" DROP COLUMN IF EXISTS "pause_reason";

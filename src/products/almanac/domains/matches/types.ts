@@ -28,6 +28,11 @@ export type GoalSourceRecord = {
   penalty: boolean;
 };
 
+export type CreditedScorerTotalRecord = {
+  squadPlayerId: string;
+  goalCount: number;
+};
+
 export type CreditedScorerTotal = {
   squadPlayerId: string;
   goalCount: number;

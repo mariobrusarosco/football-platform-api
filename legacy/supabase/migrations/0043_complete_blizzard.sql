@@ -1,1 +1,0 @@
-CREATE UNIQUE INDEX IF NOT EXISTS "scoreboard_executions_in_progress_tournament_operation_idx" ON "scoreboard_executions" USING btree ("tournament_id","operation_type") WHERE "scoreboard_executions"."status" = 'in_progress';

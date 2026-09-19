@@ -1,1 +1,0 @@
-ALTER TABLE "tournament" ALTER COLUMN "standings_mode" SET DEFAULT 'unique-group';

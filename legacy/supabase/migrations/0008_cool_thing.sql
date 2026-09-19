@@ -1,1 +1,0 @@
-ALTER TABLE "tournament" ADD COLUMN "status" text DEFAULT 'active' NOT NULL;
