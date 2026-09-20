@@ -92,6 +92,20 @@
       "when": 1789774711397,
       "tag": "0012_remove_almanac_tables",
       "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1789923524192,
+      "tag": "0013_almanac_editions_associations",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1789928245646,
+      "tag": "0014_almanac_visual_identities",
+      "breakpoints": true
     }
   ]
 }

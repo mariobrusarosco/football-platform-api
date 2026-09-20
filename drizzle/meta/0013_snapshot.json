@@ -1,0 +1,602 @@
+{
+  "id": "f8fc575c-ea99-4dc4-9df2-498de1c8638a",
+  "prevId": "8cae1e5e-fe21-45ec-a0f2-52b370b58c7c",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "almanac.edition_hosts": {
+      "name": "edition_hosts",
+      "schema": "almanac",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "edition_id": {
+          "name": "edition_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "nation_id": {
+          "name": "nation_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "display_name": {
+          "name": "display_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "position": {
+          "name": "position",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {
+        "edition_hosts_edition_nation_unique": {
+          "name": "edition_hosts_edition_nation_unique",
+          "columns": [
+            {
+              "expression": "edition_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "nation_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "edition_hosts_edition_position_unique": {
+          "name": "edition_hosts_edition_position_unique",
+          "columns": [
+            {
+              "expression": "edition_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "position",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "edition_hosts_edition_id_editions_id_fk": {
+          "name": "edition_hosts_edition_id_editions_id_fk",
+          "tableFrom": "edition_hosts",
+          "tableTo": "editions",
+          "schemaTo": "almanac",
+          "columnsFrom": [
+            "edition_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "edition_hosts_nation_id_nations_id_fk": {
+          "name": "edition_hosts_nation_id_nations_id_fk",
+          "tableFrom": "edition_hosts",
+          "tableTo": "nations",
+          "schemaTo": "almanac",
+          "columnsFrom": [
+            "nation_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "restrict",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "edition_hosts_position_check": {
+          "name": "edition_hosts_position_check",
+          "value": "\"almanac\".\"edition_hosts\".\"position\" > 0"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "almanac.editions": {
+      "name": "editions",
+      "schema": "almanac",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "year": {
+          "name": "year",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "start_date": {
+          "name": "start_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "end_date": {
+          "name": "end_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "participant_count": {
+          "name": "participant_count",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "editions_year_unique": {
+          "name": "editions_year_unique",
+          "columns": [
+            {
+              "expression": "year",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "editions_year_check": {
+          "name": "editions_year_check",
+          "value": "\"almanac\".\"editions\".\"year\" >= 1930"
+        },
+        "editions_date_range_check": {
+          "name": "editions_date_range_check",
+          "value": "\"almanac\".\"editions\".\"start_date\" is null or \"almanac\".\"editions\".\"end_date\" is null or \"almanac\".\"editions\".\"end_date\" >= \"almanac\".\"editions\".\"start_date\""
+        },
+        "editions_participant_count_check": {
+          "name": "editions_participant_count_check",
+          "value": "\"almanac\".\"editions\".\"participant_count\" is null or \"almanac\".\"editions\".\"participant_count\" > 0"
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "almanac.nations": {
+      "name": "nations",
+      "schema": "almanac",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "slug": {
+          "name": "slug",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "canonical_name": {
+          "name": "canonical_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "nations_slug_unique": {
+          "name": "nations_slug_unique",
+          "columns": [
+            {
+              "expression": "slug",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "almanac.association_editions": {
+      "name": "association_editions",
+      "schema": "almanac",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "association_id": {
+          "name": "association_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "edition_id": {
+          "name": "edition_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "result": {
+          "name": "result",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "won_title": {
+          "name": "won_title",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        }
+      },
+      "indexes": {
+        "association_editions_association_edition_unique": {
+          "name": "association_editions_association_edition_unique",
+          "columns": [
+            {
+              "expression": "association_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "edition_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "association_editions_association_id_associations_id_fk": {
+          "name": "association_editions_association_id_associations_id_fk",
+          "tableFrom": "association_editions",
+          "tableTo": "associations",
+          "schemaTo": "almanac",
+          "columnsFrom": [
+            "association_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "association_editions_edition_id_editions_id_fk": {
+          "name": "association_editions_edition_id_editions_id_fk",
+          "tableFrom": "association_editions",
+          "tableTo": "editions",
+          "schemaTo": "almanac",
+          "columnsFrom": [
+            "edition_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "almanac.association_statistics": {
+      "name": "association_statistics",
+      "schema": "almanac",
+      "columns": {
+        "association_id": {
+          "name": "association_id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "appearances": {
+          "name": "appearances",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "titles": {
+          "name": "titles",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "runners_up": {
+          "name": "runners_up",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "third_place": {
+          "name": "third_place",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fourth_place": {
+          "name": "fourth_place",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "matches_played": {
+          "name": "matches_played",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "wins": {
+          "name": "wins",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "draws": {
+          "name": "draws",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "losses": {
+          "name": "losses",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "goals_for": {
+          "name": "goals_for",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "goals_against": {
+          "name": "goals_against",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "goal_difference": {
+          "name": "goal_difference",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "points": {
+          "name": "points",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "association_statistics_association_id_associations_id_fk": {
+          "name": "association_statistics_association_id_associations_id_fk",
+          "tableFrom": "association_statistics",
+          "tableTo": "associations",
+          "schemaTo": "almanac",
+          "columnsFrom": [
+            "association_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "association_statistics_non_negative_check": {
+          "name": "association_statistics_non_negative_check",
+          "value": "\"almanac\".\"association_statistics\".\"appearances\" >= 0\n        and \"almanac\".\"association_statistics\".\"titles\" >= 0\n        and \"almanac\".\"association_statistics\".\"runners_up\" >= 0\n        and \"almanac\".\"association_statistics\".\"third_place\" >= 0\n        and \"almanac\".\"association_statistics\".\"fourth_place\" >= 0\n        and \"almanac\".\"association_statistics\".\"matches_played\" >= 0\n        and \"almanac\".\"association_statistics\".\"wins\" >= 0\n        and \"almanac\".\"association_statistics\".\"draws\" >= 0\n        and \"almanac\".\"association_statistics\".\"losses\" >= 0\n        and \"almanac\".\"association_statistics\".\"goals_for\" >= 0\n        and \"almanac\".\"association_statistics\".\"goals_against\" >= 0\n        and \"almanac\".\"association_statistics\".\"points\" >= 0"
+        },
+        "association_statistics_goal_difference_check": {
+          "name": "association_statistics_goal_difference_check",
+          "value": "\"almanac\".\"association_statistics\".\"goal_difference\" = \"almanac\".\"association_statistics\".\"goals_for\" - \"almanac\".\"association_statistics\".\"goals_against\""
+        }
+      },
+      "isRLSEnabled": false
+    },
+    "almanac.associations": {
+      "name": "associations",
+      "schema": "almanac",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "source_id": {
+          "name": "source_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "name": {
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "fifa_code": {
+          "name": "fifa_code",
+          "type": "varchar(3)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "flag_url": {
+          "name": "flag_url",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "associations_source_id_unique": {
+          "name": "associations_source_id_unique",
+          "columns": [
+            {
+              "expression": "source_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "associations_fifa_code_unique": {
+          "name": "associations_fifa_code_unique",
+          "columns": [
+            {
+              "expression": "fifa_code",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "associations_fifa_code_check": {
+          "name": "associations_fifa_code_check",
+          "value": "\"almanac\".\"associations\".\"fifa_code\" ~ '^[A-Z]{3}$'"
+        }
+      },
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {
+    "almanac": "almanac"
+  },
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

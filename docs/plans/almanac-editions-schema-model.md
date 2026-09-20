@@ -2,197 +2,198 @@
 
 ## Status
 
-**Proposed.** This document models the Editions domain only. It does not authorize schema code,
-migrations, imports, seeds or API changes.
+The conceptual scope below is **Accepted**. The Foundation-backed tables were implemented in
+`0013_almanac_editions_associations`, and the visual-identity table was implemented in
+`0014_almanac_visual_identities`. The Foundation-backed seed is implemented in
+`scripts/seed-almanac.ts`. Visual-identity seed data, repository persistence and API changes have
+not been implemented.
 
-## Accepted Inputs
+## Accepted Boundary
 
-- The collection requirements are defined in `docs/prds/almanac-editions-data-collection.md`.
-- The product covers completed men's World Cups, in English, without qualifiers.
-- `football-platform-foundation/data/editions/*.json` is an input source, not the database design.
-- Partial editions are allowed, but missing information must not be represented as zero.
-- Historical names must be preserved and multiple hosts and visual items must be supported.
+- Football facts come from `football-platform-foundation`.
+- PRD requirements that Foundation does not yet produce remain deferred.
+- New football fields may be added later through forward migrations after discussion and approval.
+- Technical database columns such as internal IDs and timestamps do not introduce football data.
+- Nations are an approved reference-data exception: Foundation will identify scraped host names
+  against a curated nation registry.
+- Edition visual identities are an approved product-managed exception. They are authored for the
+  Almanac presentation and are not scraped football facts from Foundation.
+- Historical nations remain distinct. For example, West Germany is not silently merged into
+  Germany.
 
-## Recommendation
+## Current Foundation Edition Input
 
-Use normalized PostgreSQL tables under the `almanac` namespace. Keep stable edition facts in the
-Editions domain; do not embed the complete Foundation JSON in one column. Importers must normalize
-the source data before writing it.
+Every current edition file provides:
+
+| Foundation field | Meaning |
+| --- | --- |
+| `id` | Edition year encoded as text. |
+| `year` | Edition year as a number. |
+| `host_countries[].nation_id` | Stable nation identifier resolved by Foundation. |
+| `host_countries[].display_name` | Historical host name displayed for that edition. |
+| `dates.start` | Complete ISO date in `YYYY-MM-DD` format. |
+| `dates.end` | Complete ISO date in `YYYY-MM-DD` format. |
+| `num_teams` | Participant count. |
+
+The former `host_country` and `dates.raw` fields have been removed from Foundation and are not part
+of this model.
+
+Foundation also provides `data/nations/index.json`. Each entry contains `id`, `name` and a
+`fifa_code`. The database uses the stable `id` and canonical `name`. It does not persist the
+`fifa_code`, because FIFA codes identify football associations and are stored by the Associations
+model.
+
+Foundation also produces placements, group standings, knockout matches, finals, third-place
+matches, awards, venues, cities, attendance and shootouts. Those are scraped data, but they are not
+owned by the three tables in this document.
+
+## Accepted Tables
 
 ### `editions`
 
-One row per completed World Cup.
+One row per World Cup edition.
 
-| Column | Type | Rule |
+| Column | Type | Source or purpose |
 | --- | --- | --- |
-| `id` | `uuid` | Primary key, generated internally. |
-| `year` | `smallint` | Required and unique. |
-| `display_name` | `text` | Required English edition name. |
-| `start_date` | `date` | Nullable while unavailable or unresolved. |
-| `end_date` | `date` | Nullable while unavailable or unresolved. |
-| `participant_count` | `smallint` | Nullable; positive when present. Reconciled by the importer with participations later. |
-| `introduction` | `text` | Nullable publication-ready English introduction. |
-| `created_at` | `timestamptz` | Required. |
-| `updated_at` | `timestamptz` | Required. |
+| `id` | `uuid` | Internal primary key. |
+| `year` | `smallint` | Foundation `year`; required and unique. |
+| `start_date` | `date` | Foundation `dates.start`; nullable during incomplete ingestion. |
+| `end_date` | `date` | Foundation `dates.end`; nullable during incomplete ingestion. |
+| `participant_count` | `smallint` | Foundation `num_teams`; nullable during incomplete ingestion. |
+| `created_at` | `timestamptz` | Technical audit timestamp. |
+| `updated_at` | `timestamptz` | Technical audit timestamp. |
 
-Constraints: `year >= 1930`, `end_date >= start_date` when both exist, and
-`participant_count > 0` when present. Do not persist Foundation's year-string `id`; `year` is the
-stable natural identifier and `id` is the internal relational identifier.
+Constraints:
+
+- `year >= 1930`
+- `end_date >= start_date` when both dates exist
+- `participant_count > 0` when present
+
+Foundation's text `id` is not stored because it duplicates `year`. The unique year is the
+idempotent import key.
+
+### `nations`
+
+One row per football-relevant current or historical nation.
+
+| Column | Type | Purpose |
+| --- | --- | --- |
+| `id` | `uuid` | Internal primary key. |
+| `slug` | `text` | Stable project identifier, such as `mexico`. |
+| `canonical_name` | `text` | Canonical English name. |
+| `created_at` | `timestamptz` | Technical audit timestamp. |
+| `updated_at` | `timestamptz` | Technical audit timestamp. |
+
+Constraints:
+
+- `slug` is unique.
+- No association code or geographical ISO code is stored on a nation.
 
 ### `edition_hosts`
 
-One row per host country, preserving the edition-era display name.
+Connects an edition to one or more nations.
 
-| Column | Type | Rule |
+| Column | Type | Purpose |
 | --- | --- | --- |
-| `id` | `uuid` | Primary key. |
-| `edition_id` | `uuid` | Required FK to `editions`, cascade on delete. |
-| `display_name` | `text` | Required historical English name. |
-| `position` | `smallint` | Required ordering for multi-host editions. |
+| `id` | `uuid` | Internal primary key. |
+| `edition_id` | `uuid` | Required FK to `editions`; cascade on delete. |
+| `nation_id` | `uuid` | Required FK to `nations`; restrict on delete. |
+| `display_name` | `text` | Historical host name used for that edition. |
+| `position` | `smallint` | Preserves multi-host display order. |
 
-Unique constraints: `(edition_id, position)` and `(edition_id, display_name)`. A comma-separated
-Foundation value such as `Canada, Mexico, United States` becomes three rows.
+Constraints:
 
-### `edition_formats`
+- `(edition_id, nation_id)` is unique.
+- `(edition_id, position)` is unique.
+- `position > 0`.
 
-Optional one-to-one explanation of how the competition worked.
+The previous `editions.host_display_name` proposal is removed. Display text is built from ordered
+`edition_hosts` rows.
 
-| Column | Type |
-| --- | --- |
-| `edition_id` | `uuid` primary key and FK |
-| `structure_summary` | `text` |
-| `win_points` | `smallint`, nullable |
-| `draw_points` | `smallint`, nullable |
-| `ranking_rules` | `text`, nullable |
-| `advancement_rules` | `text`, nullable |
-| `tied_match_rules` | `text`, nullable |
-| `notable_rule_differences` | `text`, nullable |
+### `edition_visual_identities`
 
-### `edition_stages`
+An optional one-to-one presentation identity for an edition.
 
-Ordered competition stages that future match and table models can reference.
-
-| Column | Type | Rule |
+| Column | Type | Purpose |
 | --- | --- | --- |
-| `id` | `uuid` | Primary key. |
-| `edition_id` | `uuid` | Required FK to `editions`. |
-| `name` | `text` | Historical display name, such as `Final round`. |
-| `kind` | `text` | Checked value: `group`, `knockout`, `league`, `placement`, or `final`. |
-| `position` | `smallint` | Required chronological ordering. |
-| `description` | `text` | Nullable. |
+| `edition_id` | `uuid` | Primary key and FK to `editions`; cascade on delete. |
+| `logo_asset_key` | `text` | Optional provider-neutral object key for the edition logo. |
+| `trophy_asset_key` | `text` | Optional provider-neutral object key for the trophy image. |
+| `accent_color` | `text` | Required presentation color. |
+| `accent_text_color` | `text` | Required text color used over the accent color. |
+| `spine_color` | `text` | Required presentation color for the edition spine. |
+| `created_at` | `timestamptz` | Technical audit timestamp. |
+| `updated_at` | `timestamptz` | Technical audit timestamp. |
 
-Unique constraint: `(edition_id, position)`. Stage names are not unique because historical source
-data may repeat a label for distinct phases.
+The dependent row's primary key enforces at most one visual identity per edition. An edition may
+exist without one. Asset columns store object keys, not Cloudflare, CloudFront or other provider
+URLs. The API converts a stored key into a public URL using the configured `ASSET_BASE_URL`.
 
-### `edition_statistics`
+## Foundation Normalization Boundary
 
-Optional one-to-one edition totals.
+Foundation, not the API importer, resolves a scraped host name to a stable nation identity. Name
+aliases used during that resolution remain Foundation configuration; there is no
+`nation_aliases` table in the API database.
 
-| Column | Type | Rule |
-| --- | --- | --- |
-| `edition_id` | `uuid` | Primary key and FK. |
-| `matches_played` | `smallint` | Nullable; non-negative when present. |
-| `total_goals` | `smallint` | Nullable; non-negative when present. |
-| `total_attendance` | `integer` | Nullable; non-negative when present. |
+The accepted Foundation contract is:
 
-Goals per match and average attendance are calculated from these stored inputs. They are not stored
-as independent values that can drift from their totals.
+```json
+{
+  "host_countries": [
+    {
+      "nation_id": "south-korea",
+      "display_name": "South Korea"
+    },
+    {
+      "nation_id": "japan",
+      "display_name": "Japan"
+    }
+  ]
+}
+```
 
-### `edition_visual_items`
+`data/nations/index.json` is the source for nation rows. `host_countries[].nation_id` must resolve
+to one of those entries before an edition is written to the database.
 
-One row per official emblem, poster, mascot or ball. Multiple rows of each kind are allowed.
+## Implemented Seed Behavior
 
-| Column | Type |
+- The seed reads `data/nations/index.json` and the edition detail files identified by
+  `data/editions/index.json` from the sibling `football-platform-foundation` project.
+- All selected JSON is loaded and validated before a database transaction begins.
+- Nations upsert by `slug`; editions upsert by `year`; edition hosts upsert by edition and ordered
+  position.
+- Existing UUIDs are preserved on repeated runs.
+- Missing source records are retained rather than treated as deletions because Foundation data is
+  incremental.
+- An invalid or unresolved host reference aborts the seed before any database mutation.
+
+## Scraped Data Owned by Later Domains
+
+| Foundation data | Future schema owner |
 | --- | --- |
-| `id` | `uuid` primary key |
-| `edition_id` | `uuid` FK |
-| `kind` | checked `text`: `emblem`, `poster`, `mascot`, `ball` |
-| `name` | `text`, nullable |
-| `description` | `text`, nullable |
-| `asset_key` | `text`, nullable |
-| `caption` | `text`, nullable |
-| `attribution` | `text`, nullable |
-| `rights_status` | checked `text`: `known`, `unknown`, `restricted` |
-| `position` | `smallint` |
+| First through fourth placements | Participations |
+| Group names and standings | Ownership to be discussed |
+| Knockout rounds and match results | Matches |
+| Final and third-place match | Matches |
+| Teams, scores, dates, venues, cities and attendance | Matches, with a later Venues decision |
+| Shootout totals and individual kicks | Matches |
+| Awards | Ownership to be discussed |
 
-### `edition_stories`
+No foreign keys to those future tables are approved yet.
 
-The introduction remains on `editions`; the required three-to-five longer stories use this table.
+## Deferred PRD-Only Data
 
-| Column | Type |
-| --- | --- |
-| `id` | `uuid` primary key |
-| `edition_id` | `uuid` FK |
-| `title` | `text` |
-| `body` | `text` |
-| `position` | `smallint` |
+Foundation does not currently produce these requirements, so they remain outside the model:
 
-Unique constraint: `(edition_id, position)`. Story evidence remains in Foundation until a product
-requirement says citations must be served by the API.
+- Edition display name and introduction
+- Competition-format and rules explanations
+- Additional official media beyond the approved logo and trophy asset keys, including posters,
+  mascots and balls
+- Dedicated verified edition statistics
+- Scoring leaderboards
+- Edition and historical records
+- Stadium inventory and historical venue enrichment
+- Edition stories
+- Evidence, citations and explicit missing/conflicting-data states
 
-### `edition_records`
-
-Edition highlights such as biggest win, highest-scoring match and records broken or equaled.
-
-| Column | Type |
-| --- | --- |
-| `id` | `uuid` primary key |
-| `edition_id` | `uuid` FK |
-| `category` | checked `text`: `biggest_win`, `highest_scoring_match`, `youngest_player`, `oldest_player`, `other` |
-| `scope` | checked `text`: `edition` or `world_cup_as_of_edition` |
-| `achievement` | checked `text`: `edition_best`, `set`, `equaled`, `historical_note` |
-| `title` | `text` |
-| `description` | `text` |
-| `position` | `smallint` |
-
-This first model stores the publishable claim. Stable player, team and match links should be added
-after those domains are modeled; names from scraper output must not become fake foreign keys.
-
-### `edition_information_states`
-
-Explicitly represents required information that is absent or disputed.
-
-| Column | Type |
-| --- | --- |
-| `id` | `uuid` primary key |
-| `edition_id` | `uuid` FK |
-| `field_key` | `text` |
-| `state` | checked `text`: `derived`, `not_applicable`, `unavailable`, `conflicting`, `pending` |
-| `note` | `text` |
-
-Unique constraint: `(edition_id, field_key)`. Found values live in their normal columns or child
-tables; this table exists only when additional state or explanation is required. `pending` may be
-used during incremental ingestion but cannot be present when an edition is declared complete.
-
-## Domain Boundary
-
-These requirements belong to later schemas and should reference `editions.id`:
-
-| Information | Future owner |
-| --- | --- |
-| Participants and final standings | Participations |
-| Group tables | Participations or a dedicated competition-table design |
-| Matches, finals, replays and shootouts | Matches |
-| Scoring leaders and player recipients | Players/Awards decision |
-| Stadiums, cities and match assignments | Venues |
-
-Foundation retains raw source values, evidence, access dates, conflicts and scraper diagnostics.
-The API database stores normalized, product-ready values plus explicit user-visible gaps.
-
-## Open Decisions
-
-- Whether citations must be returned by the API. If yes, model sources and explicit join tables;
-  do not use polymorphic foreign keys.
-- Whether visual items need multiple asset files. If yes, split `edition_visual_items` from an
-  `edition_visual_assets` child table.
-- Which domain owns group tables. Decide this before creating the Matches or Participations schema.
-
-## Implementation Sequence
-
-1. Approve or revise this model.
-2. Implement only `editions`, `edition_hosts`, `edition_formats`, `edition_stages`,
-   `edition_statistics`, `edition_visual_items`, `edition_stories`, `edition_records`, and
-   `edition_information_states` in `src/products/almanac/domains/editions/schema.ts`.
-3. Generate and review a new forward migration after `0012_remove_almanac_tables`.
-4. Add import validation separately; do not import the current JSON unchanged.
-
+Each area will be discussed before it changes the model.

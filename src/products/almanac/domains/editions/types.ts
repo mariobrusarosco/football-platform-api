@@ -1,18 +1,34 @@
-export type TournamentSourceRecord = {
-  id: string;
-  year: number;
-  name: string;
-  hostCountry: string;
-  winner: string;
-  startDate: string;
-  endDate: string;
-  teamCount: number;
-};
+import { z } from 'zod';
 
-export type SeededEdition = {
-  id: string;
-  year: number;
-};
+const isoDatePattern = /^\d{4}-\d{2}-\d{2}$/;
+
+export const foundationNationSourceSchema = z.object({
+  id: z.string().min(1),
+  name: z.string().min(1),
+});
+
+export type FoundationNationSource = z.infer<typeof foundationNationSourceSchema>;
+
+export const foundationEditionSourceSchema = z.object({
+  id: z.string().regex(/^\d{4}$/),
+  year: z.number().int().min(1930),
+  host_countries: z.array(
+    z.object({
+      nation_id: z.string().min(1),
+      display_name: z.string().min(1),
+    }),
+  ),
+  dates: z
+    .object({
+      start: z.string().regex(isoDatePattern),
+      end: z.string().regex(isoDatePattern),
+    })
+    .nullable()
+    .optional(),
+  num_teams: z.number().int().positive().nullable().optional(),
+});
+
+export type FoundationEditionSource = z.infer<typeof foundationEditionSourceSchema>;
 
 export type EditionListRecord = {
   id: string;
