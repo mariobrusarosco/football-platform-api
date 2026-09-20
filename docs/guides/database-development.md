@@ -178,7 +178,7 @@ Expected behavior:
   -> editions contains the seeded Editions index rows
 ```
 
-An empty `world_cup_editions` table is valid. The endpoint returns HTTP 200 with an empty
+An empty `almanac.editions` table is valid. The endpoint returns HTTP 200 with an empty
 `editions` array.
 
 ## Daily Development

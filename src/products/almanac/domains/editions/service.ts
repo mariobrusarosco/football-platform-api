@@ -16,6 +16,10 @@ const firstEditionPageNumber = 4;
 const firstWorldCupYear = 1930;
 const latestSupportedWorldCupYear = 2100;
 
+const toHostDisplayName = (hostDisplayNames: string[]): string => {
+  return hostDisplayNames.join(', ');
+};
+
 export const listEditions = async (): Promise<EditionListItem[]> => {
   const editions = await listEditionRecords();
 
@@ -25,7 +29,7 @@ export const listEditions = async (): Promise<EditionListItem[]> => {
     path: `/editions/${edition.year}`,
     pageNumber: firstEditionPageNumber + index,
     logoUrl: buildPublicAssetUrl(edition.logoAssetKey),
-    displayName: edition.hostDisplayName,
+    displayName: toHostDisplayName(edition.hostDisplayNames),
   }));
 };
 
@@ -43,7 +47,7 @@ const toNavigationItem = (
   return {
     year: edition.year,
     path: `/editions/${edition.year}`,
-    hostDisplayName: edition.hostDisplayName,
+    hostDisplayName: toHostDisplayName(edition.hostDisplayNames),
   };
 };
 
@@ -80,9 +84,11 @@ export const getEditionDetail = async (
     edition: {
       id: edition.id,
       year: edition.year,
-      name: edition.name,
+      startDate: edition.startDate,
+      endDate: edition.endDate,
+      participantCount: edition.participantCount,
       pageNumber: firstEditionPageNumber + editionIndex,
-      displayName: edition.hostDisplayName,
+      displayName: toHostDisplayName(edition.hostDisplayNames),
       visualIdentity:
         edition.visualIdentity === null
           ? null

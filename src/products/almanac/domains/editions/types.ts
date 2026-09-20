@@ -33,15 +33,17 @@ export type FoundationEditionSource = z.infer<typeof foundationEditionSourceSche
 export type EditionListRecord = {
   id: string;
   year: number;
-  hostDisplayName: string;
+  hostDisplayNames: string[];
   logoAssetKey: string | null;
 };
 
 export type EditionDetailRecord = {
   id: string;
   year: number;
-  name: string;
-  hostDisplayName: string;
+  startDate: string | null;
+  endDate: string | null;
+  participantCount: number | null;
+  hostDisplayNames: string[];
   visualIdentity: {
     logoAssetKey: string | null;
     trophyAssetKey: string | null;
@@ -54,7 +56,7 @@ export type EditionDetailRecord = {
 export type EditionNavigationRecord = {
   id: string;
   year: number;
-  hostDisplayName: string;
+  hostDisplayNames: string[];
 };
 
 export type EditionListItem = {
@@ -75,7 +77,9 @@ export type EditionNavigationItem = {
 export type EditionDetail = {
   id: string;
   year: number;
-  name: string;
+  startDate: string | null;
+  endDate: string | null;
+  participantCount: number | null;
   pageNumber: number;
   displayName: string;
   visualIdentity: {

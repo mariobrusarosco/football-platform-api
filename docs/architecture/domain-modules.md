@@ -252,7 +252,7 @@ GET /api/almanac/editions
   -> editions/routes.ts
     -> editions/service.ts
       -> editions/repository.ts
-        -> almanac.world_cup_editions
+        -> almanac.editions
 ```
 
 New domains should follow this implementation unless an accepted architecture decision says

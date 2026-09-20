@@ -5,8 +5,8 @@
 The conceptual scope below is **Accepted**. The Foundation-backed tables were implemented in
 `0013_almanac_editions_associations`, and the visual-identity table was implemented in
 `0014_almanac_visual_identities`. The Foundation-backed seed is implemented in
-`scripts/seed-almanac.ts`. Visual-identity seed data, repository persistence and API changes have
-not been implemented.
+`scripts/seed-almanac.ts`. The Editions repository and HTTP endpoints read the replacement schema.
+Visual-identity seed data has not been implemented.
 
 ## Accepted Boundary
 
@@ -166,6 +166,19 @@ to one of those entries before an edition is written to the database.
 - Missing source records are retained rather than treated as deletions because Foundation data is
   incremental.
 - An invalid or unresolved host reference aborts the seed before any database mutation.
+
+## Current API Contract
+
+`GET /api/almanac/editions` returns the editions index in descending year order. Each item contains
+the internal ID, year, route path, Almanac page number, public logo URL when configured, and a
+display name built from the edition's ordered host rows.
+
+`GET /api/almanac/editions/:year` returns the internal ID, year, start and end dates, participant
+count, Almanac page number, host display name, optional visual identity, and previous/next edition
+navigation. It does not synthesize the deferred edition `name` field.
+
+Public visual-identity URLs are constructed by the service from stored provider-neutral asset
+keys. Repositories return persistence values and do not know the public asset origin.
 
 ## Scraped Data Owned by Later Domains
 
