@@ -5,8 +5,8 @@ export const listNationalTeamRecords = async (): Promise<NationalTeamRecord[]> =
   return [];
 };
 
-export const findNationalTeamDetailRecordByCode = async (
-  _code: string
+export const findNationalTeamDetailRecordBySourceId = async (
+  _sourceId: string
 ): Promise<NationalTeamDetailRecord | null> => {
   return null;
 };

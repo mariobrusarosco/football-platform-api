@@ -60,15 +60,10 @@ export const editionHosts = almanacSchema.table(
     editionId: uuid('edition_id')
       .notNull()
       .references(() => editions.id, { onDelete: 'cascade' }),
-    nationSourceId: text('nation_source_id').notNull(),
     displayName: text('display_name').notNull(),
     position: smallint('position').notNull(),
   },
   (table) => [
-    uniqueIndex('edition_hosts_edition_nation_source_unique').on(
-      table.editionId,
-      table.nationSourceId,
-    ),
     uniqueIndex('edition_hosts_edition_position_unique').on(
       table.editionId,
       table.position,

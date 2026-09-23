@@ -41,7 +41,6 @@ export const seedAlmanac = async () => {
     const associationResult = await seedAssociations(
       transaction,
       source.associations,
-      source.editions,
     );
     const associationVisualIdentityCounts = await seedAssociationVisualIdentities(
       transaction,
@@ -57,8 +56,6 @@ export const seedAlmanac = async () => {
       transaction,
       source.associations,
       associationResult.ids,
-      associationResult.idsByCode,
-      source.editions,
       editionResult.ids,
     );
 

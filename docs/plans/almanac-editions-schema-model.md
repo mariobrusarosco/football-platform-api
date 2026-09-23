@@ -4,9 +4,12 @@
 
 The conceptual scope below is **Accepted**. The Foundation-backed tables were implemented in
 `0013_almanac_editions_associations`, and the visual-identity table was implemented in
-`0014_almanac_visual_identities`. The Foundation-backed seed is implemented in
-`scripts/seed-almanac.ts`. The Editions repository and HTTP endpoints read the replacement schema.
-Visual-identity seed data and first-through-fourth placement data are implemented.
+`0014_almanac_visual_identities`. Migration `0016_almanac_remove_nations` removes the unused nation
+catalog table. Migration `0018_almanac_remove_host_nation_source_id` removes the persisted host
+nation identifier and its unique index; nation identifiers remain part of import validation. The
+Foundation-backed seed is implemented in `scripts/seed-almanac.ts`. The Editions repository and
+HTTP endpoints read the replacement schema. Visual-identity seed data and association rankings are
+implemented; the Editions API projects first through fourth place from those rankings.
 
 ## Accepted Boundary
 
@@ -15,7 +18,7 @@ Visual-identity seed data and first-through-fourth placement data are implemente
 - New football fields may be added later through forward migrations after discussion and approval.
 - Technical database columns such as internal IDs and timestamps do not introduce football data.
 - Foundation identifies scraped host names against its curated nation registry. The API validates
-  those identifiers during import but does not persist a separate nation catalog.
+  those identifiers during import but does not persist them or a separate nation catalog.
 - Edition visual identities are an approved product-managed exception. They are authored for the
   Almanac presentation and are not scraped football facts from Foundation.
 - Historical nations remain distinct. For example, West Germany is not silently merged into
@@ -34,10 +37,6 @@ Every current edition file provides:
 | `dates.start` | Complete ISO date in `YYYY-MM-DD` format. |
 | `dates.end` | Complete ISO date in `YYYY-MM-DD` format. |
 | `num_teams` | Participant count. |
-| `placements.first` | Champion association name and three-character code. |
-| `placements.second` | Runner-up association name and three-character code. |
-| `placements.third` | Third-place association name and three-character code. |
-| `placements.fourth` | Fourth-place association name and three-character code. |
 
 The former `host_country` and `dates.raw` fields have been removed from Foundation and are not part
 of this model.
@@ -48,8 +47,8 @@ is not copied into a database table.
 
 Foundation also produces group standings, knockout matches, finals, third-place matches, awards,
 venues, cities, attendance and shootouts. Those are scraped data, but they are not owned by the
-edition tables in this document. Placements are stored on the Participations domain's
-`association_editions` relationship.
+edition tables in this document. Association files now supply the complete rankings; these are
+stored on the Participations domain's `association_editions` relationship.
 
 ## Accepted Tables
 
@@ -84,20 +83,18 @@ Stores the ordered host nations displayed for an edition.
 | --- | --- | --- |
 | `id` | `uuid` | Internal primary key. |
 | `edition_id` | `uuid` | Required FK to `editions`; cascade on delete. |
-| `nation_source_id` | `text` | Stable Foundation nation identifier. |
 | `display_name` | `text` | Historical host name used for that edition. |
 | `position` | `smallint` | Preserves multi-host display order. |
 
 Constraints:
 
-- `(edition_id, nation_source_id)` is unique.
 - `(edition_id, position)` is unique.
 - `position > 0`.
 
 The previous `editions.host_display_name` proposal is removed. Display text is built from ordered
 `edition_hosts` rows. A separate `nations` table is intentionally omitted because the current API
-does not expose nation behavior or metadata; the stable Foundation identifier is persisted on the
-relationship itself.
+does not expose nation behavior or metadata. Foundation nation identifiers are used only for
+import validation; host rows persist the display name and ordered position.
 
 ### `edition_visual_identities`
 
@@ -142,20 +139,18 @@ The accepted Foundation contract is:
 ```
 
 `host_countries[].nation_id` must resolve to an entry in `data/nations/index.json` before an
-edition is written. After validation, that identifier is stored directly as
-`edition_hosts.nation_source_id`.
+edition is written, and an edition cannot contain duplicate nation identifiers. These identifiers
+are validated during import but are not persisted on `edition_hosts`.
 
 ## Implemented Seed Behavior
 
 - The seed reads `data/nations/index.json` and the edition detail files identified by
   `data/editions/index.json` from the sibling `football-plataform-foundation` project.
 - All selected JSON is loaded and validated before a database transaction begins.
-- Editions upsert by `year`; edition hosts upsert by edition and ordered position. Host nation
-  identifiers are stored directly from Foundation after catalog validation.
-- Placement association codes resolve to persistent association UUIDs. Each edition's first through
-  fourth positions are stored on `association_editions.placement`.
-- A placement association missing from the association-detail catalog is inserted as a minimal
-  association using its name and code, then reused by code on later seed runs.
+- Editions upsert by `year`; edition hosts upsert by edition and ordered position. Hosts store
+  display names after nation catalog and duplicate-identifier validation.
+- Association edition ranks become numeric `association_editions.placement` values and explicit
+  tie flags. The Editions API reads ranks 1 through 4 from those records.
 - Existing UUIDs are preserved on repeated runs.
 - Missing source records are retained rather than treated as deletions because Foundation data is
   incremental.
@@ -180,7 +175,7 @@ keys. Repositories return persistence values and do not know the public asset or
 
 | Foundation data | Future schema owner |
 | --- | --- |
-| First through fourth placements | Participations — implemented in `association_editions`. |
+| Complete final rankings | Participations — implemented in `association_editions`. |
 | Group names and standings | Ownership to be discussed |
 | Knockout rounds and match results | Matches |
 | Final and third-place match | Matches |

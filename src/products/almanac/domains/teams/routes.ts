@@ -14,12 +14,12 @@ teamsRouter.get('/', async (_req, res) => {
   }
 });
 
-teamsRouter.get('/:code', async (req, res) => {
+teamsRouter.get('/:sourceId', async (req, res) => {
   try {
-    const result = await getTeamDetail(req.params.code);
+    const result = await getTeamDetail(req.params.sourceId);
 
-    if (result.status === 'invalid-code') {
-      res.status(400).json({ message: 'Invalid national team code' });
+    if (result.status === 'invalid-source-id') {
+      res.status(400).json({ message: 'Invalid national team identifier' });
       return;
     }
 

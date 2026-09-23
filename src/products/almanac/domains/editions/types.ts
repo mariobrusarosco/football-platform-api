@@ -9,11 +9,6 @@ export const foundationNationSourceSchema = z.object({
 
 export type FoundationNationSource = z.infer<typeof foundationNationSourceSchema>;
 
-const foundationPlacementAssociationSourceSchema = z.object({
-  name: z.string().min(1),
-  code: z.string().regex(/^[A-Z]{3}$/),
-});
-
 export const foundationEditionSourceSchema = z.object({
   id: z.string().regex(/^\d{4}$/),
   year: z.number().int().min(1930),
@@ -31,12 +26,6 @@ export const foundationEditionSourceSchema = z.object({
     .nullable()
     .optional(),
   num_teams: z.number().int().positive().nullable().optional(),
-  placements: z.object({
-    first: foundationPlacementAssociationSourceSchema,
-    second: foundationPlacementAssociationSourceSchema,
-    third: foundationPlacementAssociationSourceSchema,
-    fourth: foundationPlacementAssociationSourceSchema,
-  }),
 });
 
 export type FoundationEditionSource = z.infer<typeof foundationEditionSourceSchema>;

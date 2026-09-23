@@ -26,7 +26,8 @@ export const foundationAssociationSourceSchema = z.object({
   editions: z.array(
     z.object({
       year: z.number().int().min(1930),
-      result: z.string().min(1),
+      phase: z.string().min(1),
+      rank: z.string().regex(/^(?:T-)?[1-9]\d*(?:st|nd|rd|th)$/),
     }),
   ),
 });
@@ -48,6 +49,7 @@ export type NationalTeamVisualIdentitySourceRecord = {
 
 export type NationalTeamRecord = {
   id: string;
+  sourceId: string;
   code: string;
   displayName: string;
   flagAssetKey: string | null;
@@ -97,5 +99,5 @@ export type TeamDetail = {
 
 export type GetTeamDetailResult =
   | { status: 'found'; team: TeamDetail }
-  | { status: 'invalid-code' }
+  | { status: 'invalid-source-id' }
   | { status: 'not-found' };

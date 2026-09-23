@@ -1,7 +1,8 @@
 export type AssociationEditionSeedRecord = {
   associationId: string;
   editionId: string;
-  result: string;
+  phase: string;
   wonTitle: boolean;
-  placement: number | null;
+  placement: number;
+  placementIsTied: boolean;
 };

@@ -1,5 +1,4 @@
 import { and, eq } from 'drizzle-orm';
-import type { FoundationEditionSource } from '../../src/products/almanac/domains/editions/types';
 import { associationEditions } from '../../src/products/almanac/domains/participations/schema';
 import type { AssociationEditionSeedRecord } from '../../src/products/almanac/domains/participations/types';
 import type { FoundationAssociationSource } from '../../src/products/almanac/domains/teams/types';
@@ -8,15 +7,14 @@ import {
   type SeedCounts,
   type SeedTransaction,
 } from './database';
+import { parseFoundationRank } from './source';
 
 const buildSeedRecords = (
   sourceAssociations: FoundationAssociationSource[],
   associationIds: Map<string, string>,
-  associationIdsByCode: Map<string, string>,
-  sourceEditions: FoundationEditionSource[],
   editionIds: Map<number, string>,
 ): AssociationEditionSeedRecord[] => {
-  const recordsByPair = new Map<string, AssociationEditionSeedRecord>();
+  const records: AssociationEditionSeedRecord[] = [];
 
   for (const source of sourceAssociations) {
     const associationId = associationIds.get(source.id);
@@ -34,76 +32,31 @@ const buildSeedRecords = (
         throw new Error(`Missing database ID for edition ${edition.year}`);
       }
 
-      recordsByPair.set(`${associationId}:${editionId}`, {
+      const rank = parseFoundationRank(edition.rank);
+
+      records.push({
         associationId,
         editionId,
-        result: edition.result,
+        phase: edition.phase,
         wonTitle: titleYears.has(edition.year),
-        placement: null,
+        placement: rank.placement,
+        placementIsTied: rank.isTied,
       });
     }
   }
 
-  const placementResults = [
-    'Champions',
-    'Runners-up',
-    'Third place',
-    'Fourth place',
-  ] as const;
-
-  for (const edition of sourceEditions) {
-    const editionId = editionIds.get(edition.year);
-
-    if (!editionId) {
-      throw new Error(`Missing database ID for edition ${edition.year}`);
-    }
-
-    for (const [index, placement] of Object.values(
-      edition.placements,
-    ).entries()) {
-      const position = index + 1;
-      const associationId = associationIdsByCode.get(placement.code);
-
-      if (!associationId) {
-        throw new Error(
-          `Missing database ID for placement association ${placement.code}`,
-        );
-      }
-
-      const key = `${associationId}:${editionId}`;
-      const existing = recordsByPair.get(key);
-
-      if (existing) {
-        existing.placement = position;
-        continue;
-      }
-
-      recordsByPair.set(key, {
-        associationId,
-        editionId,
-        result: placementResults[index],
-        wonTitle: position === 1,
-        placement: position,
-      });
-    }
-  }
-
-  return [...recordsByPair.values()];
+  return records;
 };
 
 export const seedAssociationEditions = async (
   transaction: SeedTransaction,
   sourceAssociations: FoundationAssociationSource[],
   associationIds: Map<string, string>,
-  associationIdsByCode: Map<string, string>,
-  sourceEditions: FoundationEditionSource[],
   editionIds: Map<number, string>,
 ): Promise<SeedCounts> => {
   const seedRecords = buildSeedRecords(
     sourceAssociations,
     associationIds,
-    associationIdsByCode,
-    sourceEditions,
     editionIds,
   );
   const existingRows = await transaction.select().from(associationEditions);
@@ -124,9 +77,10 @@ export const seedAssociationEditions = async (
     }
 
     if (
-      existing.result === record.result &&
+      existing.phase === record.phase &&
       existing.wonTitle === record.wonTitle &&
-      existing.placement === record.placement
+      existing.placement === record.placement &&
+      existing.placementIsTied === record.placementIsTied
     ) {
       counts.unchanged += 1;
       continue;
@@ -135,9 +89,10 @@ export const seedAssociationEditions = async (
     await transaction
       .update(associationEditions)
       .set({
-        result: record.result,
+        phase: record.phase,
         wonTitle: record.wonTitle,
         placement: record.placement,
+        placementIsTied: record.placementIsTied,
       })
       .where(
         and(

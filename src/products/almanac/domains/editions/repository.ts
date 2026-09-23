@@ -1,4 +1,4 @@
-import { and, asc, count, desc, eq, isNotNull } from 'drizzle-orm';
+import { and, asc, count, desc, eq, lte } from 'drizzle-orm';
 import { db } from '../../../../platform/database';
 import { associationEditions } from '../participations/schema';
 import { associations } from '../teams/schema';
@@ -153,18 +153,12 @@ export const listEditionPlacementRecords = async (
     .where(
       and(
         eq(associationEditions.editionId, editionId),
-        isNotNull(associationEditions.placement),
+        lte(associationEditions.placement, 4),
       ),
     )
     .orderBy(asc(associationEditions.placement));
 
-  return rows.map(row => {
-    if (row.placement === null) {
-      throw new Error(`Association ${row.associationId} has a null placement`);
-    }
-
-    return { ...row, placement: row.placement };
-  });
+  return rows;
 };
 
 export const listEditionNavigationRecords = async (): Promise<EditionNavigationRecord[]> => {

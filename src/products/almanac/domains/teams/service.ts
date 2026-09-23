@@ -1,6 +1,6 @@
 import { buildPublicAssetUrl } from '../../../../platform/assets/public-asset-url';
 import { countWorldCupEditions } from '../editions/service';
-import { findNationalTeamDetailRecordByCode, listNationalTeamRecords } from './repository';
+import { findNationalTeamDetailRecordBySourceId, listNationalTeamRecords } from './repository';
 import type {
   GetTeamDetailResult,
   NationalTeamRecord,
@@ -21,7 +21,7 @@ const toTeamIndexItems = (
     id: team.id,
     code: team.code,
     displayName: team.displayName,
-    path: `/teams/${team.code.toLowerCase()}`,
+    path: `/teams/${team.sourceId}`,
     pageNumber: firstTeamPageNumber + index,
     flagUrl: buildPublicAssetUrl(team.flagAssetKey),
   }));
@@ -48,13 +48,12 @@ const toNavigationItem = (team: TeamIndexItem | undefined): TeamNavigationItem |
   };
 };
 
-export const getTeamDetail = async (code: string): Promise<GetTeamDetailResult> => {
-  if (!/^[A-Za-z]{3}$/.test(code)) {
-    return { status: 'invalid-code' };
+export const getTeamDetail = async (sourceId: string): Promise<GetTeamDetailResult> => {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(sourceId)) {
+    return { status: 'invalid-source-id' };
   }
 
-  const normalizedCode = code.toUpperCase();
-  const team = await findNationalTeamDetailRecordByCode(normalizedCode);
+  const team = await findNationalTeamDetailRecordBySourceId(sourceId);
 
   if (team === null) {
     return { status: 'not-found' };

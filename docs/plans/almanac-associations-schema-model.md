@@ -46,7 +46,8 @@ Each current association file provides:
 | `stats.goal_difference` | Supplied aggregate goal difference. |
 | `stats.points` | Supplied aggregate points. |
 | `editions[].year` | World Cup edition year. |
-| `editions[].result` | Association's recorded result in that edition. |
+| `editions[].phase` | Stage or outcome reached in that edition. |
+| `editions[].rank` | Final position, such as `5th` or tied `T-7th`. |
 
 The lightweight `associations/index.json` repeats identity fields plus appearances and titles. It
 is an index representation, not a separate database source.
@@ -71,7 +72,8 @@ Constraints:
 
 - `source_id` is required and unique.
 - `name` is required.
-- `fifa_code` is required and unique.
+- `fifa_code` is required. Different historical associations may share a code, such as Yugoslavia
+  and FR Yugoslavia sharing `YUG`.
 - `fifa_code` contains three uppercase letters.
 - No slug-format constraint is imposed on `source_id`; Foundation owns its exact identifier format.
 
@@ -144,30 +146,33 @@ and its schema-only imports follow ADR 0003.
 | `id` | `uuid` | Internal primary key. |
 | `association_id` | `uuid` | Required FK to `associations`. |
 | `edition_id` | `uuid` | Required FK to `editions`, resolved from `editions[].year`. |
-| `result` | `text` | Foundation `editions[].result`. |
+| `phase` | `text` | Foundation `editions[].phase`. |
 | `won_title` | `boolean` | True when the edition year appears in `stats.title_years[]`. |
-| `placement` | `smallint` | Foundation edition placement from first through fourth; otherwise null. |
+| `placement` | `smallint` | Numeric position parsed from Foundation `editions[].rank`. |
+| `placement_is_tied` | `boolean` | True when Foundation `editions[].rank` starts with `T-`. |
 
 Constraints:
 
 - `(association_id, edition_id)` is unique.
-- `result` is required but remains free text until Foundation produces a normalized result set.
+- `phase` is required and remains text because World Cup stages changed across editions.
 - `won_title` is required and defaults to false.
-- `placement` is null or between 1 and 4.
-- `(edition_id, placement)` is unique when `placement` is not null.
+- `placement` is required and positive.
+- Multiple associations may share a placement only when each source rank marks the tie. The
+  importer validates this before writing; the database does not require unique placements.
 - Deleting an association or edition cascades to its association-edition rows.
 
 `stats.title_years[]` is normalized into `won_title` on the corresponding association-edition row;
-it is not stored as a database array or duplicated in a separate titles table. Placement is loaded
-from each edition file's `placements` object and is not inferred from `result`.
+it is not stored as a database array or duplicated in a separate titles table. For example,
+`rank: "T-7th"` becomes `placement: 7` and `placement_is_tied: true`. The importer validates each
+edition's first through fourth ranks and phases.
 
 ## Foundation-to-Database Mapping
 
 ```text
-Foundation association id "argentina" or placement code "ARG"
+Foundation association id "argentina"
                  |
                  v
-associations.source_id "argentina" / associations.fifa_code "ARG"
+associations.source_id "argentina"
                  |
                  v
 associations.id <internal UUID used by database relationships>
@@ -187,13 +192,15 @@ resolved.
 - The seed reads the association detail files identified by `data/associations/index.json` from
   the sibling `football-plataform-foundation` project.
 - All selected JSON is loaded and validated before a database transaction begins.
-- Full association records upsert by their unique code or source ID. Placement-only historical
-  associations are created from their Foundation name and code. Statistics upsert by
-  `association_id`; edition history upserts by `(association_id, edition_id)`.
+- Association records upsert by unique `source_id`, including distinct historical associations
+  sharing a FIFA code. Statistics upsert by `association_id`; edition history upserts by
+  `(association_id, edition_id)`.
 - Existing UUIDs are preserved on repeated runs, and missing source records are not deleted.
-- Placement codes resolve to existing association UUIDs before first-through-fourth positions are
-  written. The seed creates minimal historical association rows when a placement code is otherwise
-  unresolved.
+- `phase` and `rank` are loaded from each association's edition history. The seed validates the
+  complete rankings and confirms exactly one first, second, third and fourth place per edition.
+- Migration `0017_almanac_association_rankings` clears previously imported participation rows,
+  changes the outcome columns, and maps three former placement-only source IDs to their canonical
+  Foundation identities while preserving their UUIDs. The seed then repopulates the rows.
 - Association-edition records whose years are absent from the authoritative editions catalog are
   excluded and reported. This keeps qualification and unsupported future-edition data outside the
   accepted Almanac scope.
@@ -240,10 +247,9 @@ is not approved.
 
 ## Known Foundation Data-Quality Boundaries
 
-- `editions[].result` currently contains non-normalized and malformed values, so a database enum is
-  not appropriate yet.
-- Foundation currently applies its own historical identity policy. For example, Germany contains
-  West Germany's historical record while East Germany is a separate association.
+- Foundation's `phase` names are kept as source text because historical stage names vary.
+- FIFA codes do not uniquely identify historical associations. `source_id` identifies each
+  association and is suitable for distinct team paths; UUIDs identify database rows.
 - The database mirrors Foundation association identities. It does not silently split, merge or
   create successor relationships between them.
 - Aggregate counts and edition-history rows may be checked for contradictions during a future
@@ -263,6 +269,6 @@ is not approved.
 
 ## Open Decisions
 
-- The future normalized vocabulary for edition results
+- Whether to normalize historical edition phases after the current source text has been reviewed
 - Whether validated calculated statistics will replace stored aggregates or be persisted as a cache
 - Whether Foundation will later provide an explicit association-to-nation relationship

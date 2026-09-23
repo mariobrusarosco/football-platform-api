@@ -25,7 +25,6 @@ export const associations = almanacSchema.table(
   },
   (table) => [
     uniqueIndex('associations_source_id_unique').on(table.sourceId),
-    uniqueIndex('associations_fifa_code_unique').on(table.fifaCode),
     check(
       'associations_fifa_code_check',
       sql`${table.fifaCode} ~ '^[A-Z]{3}$'`,

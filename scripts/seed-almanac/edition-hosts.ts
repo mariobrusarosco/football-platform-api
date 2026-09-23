@@ -32,7 +32,6 @@ export const seedEditionHosts = async (
       if (!existing) {
         await transaction.insert(editionHosts).values({
           editionId,
-          nationSourceId: sourceHost.nation_id,
           displayName: sourceHost.display_name,
           position,
         });
@@ -40,10 +39,7 @@ export const seedEditionHosts = async (
         continue;
       }
 
-      if (
-        existing.nationSourceId === sourceHost.nation_id &&
-        existing.displayName === sourceHost.display_name
-      ) {
+      if (existing.displayName === sourceHost.display_name) {
         counts.unchanged += 1;
         continue;
       }
@@ -51,7 +47,6 @@ export const seedEditionHosts = async (
       await transaction
         .update(editionHosts)
         .set({
-          nationSourceId: sourceHost.nation_id,
           displayName: sourceHost.display_name,
         })
         .where(

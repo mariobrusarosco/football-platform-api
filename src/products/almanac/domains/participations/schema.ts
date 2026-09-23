@@ -23,21 +23,19 @@ export const associationEditions = almanacSchema.table(
     editionId: uuid('edition_id')
       .notNull()
       .references(() => editions.id, { onDelete: 'cascade' }),
-    result: text('result').notNull(),
+    phase: text('phase').notNull(),
     wonTitle: boolean('won_title').default(false).notNull(),
-    placement: smallint('placement'),
+    placement: smallint('placement').notNull(),
+    placementIsTied: boolean('placement_is_tied').default(false).notNull(),
   },
   (table) => [
     uniqueIndex('association_editions_association_edition_unique').on(
       table.associationId,
       table.editionId,
     ),
-    uniqueIndex('association_editions_edition_placement_unique')
-      .on(table.editionId, table.placement)
-      .where(sql`${table.placement} is not null`),
     check(
       'association_editions_placement_check',
-      sql`${table.placement} is null or ${table.placement} between 1 and 4`,
+      sql`${table.placement} > 0`,
     ),
   ],
 );
