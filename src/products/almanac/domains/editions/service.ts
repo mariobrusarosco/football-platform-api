@@ -3,18 +3,28 @@ import {
   countWorldCupEditionRecords,
   findEditionDetailRecordByYear,
   listEditionNavigationRecords,
+  listEditionPlacementRecords,
   listEditionRecords,
 } from './repository';
 import type {
   EditionListItem,
   EditionNavigationItem,
   EditionNavigationRecord,
+  EditionPlacementItem,
+  EditionPlacements,
   GetEditionDetailResult,
 } from './types';
 
 const firstEditionPageNumber = 4;
 const firstWorldCupYear = 1930;
 const latestSupportedWorldCupYear = 2100;
+
+const placementKeys = {
+  1: 'first',
+  2: 'second',
+  3: 'third',
+  4: 'fourth',
+} as const;
 
 const toHostDisplayName = (hostDisplayNames: string[]): string => {
   return hostDisplayNames.join(', ');
@@ -51,6 +61,46 @@ const toNavigationItem = (
   };
 };
 
+const toEditionPlacements = async (
+  editionId: string,
+): Promise<EditionPlacements> => {
+  const records = await listEditionPlacementRecords(editionId);
+  const placements: Partial<EditionPlacements> = {};
+
+  for (const record of records) {
+    const key = placementKeys[record.placement as keyof typeof placementKeys];
+
+    if (key === undefined) {
+      throw new Error(
+        `Edition ${editionId} has unsupported placement ${record.placement}`,
+      );
+    }
+
+    const item: EditionPlacementItem = {
+      id: record.associationId,
+      name: record.associationName,
+      code: record.associationCode,
+    };
+    placements[key] = item;
+  }
+
+  if (
+    placements.first === undefined ||
+    placements.second === undefined ||
+    placements.third === undefined ||
+    placements.fourth === undefined
+  ) {
+    throw new Error(`Edition ${editionId} does not have four placements`);
+  }
+
+  return {
+    first: placements.first,
+    second: placements.second,
+    third: placements.third,
+    fourth: placements.fourth,
+  };
+};
+
 export const getEditionDetail = async (
   year: number,
 ): Promise<GetEditionDetailResult> => {
@@ -68,7 +118,10 @@ export const getEditionDetail = async (
     return { status: 'not-found' };
   }
 
-  const orderedEditions = await listEditionNavigationRecords();
+  const [orderedEditions, placements] = await Promise.all([
+    listEditionNavigationRecords(),
+    toEditionPlacements(edition.id),
+  ]);
   const editionIndex = orderedEditions.findIndex(
     (candidate) => candidate.id === edition.id,
   );
@@ -101,6 +154,7 @@ export const getEditionDetail = async (
               accentTextColor: edition.visualIdentity.accentTextColor,
               spineColor: edition.visualIdentity.spineColor,
             },
+      placements,
       navigation: {
         previous: toNavigationItem(orderedEditions[editionIndex + 1]),
         next: toNavigationItem(orderedEditions[editionIndex - 1]),

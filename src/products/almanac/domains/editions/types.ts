@@ -9,6 +9,11 @@ export const foundationNationSourceSchema = z.object({
 
 export type FoundationNationSource = z.infer<typeof foundationNationSourceSchema>;
 
+const foundationPlacementAssociationSourceSchema = z.object({
+  name: z.string().min(1),
+  code: z.string().regex(/^[A-Z]{3}$/),
+});
+
 export const foundationEditionSourceSchema = z.object({
   id: z.string().regex(/^\d{4}$/),
   year: z.number().int().min(1930),
@@ -26,6 +31,12 @@ export const foundationEditionSourceSchema = z.object({
     .nullable()
     .optional(),
   num_teams: z.number().int().positive().nullable().optional(),
+  placements: z.object({
+    first: foundationPlacementAssociationSourceSchema,
+    second: foundationPlacementAssociationSourceSchema,
+    third: foundationPlacementAssociationSourceSchema,
+    fourth: foundationPlacementAssociationSourceSchema,
+  }),
 });
 
 export type FoundationEditionSource = z.infer<typeof foundationEditionSourceSchema>;
@@ -59,6 +70,26 @@ export type EditionNavigationRecord = {
   hostDisplayNames: string[];
 };
 
+export type EditionPlacementRecord = {
+  associationId: string;
+  associationName: string;
+  associationCode: string;
+  placement: number;
+};
+
+export type EditionPlacementItem = {
+  id: string;
+  name: string;
+  code: string;
+};
+
+export type EditionPlacements = {
+  first: EditionPlacementItem;
+  second: EditionPlacementItem;
+  third: EditionPlacementItem;
+  fourth: EditionPlacementItem;
+};
+
 export type EditionListItem = {
   id: string;
   year: number;
@@ -89,6 +120,7 @@ export type EditionDetail = {
     accentTextColor: string;
     spineColor: string;
   } | null;
+  placements: EditionPlacements;
   navigation: {
     previous: EditionNavigationItem | null;
     next: EditionNavigationItem | null;

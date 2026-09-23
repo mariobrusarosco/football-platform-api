@@ -53,18 +53,6 @@ export const editionVisualIdentities = almanacSchema.table(
   },
 );
 
-export const nations = almanacSchema.table(
-  'nations',
-  {
-    id: uuid('id').defaultRandom().primaryKey(),
-    slug: text('slug').notNull(),
-    canonicalName: text('canonical_name').notNull(),
-    createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
-    updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow().notNull(),
-  },
-  (table) => [uniqueIndex('nations_slug_unique').on(table.slug)],
-);
-
 export const editionHosts = almanacSchema.table(
   'edition_hosts',
   {
@@ -72,16 +60,14 @@ export const editionHosts = almanacSchema.table(
     editionId: uuid('edition_id')
       .notNull()
       .references(() => editions.id, { onDelete: 'cascade' }),
-    nationId: uuid('nation_id')
-      .notNull()
-      .references(() => nations.id, { onDelete: 'restrict' }),
+    nationSourceId: text('nation_source_id').notNull(),
     displayName: text('display_name').notNull(),
     position: smallint('position').notNull(),
   },
   (table) => [
-    uniqueIndex('edition_hosts_edition_nation_unique').on(
+    uniqueIndex('edition_hosts_edition_nation_source_unique').on(
       table.editionId,
-      table.nationId,
+      table.nationSourceId,
     ),
     uniqueIndex('edition_hosts_edition_position_unique').on(
       table.editionId,

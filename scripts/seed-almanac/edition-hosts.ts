@@ -11,7 +11,6 @@ export const seedEditionHosts = async (
   transaction: SeedTransaction,
   sourceEditions: FoundationEditionSource[],
   editionIds: Map<number, string>,
-  nationIds: Map<string, string>,
 ): Promise<SeedCounts> => {
   const existingRows = await transaction.select().from(editionHosts);
   const existingByEditionPosition = new Map(
@@ -28,18 +27,12 @@ export const seedEditionHosts = async (
 
     for (const [index, sourceHost] of sourceEdition.host_countries.entries()) {
       const position = index + 1;
-      const nationId = nationIds.get(sourceHost.nation_id);
-
-      if (!nationId) {
-        throw new Error(`Missing database ID for nation ${sourceHost.nation_id}`);
-      }
-
       const existing = existingByEditionPosition.get(`${editionId}:${position}`);
 
       if (!existing) {
         await transaction.insert(editionHosts).values({
           editionId,
-          nationId,
+          nationSourceId: sourceHost.nation_id,
           displayName: sourceHost.display_name,
           position,
         });
@@ -48,7 +41,7 @@ export const seedEditionHosts = async (
       }
 
       if (
-        existing.nationId === nationId &&
+        existing.nationSourceId === sourceHost.nation_id &&
         existing.displayName === sourceHost.display_name
       ) {
         counts.unchanged += 1;
@@ -57,7 +50,10 @@ export const seedEditionHosts = async (
 
       await transaction
         .update(editionHosts)
-        .set({ nationId, displayName: sourceHost.display_name })
+        .set({
+          nationSourceId: sourceHost.nation_id,
+          displayName: sourceHost.display_name,
+        })
         .where(
           and(
             eq(editionHosts.editionId, editionId),

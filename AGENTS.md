@@ -36,9 +36,10 @@ Non-negotiable rules:
 - Services own domain behavior, orchestration, validation, and response mapping.
 - Services do not import Express, Drizzle, the database, or schema modules.
 - Repositories own persistence access and do not import routes, services, or Express.
-- A domain never imports another domain's repository. Runtime layers never import another domain's
-  schema. A `schema.ts` may import another domain's `schema.ts` only to declare an accepted
-  same-product foreign key documented by ADR 0003.
+- A domain never imports another domain's repository. A repository may import another domain's
+  `schema.ts` for a read-only join within the same product PostgreSQL schema, as documented by ADR
+  0004. Cross-domain writes remain prohibited. A `schema.ts` may import another domain's
+  `schema.ts` to declare an accepted same-product foreign key documented by ADR 0003.
 - Do not introduce `api`, `controllers`, `use-cases`, `queries`, or another architectural layer by
   copying the legacy application.
 - A structural layer change requires explicit user approval and a superseding ADR.

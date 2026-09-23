@@ -1,10 +1,13 @@
-import { asc, count, desc, eq } from 'drizzle-orm';
+import { and, asc, count, desc, eq, isNotNull } from 'drizzle-orm';
 import { db } from '../../../../platform/database';
+import { associationEditions } from '../participations/schema';
+import { associations } from '../teams/schema';
 import { editionHosts, editionVisualIdentities, editions } from './schema';
 import type {
   EditionDetailRecord,
   EditionListRecord,
   EditionNavigationRecord,
+  EditionPlacementRecord,
 } from './types';
 
 type EditionQueryRow = {
@@ -130,6 +133,38 @@ export const findEditionDetailRecordByYear = async (
     .orderBy(asc(editionHosts.position));
 
   return toEditionDetailRecords(rows)[0] ?? null;
+};
+
+export const listEditionPlacementRecords = async (
+  editionId: string,
+): Promise<EditionPlacementRecord[]> => {
+  const rows = await db
+    .select({
+      associationId: associations.id,
+      associationName: associations.name,
+      associationCode: associations.fifaCode,
+      placement: associationEditions.placement,
+    })
+    .from(associationEditions)
+    .innerJoin(
+      associations,
+      eq(associations.id, associationEditions.associationId),
+    )
+    .where(
+      and(
+        eq(associationEditions.editionId, editionId),
+        isNotNull(associationEditions.placement),
+      ),
+    )
+    .orderBy(asc(associationEditions.placement));
+
+  return rows.map(row => {
+    if (row.placement === null) {
+      throw new Error(`Association ${row.associationId} has a null placement`);
+    }
+
+    return { ...row, placement: row.placement };
+  });
 };
 
 export const listEditionNavigationRecords = async (): Promise<EditionNavigationRecord[]> => {

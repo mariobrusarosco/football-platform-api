@@ -2,7 +2,8 @@
 
 ## Status
 
-Accepted on 2026-07-11.
+Accepted on 2026-07-11. Amended by ADR 0004 on 2026-09-20 for same-product, read-only
+cross-domain repository joins.
 
 ## Context
 
@@ -49,7 +50,9 @@ persistence. Routes are optional when a domain has no HTTP surface. Empty placeh
 required.
 
 Services may call platform helpers and may call another domain's public service when the dependency
-is explicit and one-way. Domains must not import another domain's repository or schema.
+is explicit and one-way. Domains must not import another domain's repository. ADR 0004 permits a
+repository to import another domain's schema for a read-only join within the same product
+PostgreSQL schema.
 
 The legacy application does not define root architecture. In particular, `api`, `controllers`,
 `use-cases`, and `queries` are not standard root layers. A new layer requires a concrete need,

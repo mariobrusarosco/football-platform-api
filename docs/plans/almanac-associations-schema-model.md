@@ -10,7 +10,7 @@ not been implemented.
 
 ## Accepted Boundary
 
-- Football facts come from `football-platform-foundation`.
+- Football facts come from `football-plataform-foundation`.
 - An association is Almanac's identity for a men's national football team participating in the
   World Cup. This model does not describe the governing organization's corporate details.
 - Only fields currently produced by Foundation are included.
@@ -146,24 +146,28 @@ and its schema-only imports follow ADR 0003.
 | `edition_id` | `uuid` | Required FK to `editions`, resolved from `editions[].year`. |
 | `result` | `text` | Foundation `editions[].result`. |
 | `won_title` | `boolean` | True when the edition year appears in `stats.title_years[]`. |
+| `placement` | `smallint` | Foundation edition placement from first through fourth; otherwise null. |
 
 Constraints:
 
 - `(association_id, edition_id)` is unique.
 - `result` is required but remains free text until Foundation produces a normalized result set.
 - `won_title` is required and defaults to false.
+- `placement` is null or between 1 and 4.
+- `(edition_id, placement)` is unique when `placement` is not null.
 - Deleting an association or edition cascades to its association-edition rows.
 
 `stats.title_years[]` is normalized into `won_title` on the corresponding association-edition row;
-it is not stored as a database array or duplicated in a separate titles table.
+it is not stored as a database array or duplicated in a separate titles table. Placement is loaded
+from each edition file's `placements` object and is not inferred from `result`.
 
 ## Foundation-to-Database Mapping
 
 ```text
-Foundation association id "argentina"
+Foundation association id "argentina" or placement code "ARG"
                  |
                  v
-associations.source_id "argentina"
+associations.source_id "argentina" / associations.fifa_code "ARG"
                  |
                  v
 associations.id <internal UUID used by database relationships>
@@ -181,11 +185,15 @@ resolved.
 ## Implemented Seed Behavior
 
 - The seed reads the association detail files identified by `data/associations/index.json` from
-  the sibling `football-platform-foundation` project.
+  the sibling `football-plataform-foundation` project.
 - All selected JSON is loaded and validated before a database transaction begins.
-- Associations upsert by `source_id`; statistics upsert by `association_id`; edition history
-  upserts by `(association_id, edition_id)`.
+- Full association records upsert by their unique code or source ID. Placement-only historical
+  associations are created from their Foundation name and code. Statistics upsert by
+  `association_id`; edition history upserts by `(association_id, edition_id)`.
 - Existing UUIDs are preserved on repeated runs, and missing source records are not deleted.
+- Placement codes resolve to existing association UUIDs before first-through-fourth positions are
+  written. The seed creates minimal historical association rows when a placement code is otherwise
+  unresolved.
 - Association-edition records whose years are absent from the authoritative editions catalog are
   excluded and reported. This keeps qualification and unsupported future-edition data outside the
   accepted Almanac scope.

@@ -17,7 +17,7 @@ const catalogSchema = z.array(z.object({ id: z.string().min(1) }));
 export const foundationDataDirectory = resolve(
   process.cwd(),
   '..',
-  'football-platform-foundation',
+  'football-plataform-foundation',
   'data',
 );
 
@@ -105,6 +105,7 @@ const validateSource = (source: FoundationSeedSource): void => {
 
   const nationIds = new Set(source.nations.map(nation => nation.id));
   const editionYears = new Set(source.editions.map(edition => edition.year));
+  const placementNamesByCode = new Map<string, string>();
 
   for (const edition of source.editions) {
     if (edition.id !== String(edition.year)) {
@@ -134,6 +135,25 @@ const validateSource = (source: FoundationSeedSource): void => {
           `Edition ${edition.year} references unknown host nation ${host.nation_id}`,
         );
       }
+    }
+
+    const placements = Object.values(edition.placements);
+    assertUnique(
+      placements,
+      placement => placement.code,
+      `placement association code in edition ${edition.year}`,
+    );
+
+    for (const placement of placements) {
+      const knownName = placementNamesByCode.get(placement.code);
+
+      if (knownName !== undefined && knownName !== placement.name) {
+        throw new Error(
+          `Placement association ${placement.code} has conflicting names ${knownName} and ${placement.name}`,
+        );
+      }
+
+      placementNamesByCode.set(placement.code, placement.name);
     }
   }
 

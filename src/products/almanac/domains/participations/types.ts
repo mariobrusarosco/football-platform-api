@@ -3,4 +3,5 @@ export type AssociationEditionSeedRecord = {
   editionId: string;
   result: string;
   wonTitle: boolean;
+  placement: number | null;
 };

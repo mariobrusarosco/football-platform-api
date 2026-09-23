@@ -16,8 +16,9 @@ data decisions. Its folders and dependency patterns do not define the architectu
 application.
 
 A structural change to the layers or dependency direction in this document requires explicit user
-approval and a new ADR that supersedes ADR 0002. Agents and engineers must not introduce a new
-architectural layer by inference.
+approval and a new ADR. ADR 0004 amends ADR 0002 by allowing repositories to perform read-only
+joins across domains within the same product PostgreSQL schema. Agents and engineers must not
+introduce a new architectural layer by inference.
 
 ## Product And Domain Location
 
@@ -159,7 +160,9 @@ It may:
 
 - import the shared database client;
 - import its own domain schema;
+- import another domain's schema within the same product for a read-only join;
 - use Drizzle query helpers;
+- perform read-only joins across domains within the same product PostgreSQL schema;
 - map database rows into persistence records that are convenient for its service.
 
 It must not:
@@ -168,8 +171,13 @@ It must not:
 - import routes or services;
 - produce HTTP responses or status codes;
 - construct environment-specific public URLs;
-- import another domain's repository or schema;
-- hide cross-domain joins.
+- import another domain's repository;
+- insert, update, or delete rows in a table owned by another domain;
+- join across products or PostgreSQL schemas without a separate architecture decision.
+
+A repository that performs a same-product cross-domain read owns that concrete query and must keep
+the joined schema imports visible. This permission is for composing product responses from the
+shared product schema; it does not transfer ownership of the joined tables.
 
 Repository records and public API responses are separate contracts. A repository can flatten or
 normalize database rows, while the service owns the final response shape.
@@ -183,8 +191,8 @@ It must not import routes, services, repositories, or Express.
 
 A schema module may import another domain's schema module only to declare an accepted foreign key
 between tables in the same product schema. This narrow exception is defined by
-[ADR 0003](../adr/0003-same-product-schema-foreign-keys.md); it does not permit cross-domain runtime
-queries or behavior.
+[ADR 0003](../adr/0003-same-product-schema-foreign-keys.md). Runtime read-only joins are governed
+separately by [ADR 0004](../adr/0004-same-product-cross-domain-read-joins.md).
 
 ### Types
 
@@ -201,14 +209,18 @@ change independently.
 ## Cross-Domain Rules
 
 - A domain must never import another domain's `repository.ts`.
-- Routes, services, and repositories must never import another domain's `schema.ts`.
+- Routes and services must never import another domain's `schema.ts`.
+- A repository may import another domain's `schema.ts` for a read-only join when both domains belong
+  to the same product and PostgreSQL schema.
+- A repository must not insert, update, or delete rows owned by another domain.
 - A `schema.ts` may import another same-product domain's `schema.ts` only for an accepted foreign
   key dependency documented by ADR 0003.
 - A service may call another domain's public service for a small, explicit, one-way dependency.
 - A workflow coordinating several peer domains should move to a clearly named product-level
   orchestration module after a concrete use case demonstrates that need.
 - Cross-product behavior requires an explicit architecture discussion before implementation.
-- Cross-domain reads and writes must remain visible. Do not hide them in a repository join.
+- Same-product cross-domain read joins must remain visible through explicit schema imports in the
+  repository that owns the query.
 
 ## Platform Boundary
 

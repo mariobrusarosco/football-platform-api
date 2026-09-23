@@ -1,9 +1,10 @@
 import { closeDatabase, db } from '../src/platform/database';
 import { seedAssociationEditions } from './seed-almanac/association-editions';
 import { seedAssociationStatistics } from './seed-almanac/association-statistics';
+import { seedAssociationVisualIdentities } from './seed-almanac/association-visual-identities';
 import { seedAssociations } from './seed-almanac/associations';
 import { seedEditionHosts } from './seed-almanac/edition-hosts';
-import { seedNations } from './seed-almanac/nations';
+import { seedEditionVisualIdentities } from './seed-almanac/edition-visual-identities';
 import {
   foundationDataDirectory,
   readFoundationSeedSource,
@@ -26,17 +27,26 @@ export const seedAlmanac = async () => {
   }
 
   return db.transaction(async transaction => {
-    const nationResult = await seedNations(transaction, source.nations);
     const editionResult = await seedWorldCupEditions(transaction, source.editions);
     const editionHostCounts = await seedEditionHosts(
       transaction,
       source.editions,
       editionResult.ids,
-      nationResult.ids,
+    );
+    const editionVisualIdentityCounts = await seedEditionVisualIdentities(
+      transaction,
+      source.editions,
+      editionResult.ids,
     );
     const associationResult = await seedAssociations(
       transaction,
       source.associations,
+      source.editions,
+    );
+    const associationVisualIdentityCounts = await seedAssociationVisualIdentities(
+      transaction,
+      source.associations,
+      associationResult.ids,
     );
     const associationStatisticCounts = await seedAssociationStatistics(
       transaction,
@@ -47,14 +57,17 @@ export const seedAlmanac = async () => {
       transaction,
       source.associations,
       associationResult.ids,
+      associationResult.idsByCode,
+      source.editions,
       editionResult.ids,
     );
 
     return {
-      nations: nationResult.counts,
       editions: editionResult.counts,
       editionHosts: editionHostCounts,
+      editionVisualIdentities: editionVisualIdentityCounts,
       associations: associationResult.counts,
+      associationVisualIdentities: associationVisualIdentityCounts,
       associationStatistics: associationStatisticCounts,
       associationEditions: associationEditionCounts,
     };

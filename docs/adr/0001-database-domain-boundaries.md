@@ -2,7 +2,8 @@
 
 ## Status
 
-Accepted on 2026-07-10.
+Accepted on 2026-07-10. Its same-product runtime read-join restriction was superseded by ADR 0004
+on 2026-09-20; its product database-boundary decision remains accepted.
 
 ## Context
 
@@ -61,8 +62,8 @@ application. Drizzle's migration ledger will remain in `public.__drizzle_migrati
 - Sharing one database does not imply sharing domain models.
 - Cross-schema foreign keys are prohibited by default. An exception requires a concrete use case
   and a new architecture decision.
-- Cross-domain reads and writes must be explicit at the application boundary rather than accidental
-  joins hidden inside a domain repository.
+- Same-product, read-only cross-domain repository joins are permitted by ADR 0004. Cross-domain
+  writes and cross-product reads remain explicit application-boundary concerns.
 - Provider identifiers remain separate from internal IDs.
 - A shared `identity` schema will not be introduced until a concrete feature must map corresponding
   real-world entities across domains.
