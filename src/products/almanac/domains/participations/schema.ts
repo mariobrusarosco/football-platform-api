@@ -9,17 +9,17 @@ import {
   uuid,
 } from 'drizzle-orm/pg-core';
 import { editions } from '../editions/schema';
-import { associations } from '../teams/schema';
+import { nationalTeams } from '../national-teams/schema';
 
 export const almanacSchema = pgSchema('almanac');
 
-export const associationEditions = almanacSchema.table(
-  'association_editions',
+export const nationalTeamParticipations = almanacSchema.table(
+  'national_team_participations',
   {
     id: uuid('id').defaultRandom().primaryKey(),
-    associationId: uuid('association_id')
+    nationalTeamId: uuid('national_team_id')
       .notNull()
-      .references(() => associations.id, { onDelete: 'cascade' }),
+      .references(() => nationalTeams.id, { onDelete: 'cascade' }),
     editionId: uuid('edition_id')
       .notNull()
       .references(() => editions.id, { onDelete: 'cascade' }),
@@ -29,12 +29,12 @@ export const associationEditions = almanacSchema.table(
     placementIsTied: boolean('placement_is_tied').default(false).notNull(),
   },
   (table) => [
-    uniqueIndex('association_editions_association_edition_unique').on(
-      table.associationId,
+    uniqueIndex('national_team_participations_team_edition_unique').on(
+      table.nationalTeamId,
       table.editionId,
     ),
     check(
-      'association_editions_placement_check',
+      'national_team_participations_placement_check',
       sql`${table.placement} > 0`,
     ),
   ],

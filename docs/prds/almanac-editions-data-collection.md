@@ -179,7 +179,7 @@ Detailed attendance for every match is not a separate requirement unless used to
   selection. Do not assume that tied goal totals always produce shared official awards.
 - Do not invent an award for an edition in which it was not given.
 
-Player names and team associations here support edition highlights. Full player biographies,
+Player names and national-team affiliations here support edition highlights. Full player biographies,
 complete squads and a cross-edition player identity system are outside this task.
 
 ### 7. Records and Notable Statistical Achievements — Core

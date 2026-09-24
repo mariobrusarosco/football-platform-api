@@ -77,9 +77,9 @@ const toEditionPlacements = async (
     }
 
     const item: EditionPlacementItem = {
-      id: record.associationId,
-      name: record.associationName,
-      code: record.associationCode,
+      id: record.nationalTeamId,
+      name: record.nationalTeamName,
+      code: record.nationalTeamCode,
     };
     placements[key] = item;
   }

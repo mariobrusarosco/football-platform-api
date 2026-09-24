@@ -50,6 +50,14 @@ The exact domain-layer responsibilities and dependency direction are defined in 
 [Domain Module Architecture](docs/architecture/domain-modules.md) and recorded by
 [ADR 0002](docs/adr/0002-product-domain-module-layers.md).
 
+Almanac uses **national team** for a sporting identity such as Brazil, **association** for its
+governing organization (currently only a nullable acronym such as CBF), and **participation** for
+one team's appearance in an edition. `national-teams/` owns `national_teams`, statistics, and visual
+identities; `participations/` owns `national_team_participations`. Foundation's external collection
+is still named `associations`; the importer maps it to this vocabulary. See the accepted
+[National Teams Schema Model](docs/plans/almanac-national-teams-schema-model.md) and
+[schema diagram](docs/diagrams/almanac-schema.html).
+
 Almanac and Best Shot share one PostgreSQL database per environment while owning separate
 PostgreSQL schemas. Future games receive their own schemas. See
 [ADR 0001: Database Domain Boundaries](docs/adr/0001-database-domain-boundaries.md).
@@ -67,8 +75,10 @@ See [Environment Configuration](docs/guides/environment-configuration.md) for th
 Cloudflare, and GitHub setup.
 
 Public assets use the same semantic rule. Local development and the demo Worker currently use the
-same public `ASSET_BASE_URL`; PostgreSQL stores only object keys. See
-[Almanac Public Assets](docs/slices/almanac-assets.md).
+same public `ASSET_BASE_URL`; product-managed asset columns store object keys. Imported flag URLs
+remain source URLs. See the visual-identity sections in the
+[Editions](docs/plans/almanac-editions-schema-model.md) and
+[National Teams](docs/plans/almanac-national-teams-schema-model.md) schema models.
 
 ## Requirements
 
@@ -148,7 +158,7 @@ Expected result:
 /api/health/db            API can reach local Postgres
 /api/almanac/contents     API returns the Almanac section navigation
 /api/almanac/editions     API returns the seeded Almanac Editions index
-/api/almanac/teams        API returns the seeded national-team index
+/api/almanac/teams        API currently returns an empty list; database reads are pending
 ```
 
 `CORS_ORIGIN` is the frontend origin allowed to call the API. Local development uses

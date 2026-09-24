@@ -12,32 +12,33 @@ import {
 
 export const almanacSchema = pgSchema('almanac');
 
-export const associations = almanacSchema.table(
-  'associations',
+export const nationalTeams = almanacSchema.table(
+  'national_teams',
   {
     id: uuid('id').defaultRandom().primaryKey(),
     sourceId: text('source_id').notNull(),
     name: text('name').notNull(),
     fifaCode: varchar('fifa_code', { length: 3 }).notNull(),
+    associationAcronym: text('association_acronym'),
     flagUrl: text('flag_url'),
     createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
     updatedAt: timestamp('updated_at', { withTimezone: true }).defaultNow().notNull(),
   },
   (table) => [
-    uniqueIndex('associations_source_id_unique').on(table.sourceId),
+    uniqueIndex('national_teams_source_id_unique').on(table.sourceId),
     check(
-      'associations_fifa_code_check',
+      'national_teams_fifa_code_check',
       sql`${table.fifaCode} ~ '^[A-Z]{3}$'`,
     ),
   ],
 );
 
-export const associationVisualIdentities = almanacSchema.table(
-  'association_visual_identities',
+export const nationalTeamVisualIdentities = almanacSchema.table(
+  'national_team_visual_identities',
   {
-    associationId: uuid('association_id')
+    nationalTeamId: uuid('national_team_id')
       .primaryKey()
-      .references(() => associations.id, { onDelete: 'cascade' }),
+      .references(() => nationalTeams.id, { onDelete: 'cascade' }),
     badgeAssetKey: text('badge_asset_key'),
     accentColor: text('accent_color').notNull(),
     accentTextColor: text('accent_text_color').notNull(),
@@ -47,12 +48,12 @@ export const associationVisualIdentities = almanacSchema.table(
   },
 );
 
-export const associationStatistics = almanacSchema.table(
-  'association_statistics',
+export const nationalTeamStatistics = almanacSchema.table(
+  'national_team_statistics',
   {
-    associationId: uuid('association_id')
+    nationalTeamId: uuid('national_team_id')
       .primaryKey()
-      .references(() => associations.id, { onDelete: 'cascade' }),
+      .references(() => nationalTeams.id, { onDelete: 'cascade' }),
     appearances: smallint('appearances').notNull(),
     titles: smallint('titles').notNull(),
     runnersUp: smallint('runners_up').notNull(),
@@ -69,7 +70,7 @@ export const associationStatistics = almanacSchema.table(
   },
   (table) => [
     check(
-      'association_statistics_non_negative_check',
+      'national_team_statistics_non_negative_check',
       sql`${table.appearances} >= 0
         and ${table.titles} >= 0
         and ${table.runnersUp} >= 0
@@ -84,7 +85,7 @@ export const associationStatistics = almanacSchema.table(
         and ${table.points} >= 0`,
     ),
     check(
-      'association_statistics_goal_difference_check',
+      'national_team_statistics_goal_difference_check',
       sql`${table.goalDifference} = ${table.goalsFor} - ${table.goalsAgainst}`,
     ),
   ],

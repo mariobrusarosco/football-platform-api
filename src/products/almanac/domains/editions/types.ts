@@ -60,9 +60,9 @@ export type EditionNavigationRecord = {
 };
 
 export type EditionPlacementRecord = {
-  associationId: string;
-  associationName: string;
-  associationCode: string;
+  nationalTeamId: string;
+  nationalTeamName: string;
+  nationalTeamCode: string;
   placement: number;
 };
 

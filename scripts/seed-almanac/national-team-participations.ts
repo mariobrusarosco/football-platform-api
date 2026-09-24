@@ -1,7 +1,7 @@
 import { and, eq } from 'drizzle-orm';
-import { associationEditions } from '../../src/products/almanac/domains/participations/schema';
-import type { AssociationEditionSeedRecord } from '../../src/products/almanac/domains/participations/types';
-import type { FoundationAssociationSource } from '../../src/products/almanac/domains/teams/types';
+import { nationalTeamParticipations } from '../../src/products/almanac/domains/participations/schema';
+import type { NationalTeamParticipationSeedRecord } from '../../src/products/almanac/domains/participations/types';
+import type { FoundationAssociationSource } from '../../src/products/almanac/domains/national-teams/types';
 import {
   createSeedCounts,
   type SeedCounts,
@@ -10,17 +10,17 @@ import {
 import { parseFoundationRank } from './source';
 
 const buildSeedRecords = (
-  sourceAssociations: FoundationAssociationSource[],
-  associationIds: Map<string, string>,
+  sourceNationalTeams: FoundationAssociationSource[],
+  nationalTeamIds: Map<string, string>,
   editionIds: Map<number, string>,
-): AssociationEditionSeedRecord[] => {
-  const records: AssociationEditionSeedRecord[] = [];
+): NationalTeamParticipationSeedRecord[] => {
+  const records: NationalTeamParticipationSeedRecord[] = [];
 
-  for (const source of sourceAssociations) {
-    const associationId = associationIds.get(source.id);
+  for (const source of sourceNationalTeams) {
+    const nationalTeamId = nationalTeamIds.get(source.id);
 
-    if (!associationId) {
-      throw new Error(`Missing database ID for association ${source.id}`);
+    if (!nationalTeamId) {
+      throw new Error(`Missing database ID for national team ${source.id}`);
     }
 
     const titleYears = new Set(source.stats.title_years);
@@ -35,7 +35,7 @@ const buildSeedRecords = (
       const rank = parseFoundationRank(edition.rank);
 
       records.push({
-        associationId,
+        nationalTeamId,
         editionId,
         phase: edition.phase,
         wonTitle: titleYears.has(edition.year),
@@ -48,30 +48,30 @@ const buildSeedRecords = (
   return records;
 };
 
-export const seedAssociationEditions = async (
+export const seedNationalTeamParticipations = async (
   transaction: SeedTransaction,
-  sourceAssociations: FoundationAssociationSource[],
-  associationIds: Map<string, string>,
+  sourceNationalTeams: FoundationAssociationSource[],
+  nationalTeamIds: Map<string, string>,
   editionIds: Map<number, string>,
 ): Promise<SeedCounts> => {
   const seedRecords = buildSeedRecords(
-    sourceAssociations,
-    associationIds,
+    sourceNationalTeams,
+    nationalTeamIds,
     editionIds,
   );
-  const existingRows = await transaction.select().from(associationEditions);
+  const existingRows = await transaction.select().from(nationalTeamParticipations);
   const existingByPair = new Map(
-    existingRows.map(row => [`${row.associationId}:${row.editionId}`, row]),
+    existingRows.map(row => [`${row.nationalTeamId}:${row.editionId}`, row]),
   );
   const counts = createSeedCounts();
 
   for (const record of seedRecords) {
     const existing = existingByPair.get(
-      `${record.associationId}:${record.editionId}`,
+      `${record.nationalTeamId}:${record.editionId}`,
     );
 
     if (!existing) {
-      await transaction.insert(associationEditions).values(record);
+      await transaction.insert(nationalTeamParticipations).values(record);
       counts.created += 1;
       continue;
     }
@@ -87,7 +87,7 @@ export const seedAssociationEditions = async (
     }
 
     await transaction
-      .update(associationEditions)
+      .update(nationalTeamParticipations)
       .set({
         phase: record.phase,
         wonTitle: record.wonTitle,
@@ -96,8 +96,8 @@ export const seedAssociationEditions = async (
       })
       .where(
         and(
-          eq(associationEditions.associationId, record.associationId),
-          eq(associationEditions.editionId, record.editionId),
+          eq(nationalTeamParticipations.nationalTeamId, record.nationalTeamId),
+          eq(nationalTeamParticipations.editionId, record.editionId),
         ),
       );
     counts.updated += 1;

@@ -134,6 +134,13 @@
       "when": 1790199887477,
       "tag": "0018_almanac_remove_host_nation_source_id",
       "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1790209115201,
+      "tag": "0019_almanac_national_team_terminology",
+      "breakpoints": true
     }
   ]
 }

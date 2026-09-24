@@ -1,6 +1,6 @@
 import { eq } from 'drizzle-orm';
-import { associationVisualIdentities } from '../../src/products/almanac/domains/teams/schema';
-import type { FoundationAssociationSource } from '../../src/products/almanac/domains/teams/types';
+import { nationalTeamVisualIdentities } from '../../src/products/almanac/domains/national-teams/schema';
+import type { FoundationAssociationSource } from '../../src/products/almanac/domains/national-teams/types';
 import {
   createSeedCounts,
   type SeedCounts,
@@ -13,36 +13,36 @@ const temporaryColors = {
   spineColor: '#000000',
 } as const;
 
-export const seedAssociationVisualIdentities = async (
+export const seedNationalTeamVisualIdentities = async (
   transaction: SeedTransaction,
-  sourceAssociations: FoundationAssociationSource[],
-  associationIds: Map<string, string>,
+  sourceNationalTeams: FoundationAssociationSource[],
+  nationalTeamIds: Map<string, string>,
 ): Promise<SeedCounts> => {
   const existingRows = await transaction
     .select()
-    .from(associationVisualIdentities);
-  const existingByAssociationId = new Map(
-    existingRows.map(row => [row.associationId, row]),
+    .from(nationalTeamVisualIdentities);
+  const existingByNationalTeamId = new Map(
+    existingRows.map(row => [row.nationalTeamId, row]),
   );
   const counts = createSeedCounts();
 
-  for (const source of sourceAssociations) {
-    const associationId = associationIds.get(source.id);
+  for (const source of sourceNationalTeams) {
+    const nationalTeamId = nationalTeamIds.get(source.id);
 
-    if (!associationId) {
-      throw new Error(`Missing database ID for association ${source.id}`);
+    if (!nationalTeamId) {
+      throw new Error(`Missing database ID for national team ${source.id}`);
     }
 
     const values = {
       badgeAssetKey: `teams/team-${source.code}.svg`,
       ...temporaryColors,
     };
-    const existing = existingByAssociationId.get(associationId);
+    const existing = existingByNationalTeamId.get(nationalTeamId);
 
     if (!existing) {
       await transaction
-        .insert(associationVisualIdentities)
-        .values({ associationId, ...values });
+        .insert(nationalTeamVisualIdentities)
+        .values({ nationalTeamId, ...values });
       counts.created += 1;
       continue;
     }
@@ -58,9 +58,9 @@ export const seedAssociationVisualIdentities = async (
     }
 
     await transaction
-      .update(associationVisualIdentities)
+      .update(nationalTeamVisualIdentities)
       .set({ ...values, updatedAt: new Date() })
-      .where(eq(associationVisualIdentities.associationId, associationId));
+      .where(eq(nationalTeamVisualIdentities.nationalTeamId, nationalTeamId));
     counts.updated += 1;
   }
 

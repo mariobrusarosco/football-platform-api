@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Almanac database schema</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #090d15;
+        color: #eaf0f8;
+      }
+
+      * { box-sizing: border-box; }
+
+      body { margin: 0; min-width: 320px; }
+
+      .shell { max-width: 1600px; margin: 0 auto; padding: 40px clamp(16px, 3vw, 52px) 56px; }
+
+      .eyebrow { color: #8da2c0; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+      h1 { margin: 10px 0 8px; font-size: clamp(30px, 3.1vw, 48px); letter-spacing: -.055em; line-height: 1.06; }
+      .intro { margin: 0; max-width: 720px; color: #a8b7ca; line-height: 1.55; }
+
+      .topline { display: flex; justify-content: space-between; align-items: end; gap: 22px; flex-wrap: wrap; }
+      .facts { display: flex; flex-wrap: wrap; gap: 10px; }
+      .fact { border: 1px solid #27354a; background: #121b2a; border-radius: 12px; padding: 11px 14px; min-width: 106px; }
+      .fact strong { display: block; font-size: 19px; letter-spacing: -.03em; }
+      .fact span { color: #91a5bf; font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }
+
+      .toolbar { display: flex; align-items: center; gap: 12px; margin: 31px 0 14px; flex-wrap: wrap; }
+      .search-wrap { position: relative; flex: 1 1 310px; max-width: 480px; }
+      .search-wrap svg { position: absolute; top: 50%; left: 14px; transform: translateY(-50%); color: #8fa4c0; }
+      .search { width: 100%; height: 42px; padding: 0 14px 0 42px; border: 1px solid #2c3b50; border-radius: 10px; background: #111a29; color: #edf3fa; font: inherit; font-size: 13px; outline: none; }
+      .search:focus { border-color: #86a9ed; box-shadow: 0 0 0 3px #86a9ed2b; }
+      .search::placeholder { color: #8395ad; }
+      .helper { color: #869ab4; font-size: 12px; }
+      .clear { color: #a9c7ff; border: 0; background: transparent; font: inherit; font-size: 12px; padding: 9px 2px; cursor: pointer; }
+      .clear:hover { color: #e2edff; }
+
+      .board { position: relative; isolation: isolate; overflow: hidden; padding: clamp(16px, 2vw, 34px); border: 1px solid #26354a; border-radius: 20px; background-color: #0d1420; background-image: radial-gradient(#2a394e 1px, transparent 1px); background-size: 23px 23px; }
+      .board::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 48% 12%, #22345b50, transparent 52%); z-index: -1; }
+      .wires { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 0; }
+      .wire { fill: none; stroke: #61738e; stroke-width: 1.5; opacity: .65; transition: opacity .18s, stroke .18s, stroke-width .18s; }
+      .wire.active { stroke: #8bb9ff; stroke-width: 2.6; opacity: 1; }
+      .wire.quiet { opacity: .4; }
+      .wire-dot { fill: #8196b4; transition: opacity .18s, fill .18s; }
+      .wire-dot.active { fill: #b0d0ff; }
+      .wire-dot.quiet { opacity: .4; }
+
+      .grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 88px); align-items: start; }
+      .lane { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+      .lane-label { margin: 0 0 -12px 5px; color: #7890ae; font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+      .lane-middle { padding-top: 43px; }
+
+      .table-card { --tone: #8bb9ff; background: #121b29; border: 1px solid #344359; border-radius: 13px; box-shadow: 0 12px 32px #0509116b; overflow: hidden; transition: opacity .18s, border-color .18s, transform .18s, box-shadow .18s; }
+      .table-card[data-domain="participation"] { --tone: #e6ba78; }
+      .table-card[data-domain="national-team"] { --tone: #a9a0f4; }
+      .table-card.selected { border-color: var(--tone); box-shadow: 0 0 0 2px color-mix(in srgb, var(--tone) 27%, transparent), 0 18px 38px #0509118f; transform: translateY(-2px); }
+      .table-card.quiet { opacity: .76; }
+      .table-card.search-hit { border-color: #91c8a9; }
+      .card-head { display: block; width: 100%; padding: 14px 15px 13px; border: 0; border-bottom: 1px solid #2a394b; background: #172334; color: inherit; text-align: left; cursor: pointer; }
+      .card-head:focus-visible { outline: 2px solid #c1d8ff; outline-offset: -3px; }
+      .head-top { display: flex; align-items: center; gap: 9px; min-width: 0; }
+      .entity-icon { width: 17px; height: 17px; border: 1px solid var(--tone); border-radius: 3px; flex: 0 0 auto; position: relative; opacity: .9; }
+      .entity-icon::before { content: ""; position: absolute; inset: 5px 0 auto; border-top: 1px solid var(--tone); }
+      .card-title { min-width: 0; overflow-wrap: anywhere; font-weight: 670; font-size: 14px; letter-spacing: -.02em; }
+      .field-count { margin-left: auto; flex: 0 0 auto; color: #91a5c0; font-size: 11px; }
+      .card-subtitle { display: block; margin: 8px 0 0 26px; color: #8fa3bd; font-size: 11px; line-height: 1.35; }
+      .fields { padding: 5px 0; }
+      .field { display: grid; grid-template-columns: 37px minmax(0, 1fr) auto; align-items: center; gap: 8px; min-height: 29px; padding: 5px 14px; border-bottom: 1px solid #ffffff0a; font-size: 11.5px; }
+      .field:last-child { border-bottom: 0; }
+      .field.match { background: #7cbf9621; }
+      .field-name { overflow-wrap: anywhere; color: #e1eaf6; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      .field-type { color: #9aacc3; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10.5px; text-align: right; }
+      .nullable { color: #a5b1c2; }
+      .keys { display: flex; gap: 2px; min-width: 37px; }
+      .key { display: inline-flex; align-items: center; justify-content: center; min-width: 16px; height: 16px; padding: 0 2px; border-radius: 3px; font-size: 9px; font-weight: 800; line-height: 1; }
+      .key.pk { color: #0b1725; background: #f3ce87; }
+      .key.fk { color: #0b1725; background: #8eb8f7; }
+      .key.uk { color: #0b1725; background: #a5dcc0; }
+      .card-foot { padding: 8px 14px; border-top: 1px solid #2a394b; background: #152030; color: #91a6c0; font-size: 10.5px; }
+
+      .legend { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin: 14px 2px 0; color: #a1b3c9; font-size: 11px; }
+      .legend-item { display: inline-flex; align-items: center; gap: 6px; }
+      .legend-note { margin-left: auto; color: #8297b1; }
+
+      .inspector { margin-top: 28px; display: grid; grid-template-columns: minmax(180px, .7fr) minmax(0, 2fr); gap: clamp(18px, 3vw, 44px); border: 1px solid #2b3a4e; border-radius: 15px; background: #111b2a; padding: clamp(18px, 2.5vw, 28px); }
+      .inspector-kicker { color: #8da5c4; font-size: 10px; text-transform: uppercase; font-weight: 700; letter-spacing: .15em; }
+      .inspector h2 { margin: 8px 0 8px; font-size: 20px; overflow-wrap: anywhere; }
+      .inspector p { margin: 0; color: #a8b9cf; font-size: 13px; line-height: 1.5; }
+      .inspector-body { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+      .inspector h3 { margin: 0 0 9px; color: #b6c8df; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+      .inspector ul { margin: 0; padding-left: 18px; color: #d5e1f0; font-size: 12px; line-height: 1.65; }
+      .inspector li + li { margin-top: 5px; }
+      .empty-state { color: #93a9c4; font-size: 12px; }
+      .source { margin: 17px 2px 0; color: #7e93ad; font-size: 11px; line-height: 1.5; overflow-wrap: anywhere; }
+      .source code { overflow-wrap: anywhere; }
+
+      @media (max-width: 1050px) {
+        .grid { gap: 26px; }
+        .field { grid-template-columns: 34px minmax(0, 1fr); }
+        .field-type { grid-column: 2; text-align: left; }
+      }
+
+      @media (max-width: 780px) {
+        .shell { padding-top: 26px; }
+        .wires { display: none; }
+        .grid { grid-template-columns: 1fr; gap: 22px; }
+        .lane-middle { padding-top: 0; }
+        .lane { gap: 18px; }
+        .lane-label { margin-bottom: -8px; }
+        .field { grid-template-columns: 37px minmax(0, 1fr) auto; }
+        .field-type { grid-column: auto; text-align: right; }
+        .inspector { grid-template-columns: 1fr; }
+      }
+
+      @media (max-width: 510px) {
+        .facts { width: 100%; }
+        .fact { flex: 1; }
+        .inspector-body { grid-template-columns: 1fr; }
+        .legend-note { width: 100%; margin-left: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <div class="topline">
+        <div>
+          <div class="eyebrow">Football Platform / Almanac</div>
+          <h1>Database schema</h1>
+          <p class="intro">The current Almanac model: editions, national teams, their appearances, and the supporting host, statistics, and visual-identity tables.</p>
+        </div>
+        <div class="facts" aria-label="Schema summary">
+          <div class="fact"><strong>7</strong><span>tables</span></div>
+          <div class="fact"><strong>6</strong><span>foreign keys</span></div>
+          <div class="fact"><strong>almanac</strong><span>Postgres schema</span></div>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-wrap">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+          <input id="schema-search" class="search" type="search" placeholder="Find a table or column…" aria-label="Find a table or column" autocomplete="off" />
+        </label>
+        <button id="clear-search" class="clear" type="button" hidden>Clear search</button>
+        <span class="helper">Click a table to trace its relationships</span>
+      </div>
+
+      <section class="board" id="board" aria-label="Almanac entity relationship diagram">
+        <svg class="wires" id="wires" aria-hidden="true"></svg>
+        <div class="grid" id="schema-grid">
+          <div class="lane" id="edition-lane"><p class="lane-label">Edition domain</p></div>
+          <div class="lane lane-middle" id="participation-lane"><p class="lane-label">Participations domain</p></div>
+          <div class="lane" id="national-team-lane"><p class="lane-label">National Teams domain</p></div>
+        </div>
+      </section>
+
+      <div class="legend" aria-label="Diagram legend">
+        <span class="legend-item"><span class="key pk">P</span> Primary key</span>
+        <span class="legend-item"><span class="key fk">F</span> Foreign key</span>
+        <span class="legend-item"><span class="key uk">U</span> Unique key</span>
+        <span class="legend-item"><span class="nullable">?</span> Nullable column</span>
+        <span class="legend-note">Lines connect actual foreign keys; there is no nations table.</span>
+      </div>
+
+      <section class="inspector" aria-live="polite" aria-label="Selected table details">
+        <div>
+          <div class="inspector-kicker">Selected table</div>
+          <h2 id="selected-title"></h2>
+          <p id="selected-description"></p>
+        </div>
+        <div class="inspector-body">
+          <div><h3>Relationships</h3><ul id="selected-relations"></ul></div>
+          <div><h3>Constraints and notes</h3><ul id="selected-constraints"></ul></div>
+        </div>
+      </section>
+      <p class="source">Based on the current Drizzle definitions in <code>src/products/almanac/domains/{editions,participations,national-teams}/schema.ts</code>. This is a static documentation view, not a live database connection.</p>
+    </main>
+
+    <script>
+      const tables = [
+        {
+          id: 'editions', domain: 'edition', lane: 'edition-lane', kind: 'Core entity',
+          description: 'One completed or upcoming Men’s World Cup edition, identified by its unique year.',
+          fields: [
+            ['id', 'uuid', 'P'], ['year', 'smallint', 'U'], ['start_date', 'date', '', true],
+            ['end_date', 'date', '', true], ['participant_count', 'smallint', '', true],
+            ['created_at', 'timestamptz'], ['updated_at', 'timestamptz']
+          ],
+          constraints: ['year is unique and must be at least 1930.', 'When both dates exist, end_date cannot precede start_date.', 'participant_count, when present, must be positive.']
+        },
+        {
+          id: 'edition_hosts', domain: 'edition', lane: 'edition-lane', kind: 'Edition detail',
+          description: 'The host nation or nations associated with an edition, in display order.',
+          fields: [
+            ['id', 'uuid', 'P'], ['edition_id', 'uuid', 'F'],
+            ['display_name', 'text'], ['position', 'smallint']
+          ],
+          constraints: ['The pair (edition_id, position) is unique.', 'position must be positive.']
+        },
+        {
+          id: 'edition_visual_identities', domain: 'edition', lane: 'edition-lane', kind: 'One-to-one detail',
+          description: 'Asset keys and page colors for an edition.',
+          fields: [
+            ['edition_id', 'uuid', 'PF'], ['logo_asset_key', 'text', '', true],
+            ['trophy_asset_key', 'text', '', true], ['accent_color', 'text'],
+            ['accent_text_color', 'text'], ['spine_color', 'text'],
+            ['created_at', 'timestamptz'], ['updated_at', 'timestamptz']
+          ],
+          constraints: ['edition_id is both primary key and foreign key: at most one visual identity per edition.', 'Asset keys are stored as strings and may be absent.']
+        },
+        {
+          id: 'national_team_participations', domain: 'participation', lane: 'participation-lane', kind: 'Participation',
+          description: 'One national team’s appearance in one World Cup edition, including its phase and overall placement.',
+          fields: [
+            ['id', 'uuid', 'P'], ['national_team_id', 'uuid', 'F'], ['edition_id', 'uuid', 'F'],
+            ['phase', 'text'], ['won_title', 'boolean'], ['placement', 'smallint'],
+            ['placement_is_tied', 'boolean']
+          ],
+          constraints: ['The pair (national_team_id, edition_id) is unique.', 'placement must be positive; multiple national teams may share it when tied.', 'won_title and placement_is_tied default to false.']
+        },
+        {
+          id: 'national_teams', domain: 'national-team', lane: 'national-team-lane', kind: 'Core entity',
+          description: 'A distinct historical or current national football team.',
+          fields: [
+            ['id', 'uuid', 'P'], ['source_id', 'text', 'U'], ['name', 'text'],
+            ['fifa_code', 'varchar(3)'], ['association_acronym', 'text', '', true], ['flag_url', 'text', '', true],
+            ['created_at', 'timestamptz'], ['updated_at', 'timestamptz']
+          ],
+          constraints: ['source_id is unique and is the stable source identity.', 'fifa_code must be three uppercase letters but is not unique: historical national teams can reuse a code.', 'association_acronym is optional display text for the governing organization, such as CBF; it is separate from fifa_code, such as BRA.', 'Missing or null source acronyms preserve manual values; a supplied acronym replaces them.', 'flag_url may be absent.']
+        },
+        {
+          id: 'national_team_statistics', domain: 'national-team', lane: 'national-team-lane', kind: 'One-to-one detail',
+          description: 'Foundation-provided all-time summary statistics for a national team.',
+          fields: [
+            ['national_team_id', 'uuid', 'PF'], ['appearances', 'smallint'], ['titles', 'smallint'],
+            ['runners_up', 'smallint'], ['third_place', 'smallint'], ['fourth_place', 'smallint'],
+            ['matches_played', 'smallint'], ['wins', 'smallint'], ['draws', 'smallint'],
+            ['losses', 'smallint'], ['goals_for', 'smallint'], ['goals_against', 'smallint'],
+            ['goal_difference', 'smallint'], ['points', 'smallint']
+          ],
+          constraints: ['national_team_id is both primary key and foreign key: at most one statistics row per national team.', 'Counts and points are non-negative.', 'goal_difference must equal goals_for minus goals_against.']
+        },
+        {
+          id: 'national_team_visual_identities', domain: 'national-team', lane: 'national-team-lane', kind: 'One-to-one detail',
+          description: 'Badge asset key and page colors for a national team.',
+          fields: [
+            ['national_team_id', 'uuid', 'PF'], ['badge_asset_key', 'text', '', true],
+            ['accent_color', 'text'], ['accent_text_color', 'text'], ['spine_color', 'text'],
+            ['created_at', 'timestamptz'], ['updated_at', 'timestamptz']
+          ],
+          constraints: ['national_team_id is both primary key and foreign key: at most one visual identity per national team.', 'badge_asset_key may be absent.']
+        }
+      ];
+
+      const relationships = [
+        { child: 'edition_hosts', parent: 'editions', key: 'edition_id', label: 'many hosts → one edition' },
+        { child: 'edition_visual_identities', parent: 'editions', key: 'edition_id', label: 'zero or one visual identity → one edition' },
+        { child: 'national_team_participations', parent: 'editions', key: 'edition_id', label: 'many appearances → one edition' },
+        { child: 'national_team_participations', parent: 'national_teams', key: 'national_team_id', label: 'many appearances → one national team' },
+        { child: 'national_team_statistics', parent: 'national_teams', key: 'national_team_id', label: 'zero or one statistics row → one national team' },
+        { child: 'national_team_visual_identities', parent: 'national_teams', key: 'national_team_id', label: 'zero or one visual identity → one national team' }
+      ];
+
+      const byId = Object.fromEntries(tables.map(table => [table.id, table]));
+      const board = document.getElementById('board');
+      const wireLayer = document.getElementById('wires');
+      const searchInput = document.getElementById('schema-search');
+      const clearSearch = document.getElementById('clear-search');
+      let selected = 'national_team_participations';
+
+      function element(tag, className, text) {
+        const node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text !== undefined) node.textContent = text;
+        return node;
+      }
+
+      function renderCards() {
+        for (const table of tables) {
+          const card = element('article', 'table-card');
+          card.id = `table-${table.id}`;
+          card.dataset.domain = table.domain;
+          const head = element('button', 'card-head');
+          head.type = 'button';
+          head.setAttribute('aria-label', `Inspect ${table.id}`);
+          const top = element('span', 'head-top');
+          top.append(element('span', 'entity-icon'));
+          top.append(element('span', 'card-title', table.id));
+          top.append(element('span', 'field-count', `${table.fields.length} fields`));
+          head.append(top, element('span', 'card-subtitle', table.kind));
+          head.addEventListener('click', () => { selected = table.id; update(); });
+          card.append(head);
+          const fields = element('div', 'fields');
+          for (const [name, type, keys = '', nullable = false] of table.fields) {
+            const row = element('div', 'field');
+            row.dataset.field = name.toLowerCase();
+            const badges = element('span', 'keys');
+            for (const key of keys) {
+              badges.append(element('span', `key ${key === 'P' ? 'pk' : key === 'F' ? 'fk' : 'uk'}`, key));
+            }
+            row.append(badges, element('span', 'field-name', name), element('span', 'field-type', type + (nullable ? ' ?' : '')));
+            fields.append(row);
+          }
+          card.append(fields, element('div', 'card-foot', table.domain === 'participation' ? 'Links editions ↔ national teams' : table.kind));
+          document.getElementById(table.lane).append(card);
+        }
+      }
+
+      function fillList(id, items) {
+        const list = document.getElementById(id);
+        list.replaceChildren();
+        if (!items.length) {
+          list.append(element('li', 'empty-state', 'No direct relationships.'));
+          return;
+        }
+        for (const item of items) list.append(element('li', '', item));
+      }
+
+      function updateInspector() {
+        const table = byId[selected];
+        document.getElementById('selected-title').textContent = table.id;
+        document.getElementById('selected-description').textContent = table.description;
+        const relationText = relationships
+          .filter(rel => rel.child === selected || rel.parent === selected)
+          .map(rel => rel.child === selected
+            ? `${rel.key} → ${rel.parent}.id (${rel.label})`
+            : `${rel.child}.${rel.key} → id (${rel.label})`);
+        fillList('selected-relations', relationText);
+        fillList('selected-constraints', table.constraints);
+      }
+
+      function drawWires() {
+        const boardRect = board.getBoundingClientRect();
+        wireLayer.setAttribute('viewBox', `0 0 ${boardRect.width} ${boardRect.height}`);
+        wireLayer.replaceChildren();
+        for (const rel of relationships) {
+          const child = document.getElementById(`table-${rel.child}`).getBoundingClientRect();
+          const parent = document.getElementById(`table-${rel.parent}`).getBoundingClientRect();
+          const cx = child.left + child.width / 2 - boardRect.left;
+          const cy = child.top + child.height / 2 - boardRect.top;
+          const px = parent.left + parent.width / 2 - boardRect.left;
+          const py = parent.top + parent.height / 2 - boardRect.top;
+          let x1, y1, x2, y2, pathData;
+          if (rel.child === 'edition_visual_identities' || rel.child === 'national_team_visual_identities') {
+            const useLeft = rel.child === 'edition_visual_identities';
+            x1 = (useLeft ? child.left : child.right) - boardRect.left;
+            y1 = cy;
+            x2 = (useLeft ? parent.left : parent.right) - boardRect.left;
+            y2 = py;
+            const outside = useLeft ? Math.min(x1, x2) - 17 : Math.max(x1, x2) + 17;
+            pathData = `M ${x1} ${y1} H ${outside} V ${y2} H ${x2}`;
+          } else if (Math.abs(cx - px) > Math.abs(cy - py) * .7) {
+            const leftToRight = cx < px;
+            x1 = (leftToRight ? child.right : child.left) - boardRect.left;
+            y1 = cy;
+            x2 = (leftToRight ? parent.left : parent.right) - boardRect.left;
+            y2 = py;
+            const bend = (x1 + x2) / 2;
+            pathData = `M ${x1} ${y1} H ${bend} V ${y2} H ${x2}`;
+          } else {
+            const topToBottom = cy < py;
+            x1 = cx;
+            y1 = (topToBottom ? child.bottom : child.top) - boardRect.top;
+            x2 = px;
+            y2 = (topToBottom ? parent.top : parent.bottom) - boardRect.top;
+            const bend = (y1 + y2) / 2;
+            pathData = `M ${x1} ${y1} V ${bend} H ${x2} V ${y2}`;
+          }
+          const active = rel.child === selected || rel.parent === selected;
+          const quiet = searchInput.value.trim() ? !matchesSearch(rel.child) && !matchesSearch(rel.parent) : !active;
+          const state = active ? 'active' : quiet ? 'quiet' : '';
+          const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          path.setAttribute('d', pathData);
+          path.setAttribute('class', `wire ${state}`);
+          wireLayer.append(path);
+          for (const [x, y] of [[x1, y1], [x2, y2]]) {
+            const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            dot.setAttribute('cx', x);
+            dot.setAttribute('cy', y);
+            dot.setAttribute('r', active ? '3.6' : '2.6');
+            dot.setAttribute('class', `wire-dot ${state}`);
+            wireLayer.append(dot);
+          }
+        }
+      }
+
+      function matchesSearch(id) {
+        const query = searchInput.value.trim().toLowerCase();
+        return !query || id.includes(query) || byId[id].fields.some(([name, type]) => name.includes(query) || type.includes(query));
+      }
+
+      function update() {
+        const query = searchInput.value.trim().toLowerCase();
+        clearSearch.hidden = !query;
+        for (const table of tables) {
+          const card = document.getElementById(`table-${table.id}`);
+          const connected = relationships.some(rel =>
+            (rel.child === selected && rel.parent === table.id) ||
+            (rel.parent === selected && rel.child === table.id));
+          card.classList.toggle('selected', table.id === selected);
+          card.classList.toggle('search-hit', Boolean(query && matchesSearch(table.id)));
+          card.classList.toggle('quiet', query ? !matchesSearch(table.id) : table.id !== selected && !connected);
+          card.querySelector('.card-head').setAttribute('aria-pressed', String(table.id === selected));
+          for (const row of card.querySelectorAll('.field')) {
+            row.classList.toggle('match', Boolean(query && row.dataset.field.includes(query)));
+          }
+        }
+        updateInspector();
+        drawWires();
+      }
+
+      renderCards();
+      searchInput.addEventListener('input', update);
+      clearSearch.addEventListener('click', () => { searchInput.value = ''; searchInput.focus(); update(); });
+      new ResizeObserver(drawWires).observe(board);
+      window.addEventListener('resize', drawWires);
+      if (document.fonts) document.fonts.ready.then(drawWires);
+      update();
+    </script>
+  </body>
+</html>

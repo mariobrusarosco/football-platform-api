@@ -8,8 +8,13 @@ The conceptual scope below is **Accepted**. The Foundation-backed tables were im
 catalog table. Migration `0018_almanac_remove_host_nation_source_id` removes the persisted host
 nation identifier and its unique index; nation identifiers remain part of import validation. The
 Foundation-backed seed is implemented in `scripts/seed-almanac.ts`. The Editions repository and
-HTTP endpoints read the replacement schema. Visual-identity seed data and association rankings are
+HTTP endpoints read the replacement schema. Visual-identity seed data and national-team rankings are
 implemented; the Editions API projects first through fourth place from those rankings.
+
+Migration `0019_almanac_national_team_terminology` adopts `national_teams` and
+`national_team_participations`. The
+[National Teams Schema Model](almanac-national-teams-schema-model.md) defines the accepted
+distinction between a national team, its governing association, and its participation in an edition.
 
 ## Accepted Boundary
 
@@ -47,8 +52,8 @@ is not copied into a database table.
 
 Foundation also produces group standings, knockout matches, finals, third-place matches, awards,
 venues, cities, attendance and shootouts. Those are scraped data, but they are not owned by the
-edition tables in this document. Association files now supply the complete rankings; these are
-stored on the Participations domain's `association_editions` relationship.
+edition tables in this document. Foundation files from `data/associations/` supply the complete
+rankings; these are stored in the Participations domain's `national_team_participations` table.
 
 ## Accepted Tables
 
@@ -149,7 +154,7 @@ are validated during import but are not persisted on `edition_hosts`.
 - All selected JSON is loaded and validated before a database transaction begins.
 - Editions upsert by `year`; edition hosts upsert by edition and ordered position. Hosts store
   display names after nation catalog and duplicate-identifier validation.
-- Association edition ranks become numeric `association_editions.placement` values and explicit
+- National-team edition ranks become numeric `national_team_participations.placement` values and explicit
   tie flags. The Editions API reads ranks 1 through 4 from those records.
 - Existing UUIDs are preserved on repeated runs.
 - Missing source records are retained rather than treated as deletions because Foundation data is
@@ -165,7 +170,7 @@ display name built from the edition's ordered host rows.
 `GET /api/almanac/editions/:year` returns the internal ID, year, start and end dates, participant
 count, Almanac page number, host display name, optional visual identity, and previous/next edition
 navigation. It also returns `placements.first`, `second`, `third` and `fourth`; each placement
-contains the association's internal ID, name and code. It does not synthesize the deferred edition
+contains the national team's internal ID, name and code. It does not synthesize the deferred edition
 `name` field.
 
 Public visual-identity URLs are constructed by the service from stored provider-neutral asset
@@ -175,7 +180,7 @@ keys. Repositories return persistence values and do not know the public asset or
 
 | Foundation data | Future schema owner |
 | --- | --- |
-| Complete final rankings | Participations — implemented in `association_editions`. |
+| Complete final rankings | Participations — implemented in `national_team_participations`. |
 | Group names and standings | Ownership to be discussed |
 | Knockout rounds and match results | Matches |
 | Final and third-place match | Matches |

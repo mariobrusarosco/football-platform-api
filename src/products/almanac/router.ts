@@ -1,7 +1,7 @@
 import express from "express";
 import contentsRouter from "./domains/contents/routes";
 import editionsRouter from "./domains/editions/routes";
-import teamsRouter from "./domains/teams/routes";
+import teamsRouter from "./domains/national-teams/routes";
 
 const almanacRouter = express.Router();
 

@@ -218,9 +218,22 @@ Use Studio to inspect tables and rows. Do not use Studio to make schema changes 
 your local database. Schema changes must begin in a committed Drizzle schema declaration and
 migration.
 
+For the current Almanac tables, use the
+[National Teams Schema Model](../plans/almanac-national-teams-schema-model.md),
+[Editions Schema Model](../plans/almanac-editions-schema-model.md), and
+[schema diagram](../diagrams/almanac-schema.html). `national_teams` contains team identities;
+`national_team_participations` contains team appearances in editions. Association means the
+governing organization and is currently stored only as nullable `association_acronym` text.
+
+You can enter an acronym manually in Studio or SQL. The
+[manual-entry instructions](../plans/almanac-national-teams-schema-model.md#association-acronym-manual-entry-and-import-behavior)
+include an example. Missing or null Foundation acronyms preserve a manual value; a non-null source
+acronym replaces it. There is no automatic acronym backfill or admin endpoint.
+
 ## Store Public Asset References
 
-PostgreSQL stores provider-neutral object keys, not complete Cloudflare URLs. Name the column for
+Product-managed assets use provider-neutral object keys, not complete Cloudflare URLs. Imported
+`national_teams.flag_url` values remain source URLs. Name an object-key column for
 the asset's domain meaning, such as `logo_asset_key`.
 
 ```text
@@ -237,8 +250,9 @@ Local development and the Cloudflare demo deployment currently use the same publ
 They retain separate PostgreSQL databases; sharing the public asset origin does not share database
 state.
 
-See [Almanac Public Assets](../slices/almanac-assets.md) for the accepted demo delivery, upload, and
-replacement decisions.
+See the visual-identity sections of the
+[Editions](../plans/almanac-editions-schema-model.md) and
+[National Teams](../plans/almanac-national-teams-schema-model.md) schema models for asset ownership.
 
 ## Create Or Change A Table
 

@@ -10,7 +10,7 @@ import {
 import {
   foundationAssociationSourceSchema,
   type FoundationAssociationSource,
-} from '../../src/products/almanac/domains/teams/types';
+} from '../../src/products/almanac/domains/national-teams/types';
 
 const catalogSchema = z.array(z.object({ id: z.string().min(1) }));
 
@@ -24,15 +24,15 @@ export const foundationDataDirectory = resolve(
 export type FoundationSeedSource = {
   nations: FoundationNationSource[];
   editions: FoundationEditionSource[];
-  associations: FoundationAssociationSource[];
-  excludedAssociationEditions: Array<{
-    associationId: string;
+  nationalTeams: FoundationAssociationSource[];
+  excludedNationalTeamParticipations: Array<{
+    nationalTeamId: string;
     year: number;
     phase: string;
     rank: string;
   }>;
   derivedTitleEditions: Array<{
-    associationId: string;
+    nationalTeamId: string;
     year: number;
   }>;
 };
@@ -142,7 +142,7 @@ const validateSource = (source: FoundationSeedSource): void => {
   assertUnique(source.nations, nation => nation.id, 'nation ID');
   assertUnique(source.editions, edition => edition.year, 'edition year');
   assertUnique(source.editions, edition => edition.id, 'edition ID');
-  assertUnique(source.associations, association => association.id, 'association ID');
+  assertUnique(source.nationalTeams, nationalTeam => nationalTeam.id, 'national team ID');
 
   const nationIds = new Set(source.nations.map(nation => nation.id));
   const editionYears = new Set(source.editions.map(edition => edition.year));
@@ -181,35 +181,35 @@ const validateSource = (source: FoundationSeedSource): void => {
     }
   }
 
-  for (const association of source.associations) {
+  for (const nationalTeam of source.nationalTeams) {
     if (
-      association.stats.goal_difference !==
-      association.stats.goals_for - association.stats.goals_against
+      nationalTeam.stats.goal_difference !==
+      nationalTeam.stats.goals_for - nationalTeam.stats.goals_against
     ) {
-      throw new Error(`Association ${association.id} has an invalid goal difference`);
+      throw new Error(`National team ${nationalTeam.id} has an invalid goal difference`);
     }
 
     assertUnique(
-      association.editions,
+      nationalTeam.editions,
       edition => edition.year,
-      `edition year for association ${association.id}`,
+      `edition year for national team ${nationalTeam.id}`,
     );
     assertUnique(
-      association.stats.title_years,
+      nationalTeam.stats.title_years,
       year => year,
-      `title year for association ${association.id}`,
+      `title year for national team ${nationalTeam.id}`,
     );
 
-    const associationEditionYears = new Set(
-      association.editions.map(edition => edition.year),
+    const nationalTeamParticipationYears = new Set(
+      nationalTeam.editions.map(edition => edition.year),
     );
 
-    for (const edition of association.editions) {
+    for (const edition of nationalTeam.editions) {
       const sourceEdition = editionsByYear.get(edition.year);
 
       if (!sourceEdition) {
         throw new Error(
-          `Association ${association.id} references unknown edition ${edition.year}`,
+          `National team ${nationalTeam.id} references unknown edition ${edition.year}`,
         );
       }
 
@@ -221,30 +221,30 @@ const validateSource = (source: FoundationSeedSource): void => {
         rank.placement > sourceEdition.num_teams
       ) {
         throw new Error(
-          `Association ${association.id} has placement ${rank.placement} beyond the ${sourceEdition.num_teams} participants in edition ${edition.year}`,
+          `National team ${nationalTeam.id} has placement ${rank.placement} beyond the ${sourceEdition.num_teams} participants in edition ${edition.year}`,
         );
       }
 
-      const wonTitle = association.stats.title_years.includes(edition.year);
+      const wonTitle = nationalTeam.stats.title_years.includes(edition.year);
 
       if (wonTitle !== (rank.placement === 1)) {
         throw new Error(
-          `Association ${association.id} has inconsistent title and placement data for edition ${edition.year}`,
+          `National team ${nationalTeam.id} has inconsistent title and placement data for edition ${edition.year}`,
         );
       }
     }
 
-    for (const titleYear of association.stats.title_years) {
-      if (!associationEditionYears.has(titleYear)) {
+    for (const titleYear of nationalTeam.stats.title_years) {
+      if (!nationalTeamParticipationYears.has(titleYear)) {
         throw new Error(
-          `Association ${association.id} has title year ${titleYear} without an edition record`,
+          `National team ${nationalTeam.id} has title year ${titleYear} without an edition record`,
         );
       }
     }
 
-    if (association.stats.titles !== association.stats.title_years.length) {
+    if (nationalTeam.stats.titles !== nationalTeam.stats.title_years.length) {
       throw new Error(
-        `Association ${association.id} has inconsistent title count and title years`,
+        `National team ${nationalTeam.id} has inconsistent title count and title years`,
       );
     }
   }
@@ -257,30 +257,30 @@ const validateSource = (source: FoundationSeedSource): void => {
   ] as const;
 
   for (const sourceEdition of source.editions) {
-    const associationEditionRows = source.associations.flatMap(association => {
-      const edition = association.editions.find(
+    const nationalTeamParticipationRows = source.nationalTeams.flatMap(nationalTeam => {
+      const edition = nationalTeam.editions.find(
         candidate => candidate.year === sourceEdition.year,
       );
 
-      return edition ? [{ association, edition }] : [];
+      return edition ? [{ nationalTeam, edition }] : [];
     });
 
     if (
       sourceEdition.num_teams !== null &&
       sourceEdition.num_teams !== undefined &&
-      associationEditionRows.length !== sourceEdition.num_teams
+      nationalTeamParticipationRows.length !== sourceEdition.num_teams
     ) {
       throw new Error(
-        `Edition ${sourceEdition.year} has ${associationEditionRows.length} association rankings for ${sourceEdition.num_teams} participants`,
+        `Edition ${sourceEdition.year} has ${nationalTeamParticipationRows.length} national team rankings for ${sourceEdition.num_teams} participants`,
       );
     }
 
     const rowsByPlacement = new Map<
       number,
-      Array<(typeof associationEditionRows)[number] & ParsedFoundationRank>
+      Array<(typeof nationalTeamParticipationRows)[number] & ParsedFoundationRank>
     >();
 
-    for (const row of associationEditionRows) {
+    for (const row of nationalTeamParticipationRows) {
       const rank = parseFoundationRank(row.edition.rank);
       const rows = rowsByPlacement.get(rank.placement) ?? [];
       rows.push({ ...row, ...rank });
@@ -307,7 +307,7 @@ const validateSource = (source: FoundationSeedSource): void => {
 
       if (rows.length !== 1) {
         throw new Error(
-          `Edition ${sourceEdition.year} must have exactly one association at placement ${position}`,
+          `Edition ${sourceEdition.year} must have exactly one national team at placement ${position}`,
         );
       }
 
@@ -323,38 +323,38 @@ const validateSource = (source: FoundationSeedSource): void => {
 };
 
 export const readFoundationSeedSource = async (): Promise<FoundationSeedSource> => {
-  const [nationJson, editions, unfilteredAssociations] = await Promise.all([
+  const [nationJson, editions, unfilteredNationalTeams] = await Promise.all([
     readJson(resolve(foundationDataDirectory, 'nations', 'index.json')),
     readDetailCollection('editions', foundationEditionSourceSchema),
     readDetailCollection('associations', foundationAssociationSourceSchema),
   ]);
   const nations = z.array(foundationNationSourceSchema).parse(nationJson);
   const editionYears = new Set(editions.map(edition => edition.year));
-  const excludedAssociationEditions = unfilteredAssociations.flatMap(association =>
-    association.editions
+  const excludedNationalTeamParticipations = unfilteredNationalTeams.flatMap(nationalTeam =>
+    nationalTeam.editions
       .filter(edition => !editionYears.has(edition.year))
       .map(edition => ({
-        associationId: association.id,
+        nationalTeamId: nationalTeam.id,
         year: edition.year,
         phase: edition.phase,
         rank: edition.rank,
       })),
   );
   const derivedTitleEditions: FoundationSeedSource['derivedTitleEditions'] = [];
-  const associations = unfilteredAssociations.map(association => {
-    const scopedEditions = association.editions.filter(edition =>
+  const nationalTeams = unfilteredNationalTeams.map(nationalTeam => {
+    const scopedEditions = nationalTeam.editions.filter(edition =>
       editionYears.has(edition.year),
     );
     const scopedEditionYears = new Set(scopedEditions.map(edition => edition.year));
-    const missingTitleEditions = association.stats.title_years
+    const missingTitleEditions = nationalTeam.stats.title_years
       .filter(year => editionYears.has(year) && !scopedEditionYears.has(year))
       .map(year => {
-        derivedTitleEditions.push({ associationId: association.id, year });
+        derivedTitleEditions.push({ nationalTeamId: nationalTeam.id, year });
         return { year, phase: 'Champions', rank: '1st' };
       });
 
     return {
-      ...association,
+      ...nationalTeam,
       editions: [...scopedEditions, ...missingTitleEditions].sort(
         (left, right) => left.year - right.year,
       ),
@@ -363,8 +363,8 @@ export const readFoundationSeedSource = async (): Promise<FoundationSeedSource> 
   const source = {
     nations,
     editions,
-    associations,
-    excludedAssociationEditions,
+    nationalTeams,
+    excludedNationalTeamParticipations,
     derivedTitleEditions,
   };
 

@@ -1,5 +1,5 @@
-export type AssociationEditionSeedRecord = {
-  associationId: string;
+export type NationalTeamParticipationSeedRecord = {
+  nationalTeamId: string;
   editionId: string;
   phase: string;
   wonTitle: boolean;

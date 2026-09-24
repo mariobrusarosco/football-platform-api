@@ -1,28 +1,28 @@
 import { eq } from 'drizzle-orm';
-import { associationStatistics } from '../../src/products/almanac/domains/teams/schema';
-import type { FoundationAssociationSource } from '../../src/products/almanac/domains/teams/types';
+import { nationalTeamStatistics } from '../../src/products/almanac/domains/national-teams/schema';
+import type { FoundationAssociationSource } from '../../src/products/almanac/domains/national-teams/types';
 import {
   createSeedCounts,
   type SeedCounts,
   type SeedTransaction,
 } from './database';
 
-export const seedAssociationStatistics = async (
+export const seedNationalTeamStatistics = async (
   transaction: SeedTransaction,
-  sourceAssociations: FoundationAssociationSource[],
-  associationIds: Map<string, string>,
+  sourceNationalTeams: FoundationAssociationSource[],
+  nationalTeamIds: Map<string, string>,
 ): Promise<SeedCounts> => {
-  const existingRows = await transaction.select().from(associationStatistics);
-  const existingByAssociationId = new Map(
-    existingRows.map(row => [row.associationId, row]),
+  const existingRows = await transaction.select().from(nationalTeamStatistics);
+  const existingByNationalTeamId = new Map(
+    existingRows.map(row => [row.nationalTeamId, row]),
   );
   const counts = createSeedCounts();
 
-  for (const source of sourceAssociations) {
-    const associationId = associationIds.get(source.id);
+  for (const source of sourceNationalTeams) {
+    const nationalTeamId = nationalTeamIds.get(source.id);
 
-    if (!associationId) {
-      throw new Error(`Missing database ID for association ${source.id}`);
+    if (!nationalTeamId) {
+      throw new Error(`Missing database ID for national team ${source.id}`);
     }
 
     const values = {
@@ -40,12 +40,12 @@ export const seedAssociationStatistics = async (
       goalDifference: source.stats.goal_difference,
       points: source.stats.points,
     };
-    const existing = existingByAssociationId.get(associationId);
+    const existing = existingByNationalTeamId.get(nationalTeamId);
 
     if (!existing) {
       await transaction
-        .insert(associationStatistics)
-        .values({ associationId, ...values });
+        .insert(nationalTeamStatistics)
+        .values({ nationalTeamId, ...values });
       counts.created += 1;
       continue;
     }
@@ -70,9 +70,9 @@ export const seedAssociationStatistics = async (
     }
 
     await transaction
-      .update(associationStatistics)
+      .update(nationalTeamStatistics)
       .set(values)
-      .where(eq(associationStatistics.associationId, associationId));
+      .where(eq(nationalTeamStatistics.nationalTeamId, nationalTeamId));
     counts.updated += 1;
   }
 

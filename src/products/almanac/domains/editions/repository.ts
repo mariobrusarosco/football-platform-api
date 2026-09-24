@@ -1,7 +1,7 @@
 import { and, asc, count, desc, eq, lte } from 'drizzle-orm';
 import { db } from '../../../../platform/database';
-import { associationEditions } from '../participations/schema';
-import { associations } from '../teams/schema';
+import { nationalTeamParticipations } from '../participations/schema';
+import { nationalTeams } from '../national-teams/schema';
 import { editionHosts, editionVisualIdentities, editions } from './schema';
 import type {
   EditionDetailRecord,
@@ -140,23 +140,23 @@ export const listEditionPlacementRecords = async (
 ): Promise<EditionPlacementRecord[]> => {
   const rows = await db
     .select({
-      associationId: associations.id,
-      associationName: associations.name,
-      associationCode: associations.fifaCode,
-      placement: associationEditions.placement,
+      nationalTeamId: nationalTeams.id,
+      nationalTeamName: nationalTeams.name,
+      nationalTeamCode: nationalTeams.fifaCode,
+      placement: nationalTeamParticipations.placement,
     })
-    .from(associationEditions)
+    .from(nationalTeamParticipations)
     .innerJoin(
-      associations,
-      eq(associations.id, associationEditions.associationId),
+      nationalTeams,
+      eq(nationalTeams.id, nationalTeamParticipations.nationalTeamId),
     )
     .where(
       and(
-        eq(associationEditions.editionId, editionId),
-        lte(associationEditions.placement, 4),
+        eq(nationalTeamParticipations.editionId, editionId),
+        lte(nationalTeamParticipations.placement, 4),
       ),
     )
-    .orderBy(asc(associationEditions.placement));
+    .orderBy(asc(nationalTeamParticipations.placement));
 
   return rows;
 };

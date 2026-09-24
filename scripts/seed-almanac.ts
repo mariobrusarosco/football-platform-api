@@ -1,8 +1,8 @@
 import { closeDatabase, db } from '../src/platform/database';
-import { seedAssociationEditions } from './seed-almanac/association-editions';
-import { seedAssociationStatistics } from './seed-almanac/association-statistics';
-import { seedAssociationVisualIdentities } from './seed-almanac/association-visual-identities';
-import { seedAssociations } from './seed-almanac/associations';
+import { seedNationalTeamParticipations } from './seed-almanac/national-team-participations';
+import { seedNationalTeamStatistics } from './seed-almanac/national-team-statistics';
+import { seedNationalTeamVisualIdentities } from './seed-almanac/national-team-visual-identities';
+import { seedNationalTeams } from './seed-almanac/national-teams';
 import { seedEditionHosts } from './seed-almanac/edition-hosts';
 import { seedEditionVisualIdentities } from './seed-almanac/edition-visual-identities';
 import {
@@ -14,9 +14,9 @@ import { seedWorldCupEditions } from './seed-almanac/world-cup-editions';
 export const seedAlmanac = async () => {
   const source = await readFoundationSeedSource();
 
-  if (source.excludedAssociationEditions.length > 0) {
+  if (source.excludedNationalTeamParticipations.length > 0) {
     console.warn(
-      `Excluded ${source.excludedAssociationEditions.length} association-edition records outside the editions catalog.`,
+      `Excluded ${source.excludedNationalTeamParticipations.length} national-team participation records outside the editions catalog.`,
     );
   }
 
@@ -38,24 +38,24 @@ export const seedAlmanac = async () => {
       source.editions,
       editionResult.ids,
     );
-    const associationResult = await seedAssociations(
+    const nationalTeamResult = await seedNationalTeams(
       transaction,
-      source.associations,
+      source.nationalTeams,
     );
-    const associationVisualIdentityCounts = await seedAssociationVisualIdentities(
+    const nationalTeamVisualIdentityCounts = await seedNationalTeamVisualIdentities(
       transaction,
-      source.associations,
-      associationResult.ids,
+      source.nationalTeams,
+      nationalTeamResult.ids,
     );
-    const associationStatisticCounts = await seedAssociationStatistics(
+    const nationalTeamStatisticCounts = await seedNationalTeamStatistics(
       transaction,
-      source.associations,
-      associationResult.ids,
+      source.nationalTeams,
+      nationalTeamResult.ids,
     );
-    const associationEditionCounts = await seedAssociationEditions(
+    const nationalTeamParticipationCounts = await seedNationalTeamParticipations(
       transaction,
-      source.associations,
-      associationResult.ids,
+      source.nationalTeams,
+      nationalTeamResult.ids,
       editionResult.ids,
     );
 
@@ -63,10 +63,10 @@ export const seedAlmanac = async () => {
       editions: editionResult.counts,
       editionHosts: editionHostCounts,
       editionVisualIdentities: editionVisualIdentityCounts,
-      associations: associationResult.counts,
-      associationVisualIdentities: associationVisualIdentityCounts,
-      associationStatistics: associationStatisticCounts,
-      associationEditions: associationEditionCounts,
+      nationalTeams: nationalTeamResult.counts,
+      nationalTeamVisualIdentities: nationalTeamVisualIdentityCounts,
+      nationalTeamStatistics: nationalTeamStatisticCounts,
+      nationalTeamParticipations: nationalTeamParticipationCounts,
     };
   });
 };

@@ -33,11 +33,23 @@ Examples:
 ```text
 src/products/almanac/domains/editions/
 src/products/almanac/domains/contents/
-src/products/almanac/domains/teams/
+src/products/almanac/domains/national-teams/
 src/products/best-shot/domains/guesses/
 ```
 
 Use a specific product name such as `best-shot`. Do not create a generic `game` product.
+
+### Almanac Vocabulary
+
+The accepted model distinguishes the national team (Brazil), its governing association (display
+acronym CBF), and its participation in an edition (Brazil in 2002). Use `national-teams/` for team
+identity, statistics, and visual identities; use `participations/` for `national_team_participations`.
+An association is represented only by nullable `national_teams.association_acronym`, not by a
+separate domain. The public `/teams` routes retain their existing names.
+
+The [National Teams Schema Model](../plans/almanac-national-teams-schema-model.md) defines the
+accepted terms, source mapping, manual acronym entry, and remaining deferred work. Foundation's
+external `associations` collection name must not be copied into application-domain terminology.
 
 ## Standard Request Flow
 

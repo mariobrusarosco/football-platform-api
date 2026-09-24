@@ -1,6 +1,6 @@
 import type { NationalTeamDetailRecord, NationalTeamRecord } from './types';
 
-// Persistence is disabled until the replacement schemas are defined.
+// Database reads for the national-team endpoints are not implemented yet.
 export const listNationalTeamRecords = async (): Promise<NationalTeamRecord[]> => {
   return [];
 };

@@ -76,6 +76,7 @@ export const getTeamDetail = async (sourceId: string): Promise<GetTeamDetailResu
       id: team.id,
       code: team.code,
       displayName: team.displayName,
+      associationAcronym: team.associationAcronym,
       pageNumber: orderedTeams[teamIndex].pageNumber,
       flagUrl: orderedTeams[teamIndex].flagUrl,
       visualIdentity:

@@ -5,6 +5,10 @@
 Accepted on 2026-07-17. Its runtime read-join restriction was superseded by ADR 0004 on
 2026-09-20; its schema foreign-key decision remains accepted.
 
+Examples use the national-team terminology accepted on 2026-09-23. This naming update does not
+change the architecture policy. See the
+[National Teams Schema Model](../plans/almanac-national-teams-schema-model.md).
+
 ## Context
 
 The Almanac product separates business capabilities into domains while storing their tables in the
@@ -37,7 +41,7 @@ For Participations, the accepted schema dependency is:
 ```text
 participations/schema.ts
   |-> editions/schema.ts
-  `-> teams/schema.ts
+  `-> national-teams/schema.ts
 ```
 
 This dependency exists so PostgreSQL can enforce that every participation references an existing

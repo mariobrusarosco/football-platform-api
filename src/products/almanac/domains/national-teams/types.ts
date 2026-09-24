@@ -6,6 +6,7 @@ export const foundationAssociationSourceSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
   code: z.string().regex(/^[A-Z]{3}$/),
+  association_acronym: z.string().trim().min(1).nullish(),
   flag_url: z.string().url().nullable().optional(),
   stats: z.object({
     appearances: nonNegativeInteger,
@@ -52,6 +53,7 @@ export type NationalTeamRecord = {
   sourceId: string;
   code: string;
   displayName: string;
+  associationAcronym: string | null;
   flagAssetKey: string | null;
 };
 
@@ -83,6 +85,7 @@ export type TeamDetail = {
   id: string;
   code: string;
   displayName: string;
+  associationAcronym: string | null;
   pageNumber: number;
   flagUrl: string | null;
   visualIdentity: {
